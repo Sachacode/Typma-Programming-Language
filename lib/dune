@@ -1,0 +1,3 @@
+(library
+	(name et)
+	(libraries zarith core typ))
