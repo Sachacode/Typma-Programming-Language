@@ -1,0 +1,20 @@
+opam-version: "2.0"
+version: "0.1.0"
+synopsis: "Typma Programming Language"
+maintainer: "speterson@oxy.edu"
+authors: ["Sacha Peterson <speterson@oxy.edu>"]
+homepage: "https://github.com/Sachacode/Typma-Programming-Language"
+dev-repo: "git+https://github.com/Sachacode/Typma-Programming-Language"
+bug-reports: "https://github.com/Sachacode/Typma-Programming-Language/issues"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+install: [
+  ["dune" "install"]
+]
+depends: [
+  "dune"
+  "ocaml"
+  "typ"
+  "zarith"
+]
