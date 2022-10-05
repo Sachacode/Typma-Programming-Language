@@ -1,0 +1,31 @@
+lib: [
+  "_build/install/default/lib/typ/Datatypes.ml"
+  "_build/install/default/lib/typ/Datatypes.mli"
+  "_build/install/default/lib/typ/META"
+  "_build/install/default/lib/typ/Test.ml"
+  "_build/install/default/lib/typ/Test.mli"
+  "_build/install/default/lib/typ/dune-package"
+  "_build/install/default/lib/typ/opam"
+  "_build/install/default/lib/typ/typ.a"
+  "_build/install/default/lib/typ/typ.cma"
+  "_build/install/default/lib/typ/typ.cmi"
+  "_build/install/default/lib/typ/typ.cmt"
+  "_build/install/default/lib/typ/typ.cmx"
+  "_build/install/default/lib/typ/typ.cmxa"
+  "_build/install/default/lib/typ/typ.ml"
+  "_build/install/default/lib/typ/typ__Datatypes.cmi"
+  "_build/install/default/lib/typ/typ__Datatypes.cmt"
+  "_build/install/default/lib/typ/typ__Datatypes.cmti"
+  "_build/install/default/lib/typ/typ__Datatypes.cmx"
+  "_build/install/default/lib/typ/typ__Test.cmi"
+  "_build/install/default/lib/typ/typ__Test.cmt"
+  "_build/install/default/lib/typ/typ__Test.cmti"
+  "_build/install/default/lib/typ/typ__Test.cmx"
+]
+lib_root: [
+  "_build/install/default/lib/coq/user-contrib/TypmaTest/Test.v" {"coq/user-contrib/TypmaTest/Test.v"}
+  "_build/install/default/lib/coq/user-contrib/TypmaTest/Test.vo" {"coq/user-contrib/TypmaTest/Test.vo"}
+]
+libexec: [
+  "_build/install/default/lib/typ/typ.cmxs"
+]

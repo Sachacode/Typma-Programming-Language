@@ -1,0 +1,6 @@
+(** @canonical Typ.Datatypes *)
+module Datatypes = Typ__Datatypes
+
+
+(** @canonical Typ.Test *)
+module Test = Typ__Test

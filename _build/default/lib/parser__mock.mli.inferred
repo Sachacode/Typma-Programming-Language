@@ -1,0 +1,42 @@
+type token =
+    WHILE
+  | VAR of string
+  | UNTIL
+  | SUB
+  | SKIP
+  | SEMICOLON
+  | RPAREN
+  | RBRACE
+  | PRINT
+  | OR
+  | NOT
+  | MUL
+  | LT
+  | LPAREN
+  | LBRACE
+  | INT of int
+  | IF
+  | EQ
+  | EOF
+  | ELSE
+  | DO
+  | DIV
+  | CON
+  | BOOL of bool
+  | ASGN
+  | AND
+  | ADD
+val menhir_begin_marker : int
+val xv_prog : Syntax.cmd
+val xv_cseq : Syntax.cmd
+val xv_cctrl : Syntax.cmd
+val xv_cbot : Syntax.cmd
+val xv_bor : Syntax.bexp
+val xv_bnot : Syntax.bexp
+val xv_blit : Syntax.bexp
+val xv_bcomp : Syntax.bexp
+val xv_band : Syntax.bexp
+val xv_amul : Syntax.aexp
+val xv_alit : Syntax.aexp
+val xv_aadd : Syntax.aexp
+val menhir_end_marker : int
