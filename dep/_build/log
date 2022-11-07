@@ -4,7 +4,7 @@
 # Workspace root:
 # /Users/sachapeterson/Desktop/TypmaRepo/Typma-Programming-Language/dep
 # Auto-detected concurrency: 8
-$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_c96cc0_output
+$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_41b824_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -114,20 +114,161 @@ $ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_
 #      }
 #  }
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -I extract/.typ.objs/byte -no-alias-deps -o extract/.typ.objs/byte/typ.cmo -c -impl extract/typ.ml-gen)
-$ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqdep -Q ../lib TypmaTest -R . DuneExtraction -dyndep opt Extract.v) > _build/default/extract/Extract.v.d
+$ (cd _build/default/lib && /Users/sachapeterson/.opam/coq/bin/coqdep -R . TypmaEval -dyndep opt Typma.v) > _build/default/lib/Typma.v.d
+$ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqdep -Q ../lib TypmaEval -R . DuneExtraction -dyndep opt Extract.v) > _build/default/extract/Extract.v.d
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -49 -nopervasives -nostdlib -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -intf-suffix .ml-gen -no-alias-deps -o extract/.typ.objs/native/typ.cmx -c -impl extract/typ.ml-gen)
-$ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqc -q -w -deprecated-native-compiler-option -w -native-compiler-disabled -native-compiler ondemand -Q ../lib TypmaTest -R . DuneExtraction Extract.v)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/coqc -q -w -deprecated-native-compiler-option -w -native-compiler-disabled -native-compiler ondemand -R lib TypmaEval lib/Typma.v)
+> File "./lib/Typma.v", line 4, characters 0-34:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 5, characters 0-33:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 6, characters 0-36:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 7, characters 0-36:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 8, characters 0-28:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 9, characters 0-35:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+> File "./lib/Typma.v", line 10, characters 0-39:
+> Warning: Use of “Require” inside a section is fragile. It is not recommended
+> to use this functionality in finished proof scripts.
+> [require-in-section,fragile]
+$ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqc -q -w -deprecated-native-compiler-option -w -native-compiler-disabled -native-compiler ondemand -Q ../lib TypmaEval -R . DuneExtraction Extract.v)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Bool.ml) > _build/default/extract/.typ.objs/Bool.ml.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Bool.mli) > _build/default/extract/.typ.objs/Bool.mli.d
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Datatypes.ml) > _build/default/extract/.typ.objs/Datatypes.ml.d
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Datatypes.mli) > _build/default/extract/.typ.objs/Datatypes.mli.d
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Test.ml) > _build/default/extract/.typ.objs/Test.ml.d
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Test.mli) > _build/default/extract/.typ.objs/Test.mli.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Nat.ml) > _build/default/extract/.typ.objs/Nat.ml.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Nat.mli) > _build/default/extract/.typ.objs/Nat.mli.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/String.ml) > _build/default/extract/.typ.objs/String.ml.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/String.mli) > _build/default/extract/.typ.objs/String.mli.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Typma.mli) > _build/default/extract/.typ.objs/Typma.mli.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Typma.ml) > _build/default/extract/.typ.objs/Typma.ml.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Bool.cmi -c -intf extract/Bool.mli)
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Datatypes.cmi -c -intf extract/Datatypes.mli)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Test.cmi -c -intf extract/Test.mli)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__String.cmi -c -intf extract/String.mli)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Bool.cmo -c -impl extract/Bool.ml)
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Datatypes.cmo -c -impl extract/Datatypes.ml)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Test.cmo -c -impl extract/Test.ml)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -a -o extract/typ.cma extract/.typ.objs/byte/typ.cmo extract/.typ.objs/byte/typ__Test.cmo extract/.typ.objs/byte/typ__Datatypes.cmo)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Nat.cmi -c -intf extract/Nat.mli)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__String.cmo -c -impl extract/String.ml)
+> File "extract/String.ml", line 25, characters 11-26:
+> 25 | | _::s' -> Pervasives.succ (length s')
+>                 ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Typma.cmi -c -intf extract/Typma.mli)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Nat.cmo -c -impl extract/Nat.ml)
+> File "extract/Nat.ml", line 13, characters 25-39:
+> 13 | let rec sub = fun n m -> Pervasives.max 0 (n-m)
+>                               ^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Nat.ml", line 46, characters 7-22:
+> 46 |   leb (Pervasives.succ n) m
+>             ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Nat.ml", line 55, characters 29-44:
+> 55 |       (fun _ -> divmod x' y (Pervasives.succ q) y)
+>                                   ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Bool.cmx -c -impl extract/Bool.ml)
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Datatypes.cmx -c -impl extract/Datatypes.ml)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Test.cmx -c -impl extract/Test.ml)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -a -o extract/typ.cmxa extract/.typ.objs/native/typ.cmx extract/.typ.objs/native/typ__Test.cmx extract/.typ.objs/native/typ__Datatypes.cmx)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__String.cmx -c -impl extract/String.ml)
+> File "extract/String.ml", line 25, characters 11-26:
+> 25 | | _::s' -> Pervasives.succ (length s')
+>                 ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Typma.cmo -c -impl extract/Typma.ml)
+> File "extract/Typma.ml", line 49, characters 23-38:
+> 49 | | TBool b -> if b then Pervasives.succ 0 else 0
+>                             ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Typma.ml", line 206, characters 14-29:
+> 206 |     (fun _ -> Pervasives.succ 0)
+>                     ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Nat.cmx -c -impl extract/Nat.ml)
+> File "extract/Nat.ml", line 13, characters 25-39:
+> 13 | let rec sub = fun n m -> Pervasives.max 0 (n-m)
+>                               ^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Nat.ml", line 46, characters 7-22:
+> 46 |   leb (Pervasives.succ n) m
+>             ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Nat.ml", line 55, characters 29-44:
+> 55 |       (fun _ -> divmod x' y (Pervasives.succ q) y)
+>                                   ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -g -a -o extract/typ.cma extract/.typ.objs/byte/typ.cmo extract/.typ.objs/byte/typ__Bool.cmo extract/.typ.objs/byte/typ__Datatypes.cmo extract/.typ.objs/byte/typ__Nat.cmo extract/.typ.objs/byte/typ__String.cmo extract/.typ.objs/byte/typ__Typma.cmo)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Typma.cmx -c -impl extract/Typma.ml)
+> File "extract/Typma.ml", line 49, characters 23-38:
+> 49 | | TBool b -> if b then Pervasives.succ 0 else 0
+>                             ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+> File "extract/Typma.ml", line 206, characters 14-29:
+> 206 |     (fun _ -> Pervasives.succ 0)
+>                     ^^^^^^^^^^^^^^^
+> Alert deprecated: module Stdlib.Pervasives
+> Use Stdlib instead.
+>
+> If you need to stay compatible with OCaml < 4.07, you can use the 
+> stdlib-shims library: https://github.com/ocaml/stdlib-shims
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -a -o extract/typ.cmxa extract/.typ.objs/native/typ.cmx extract/.typ.objs/native/typ__Bool.cmx extract/.typ.objs/native/typ__Datatypes.cmx extract/.typ.objs/native/typ__Nat.cmx extract/.typ.objs/native/typ__String.cmx extract/.typ.objs/native/typ__Typma.cmx)
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -g -shared -linkall -I extract -o extract/typ.cmxs extract/typ.cmxa)
 # Promoting "_build/default/typ.install" to "typ.install"

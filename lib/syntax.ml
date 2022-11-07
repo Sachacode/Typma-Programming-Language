@@ -1,26 +1,15 @@
 (** Imp Syntax. *)
 
 (** Arithmetic operations. *)
-type aop = Add | Sub | Mul | Div
+type op = Add | Sub | Mul | Div | Eq | Le | Not | And | Or
 
 (** Arithmetic expressions. *)
-type aexp =
+type exp =
   | Int of int
-  | Var of string
-  | AOp of aexp * aop * aexp
-
-(** Boolean operations. *)
-type bop = And | Or
-
-(** Comparison operations. *)
-type cop = Eq | Lt
-
-(** Boolean expressions. *)
-type bexp =
   | Bool of bool
-  | Not of bexp
-  | BOp of bexp * bop * bexp
-  | COp of aexp * cop * aexp
+  | Str of string
+  | Var of string
+  | EOp of exp * op * exp
 
 (** Imp commands. *)
 type cmd =

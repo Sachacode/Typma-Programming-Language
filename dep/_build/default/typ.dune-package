@@ -4,11 +4,17 @@
 (sections (lib .) (lib_root ..) (libexec .))
 (files
  (lib
-  (Datatypes.ml
+  (Bool.ml
+   Bool.mli
+   Datatypes.ml
    Datatypes.mli
    META
-   Test.ml
-   Test.mli
+   Nat.ml
+   Nat.mli
+   String.ml
+   String.mli
+   Typma.ml
+   Typma.mli
    dune-package
    opam
    typ.a
@@ -18,16 +24,28 @@
    typ.cmx
    typ.cmxa
    typ.ml
+   typ__Bool.cmi
+   typ__Bool.cmt
+   typ__Bool.cmti
+   typ__Bool.cmx
    typ__Datatypes.cmi
    typ__Datatypes.cmt
    typ__Datatypes.cmti
    typ__Datatypes.cmx
-   typ__Test.cmi
-   typ__Test.cmt
-   typ__Test.cmti
-   typ__Test.cmx))
+   typ__Nat.cmi
+   typ__Nat.cmt
+   typ__Nat.cmti
+   typ__Nat.cmx
+   typ__String.cmi
+   typ__String.cmt
+   typ__String.cmti
+   typ__String.cmx
+   typ__Typma.cmi
+   typ__Typma.cmt
+   typ__Typma.cmti
+   typ__Typma.cmx))
  (lib_root
-  (coq/user-contrib/TypmaTest/Test.v coq/user-contrib/TypmaTest/Test.vo))
+  (coq/user-contrib/TypmaEval/Typma.v coq/user-contrib/TypmaEval/Typma.vo))
  (libexec (typ.cmxs)))
 (library
  (name typ)
@@ -42,12 +60,15 @@
   (wrapped
    (main_module_name Typ)
    (modules
+    ((name Bool) (obj_name typ__Bool) (visibility public) (impl) (intf))
     ((name Datatypes)
      (obj_name typ__Datatypes)
      (visibility public)
      (impl)
      (intf))
-    ((name Test) (obj_name typ__Test) (visibility public) (impl) (intf)))
+    ((name Nat) (obj_name typ__Nat) (visibility public) (impl) (intf))
+    ((name String) (obj_name typ__String) (visibility public) (impl) (intf))
+    ((name Typma) (obj_name typ__Typma) (visibility public) (impl) (intf)))
    (alias_module
     (name Typ)
     (obj_name typ)

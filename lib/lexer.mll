@@ -15,7 +15,7 @@ rule tokenize = parse
      | "+" { ADD }
      | "-" { SUB }
      | "*" { MUL }
-		 | "/" { DIV }
+     | "/" { DIV }
      | "!" { NOT }
      | "or" { OR }
      | "and" { AND }
@@ -25,12 +25,9 @@ rule tokenize = parse
      | "print" { PRINT }
      | ":=" { ASGN }
      | ";" { SEMICOLON }
-		 | "||" { CON }
      | "if" { IF }
      | "else" { ELSE }
      | "while" { WHILE }
-		 | "do" { DO }
-		 | "until" { UNTIL }
      | "true" { BOOL true }
      | "false" { BOOL false }
      | num as z { INT (int_of_string z) }

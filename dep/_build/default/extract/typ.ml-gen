@@ -1,6 +1,18 @@
+(** @canonical Typ.Bool *)
+module Bool = Typ__Bool
+
+
 (** @canonical Typ.Datatypes *)
 module Datatypes = Typ__Datatypes
 
 
-(** @canonical Typ.Test *)
-module Test = Typ__Test
+(** @canonical Typ.Nat *)
+module Nat = Typ__Nat
+
+
+(** @canonical Typ.String *)
+module String = Typ__String
+
+
+(** @canonical Typ.Typma *)
+module Typma = Typ__Typma
