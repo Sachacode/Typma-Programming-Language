@@ -1,6 +1,6 @@
 From Coq Require extraction.Extraction.
 Require Export Coq.extraction.ExtrOcamlBasic.
-Require Export Coq.extraction.ExtrOcamlString.
+Require Export Coq.extraction.ExtrOcamlNativeString.
 Require Export Coq.extraction.ExtrOcamlNatInt.
 
 (** Extraction of [nat] to [Zarith]'s [Z.t]. *)

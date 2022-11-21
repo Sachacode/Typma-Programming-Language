@@ -10,9 +10,5 @@ module Datatypes = Typ__Datatypes
 module Nat = Typ__Nat
 
 
-(** @canonical Typ.String *)
-module String = Typ__String
-
-
 (** @canonical Typ.Typma *)
 module Typma = Typ__Typma

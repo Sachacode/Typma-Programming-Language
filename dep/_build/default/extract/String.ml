@@ -1,41 +1,44 @@
 
-(** val eqb : char list -> char list -> bool **)
+(** val length : string -> int **)
 
-let rec eqb s1 s2 =
-  match s1 with
-  | [] -> (match s2 with
-           | [] -> true
-           | _::_ -> false)
-  | c1::s1' ->
-    (match s2 with
-     | [] -> false
-     | c2::s2' -> if (=) c1 c2 then eqb s1' s2' else false)
+let rec length s =
+  (* If this appears, you're using String internals. Please don't *)
+ (fun f0 f1 s ->
+    let l = String.length s in
+    if l = 0 then f0 else f1 (String.get s 0) (String.sub s 1 (l-1)))
 
-(** val append : char list -> char list -> char list **)
+    (fun _ -> 0)
+    (fun _ s' -> Pervasives.succ (length s'))
+    s
 
-let rec append s1 s2 =
-  match s1 with
-  | [] -> s2
-  | c::s1' -> c::(append s1' s2)
-
-(** val length : char list -> int **)
-
-let rec length = function
-| [] -> 0
-| _::s' -> Pervasives.succ (length s')
-
-(** val substring : int -> int -> char list -> char list **)
+(** val substring : int -> int -> string -> string **)
 
 let rec substring n m s =
   (fun fO fS n -> if n=0 then fO () else fS (n-1))
     (fun _ ->
     (fun fO fS n -> if n=0 then fO () else fS (n-1))
-      (fun _ -> [])
-      (fun m' -> match s with
-                 | [] -> s
-                 | c::s' -> c::(substring 0 m' s'))
+      (fun _ -> "")
+      (fun m' ->
+      (* If this appears, you're using String internals. Please don't *)
+ (fun f0 f1 s ->
+    let l = String.length s in
+    if l = 0 then f0 else f1 (String.get s 0) (String.sub s 1 (l-1)))
+
+        (fun _ -> s)
+        (fun c s' ->
+        (* If this appears, you're using String internals. Please don't *)
+  (fun (c, s) -> String.make 1 c ^ s)
+
+        (c, (substring 0 m' s')))
+        s)
       m)
-    (fun n' -> match s with
-               | [] -> s
-               | _::s' -> substring n' m s')
+    (fun n' ->
+    (* If this appears, you're using String internals. Please don't *)
+ (fun f0 f1 s ->
+    let l = String.length s in
+    if l = 0 then f0 else f1 (String.get s 0) (String.sub s 1 (l-1)))
+
+      (fun _ -> s)
+      (fun _ s' -> substring n' m s')
+      s)
     n

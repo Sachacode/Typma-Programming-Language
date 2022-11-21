@@ -1,7 +1,0 @@
-version = "0.1.0"
-description = ""
-requires = "zarith"
-archive(byte) = "typ.cma"
-archive(native) = "typ.cmxa"
-plugin(byte) = "typ.cma"
-plugin(native) = "typ.cmxs"

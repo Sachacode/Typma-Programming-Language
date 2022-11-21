@@ -1,1521 +1,1545 @@
-DIGEST d68e84ee07a9f175bb751812a17f70db
+DIGEST 5fa87977a1c5a2f473815153179fc82b
 FTypmaEval.Typma
-sec 8:12 <> Typma
-R120:128 Coq.Bool.Bool <> <> lib
-R155:162 Coq.Init.Nat <> <> lib
-R189:199 Coq.Arith.Arith <> <> lib
-R226:236 Coq.Arith.EqNat <> <> lib
-R275:277 Coq.micromega.Lia <> <> lib
-R304:313 Coq.Lists.List <> <> lib
-R362:375 Coq.Strings.String <> <> lib
-def 390:394 <> pacer
-R397:402 Coq.Strings.String <> string ind
-ind 1049:1053 <> typma
-constr 1069:1072 <> TNat
-constr 1088:1092 <> TBool
-constr 1109:1112 <> TStr
-R1079:1081 Coq.Init.Datatypes <> nat ind
-binder 1075:1075 <> n:3
-R1099:1102 Coq.Init.Datatypes <> bool ind
-binder 1095:1095 <> b:4
-R1119:1124 Coq.Strings.String <> string ind
-binder 1115:1115 <> s:5
-def 1172:1180 <> total_map
-binder 1183:1183 <> A:6
-R1202:1205 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1206:1206 TypmaEval.Typma <> A:6 var
-R1196:1201 Coq.Strings.String <> string ind
-def 1220:1224 <> state
-R1229:1237 TypmaEval.Typma <> total_map def
-R1239:1243 TypmaEval.Typma <> typma ind
-def 1257:1263 <> t_empty
-binder 1266:1266 <> A:7
-R1281:1281 TypmaEval.Typma <> A:7 var
-binder 1277:1277 <> v:8
-R1286:1294 TypmaEval.Typma <> total_map def
-R1296:1296 TypmaEval.Typma <> A:7 var
-R1311:1311 TypmaEval.Typma <> v:8 var
-def 1326:1333 <> t_update
-binder 1336:1336 <> A:9
-R1351:1359 TypmaEval.Typma <> total_map def
-R1361:1361 TypmaEval.Typma <> A:9 var
-binder 1347:1347 <> m:10
-R1369:1374 Coq.Strings.String <> string ind
-binder 1365:1365 <> x:11
-R1382:1382 TypmaEval.Typma <> A:9 var
-binder 1378:1378 <> v:12
-binder 1392:1393 <> x':13
-R1401:1410 Coq.Strings.String <> eqb def
-R1414:1415 TypmaEval.Typma <> x':13 var
-R1412:1412 TypmaEval.Typma <> x:11 var
-R1429:1429 TypmaEval.Typma <> m:10 var
-R1431:1432 TypmaEval.Typma <> x':13 var
-R1422:1422 TypmaEval.Typma <> v:12 var
-def 1492:1497 <> to_nat
-R1504:1508 TypmaEval.Typma <> typma ind
-binder 1500:1500 <> t:14
-R1513:1515 Coq.Init.Datatypes <> nat ind
-R1528:1528 TypmaEval.Typma <> t:14 var
-R1539:1542 TypmaEval.Typma <> TNat constr
-R1555:1559 TypmaEval.Typma <> TBool constr
-R1561:1564 Coq.Init.Datatypes <> true constr
-R1575:1579 TypmaEval.Typma <> TBool constr
-R1581:1585 Coq.Init.Datatypes <> false constr
-R1596:1599 TypmaEval.Typma <> TStr constr
-R1606:1611 Coq.Strings.String <> length def
-def 1680:1686 <> to_bool
-R1693:1697 TypmaEval.Typma <> typma ind
-binder 1689:1689 <> t:16
-R1702:1705 Coq.Init.Datatypes <> bool ind
-R1718:1718 TypmaEval.Typma <> t:16 var
-R1729:1732 TypmaEval.Typma <> TNat constr
-R1741:1744 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R1752:1756 TypmaEval.Typma <> TBool constr
-R1769:1772 TypmaEval.Typma <> TStr constr
-R1774:1784 Coq.Strings.String <> EmptyString constr
-R1789:1793 Coq.Init.Datatypes <> false constr
-R1799:1802 TypmaEval.Typma <> TStr constr
-R1809:1812 Coq.Init.Datatypes <> true constr
-def 1878:1883 <> to_str
-R1890:1894 TypmaEval.Typma <> typma ind
-binder 1886:1886 <> t:18
-R1899:1904 Coq.Strings.String <> string ind
-R1917:1917 TypmaEval.Typma <> t:18 var
-R1928:1931 TypmaEval.Typma <> TNat constr
-R1943:1946 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R1981:1985 TypmaEval.Typma <> TBool constr
-R2015:2019 Coq.Init.Datatypes <> false constr
-R2038:2041 Coq.Init.Datatypes <> true constr
-R2065:2068 TypmaEval.Typma <> TStr constr
-def 2204:2212 <> typma_add
-R2223:2227 TypmaEval.Typma <> typma ind
-binder 2215:2216 <> t1:21
-binder 2218:2219 <> t2:22
-R2232:2236 TypmaEval.Typma <> typma ind
-R2253:2254 TypmaEval.Typma <> t2:22 var
-R2249:2250 TypmaEval.Typma <> t1:21 var
-R2265:2268 TypmaEval.Typma <> TNat constr
-R2274:2277 TypmaEval.Typma <> TNat constr
-R2285:2288 TypmaEval.Typma <> TNat constr
-R2293:2295 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R2304:2307 TypmaEval.Typma <> TNat constr
-R2312:2316 TypmaEval.Typma <> TBool constr
-R2323:2326 TypmaEval.Typma <> TNat constr
-R2330:2332 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R2333:2338 TypmaEval.Typma <> to_nat def
-R2340:2341 TypmaEval.Typma <> t2:22 var
-R2348:2351 TypmaEval.Typma <> TNat constr
-R2356:2359 TypmaEval.Typma <> TStr constr
-R2366:2369 TypmaEval.Typma <> TNat constr
-R2373:2375 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R2376:2381 TypmaEval.Typma <> to_nat def
-R2383:2384 TypmaEval.Typma <> t2:22 var
-R2391:2395 TypmaEval.Typma <> TBool constr
-R2400:2403 TypmaEval.Typma <> TNat constr
-R2410:2413 TypmaEval.Typma <> TNat constr
-R2417:2419 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R2420:2425 TypmaEval.Typma <> to_nat def
-R2427:2428 TypmaEval.Typma <> t1:21 var
-R2435:2439 TypmaEval.Typma <> TBool constr
-R2445:2449 TypmaEval.Typma <> TBool constr
-R2457:2460 TypmaEval.Typma <> TNat constr
-R2472:2474 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R2463:2468 TypmaEval.Typma <> to_nat def
-R2470:2471 TypmaEval.Typma <> t1:21 var
-R2475:2480 TypmaEval.Typma <> to_nat def
-R2482:2483 TypmaEval.Typma <> t2:22 var
-R2490:2494 TypmaEval.Typma <> TBool constr
-R2499:2502 TypmaEval.Typma <> TStr constr
-R2509:2512 TypmaEval.Typma <> TStr constr
-R2524:2527 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R2515:2520 TypmaEval.Typma <> to_str def
-R2522:2523 TypmaEval.Typma <> t1:21 var
-R2535:2538 TypmaEval.Typma <> TStr constr
-R2543:2546 TypmaEval.Typma <> TNat constr
-R2553:2556 TypmaEval.Typma <> TStr constr
-R2560:2563 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R2564:2569 TypmaEval.Typma <> to_str def
-R2571:2572 TypmaEval.Typma <> t2:22 var
-R2579:2582 TypmaEval.Typma <> TStr constr
-R2587:2591 TypmaEval.Typma <> TBool constr
-R2598:2601 TypmaEval.Typma <> TStr constr
-R2605:2608 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R2609:2614 TypmaEval.Typma <> to_str def
-R2616:2617 TypmaEval.Typma <> t2:22 var
-R2624:2627 TypmaEval.Typma <> TStr constr
-R2633:2636 TypmaEval.Typma <> TStr constr
-R2644:2647 TypmaEval.Typma <> TStr constr
-R2652:2655 Coq.Strings.String <> ::string_scope:x_'++'_x not
-def 2722:2732 <> typma_minus
-R2743:2747 TypmaEval.Typma <> typma ind
-binder 2735:2736 <> t1:25
-binder 2738:2739 <> t2:26
-R2752:2756 TypmaEval.Typma <> typma ind
-R2773:2774 TypmaEval.Typma <> t2:26 var
-R2769:2770 TypmaEval.Typma <> t1:25 var
-R2785:2788 TypmaEval.Typma <> TNat constr
-R2794:2797 TypmaEval.Typma <> TNat constr
-R2805:2808 TypmaEval.Typma <> TNat constr
-R2813:2815 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R2824:2827 TypmaEval.Typma <> TNat constr
-R2832:2836 TypmaEval.Typma <> TBool constr
-R2843:2846 TypmaEval.Typma <> TNat constr
-R2850:2852 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R2853:2858 TypmaEval.Typma <> to_nat def
-R2860:2861 TypmaEval.Typma <> t2:26 var
-R2868:2871 TypmaEval.Typma <> TNat constr
-R2876:2879 TypmaEval.Typma <> TStr constr
-R2886:2889 TypmaEval.Typma <> TNat constr
-R2893:2895 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R2896:2901 TypmaEval.Typma <> to_nat def
-R2903:2904 TypmaEval.Typma <> t2:26 var
-R2911:2915 TypmaEval.Typma <> TBool constr
-R2920:2923 TypmaEval.Typma <> TNat constr
-R2930:2933 TypmaEval.Typma <> TNat constr
-R2945:2947 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R2936:2941 TypmaEval.Typma <> to_nat def
-R2943:2944 TypmaEval.Typma <> t1:25 var
-R2955:2959 TypmaEval.Typma <> TBool constr
-R2965:2969 TypmaEval.Typma <> TBool constr
-R2977:2980 TypmaEval.Typma <> TNat constr
-R2992:2994 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R2983:2988 TypmaEval.Typma <> to_nat def
-R2990:2991 TypmaEval.Typma <> t1:25 var
-R2995:3000 TypmaEval.Typma <> to_nat def
-R3002:3003 TypmaEval.Typma <> t2:26 var
-R3010:3014 TypmaEval.Typma <> TBool constr
-R3019:3022 TypmaEval.Typma <> TStr constr
-R3029:3032 TypmaEval.Typma <> TNat constr
-R3044:3046 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R3035:3040 TypmaEval.Typma <> to_nat def
-R3042:3043 TypmaEval.Typma <> t1:25 var
-R3047:3052 TypmaEval.Typma <> to_nat def
-R3054:3055 TypmaEval.Typma <> t2:26 var
-R3062:3065 TypmaEval.Typma <> TStr constr
-R3070:3073 TypmaEval.Typma <> TNat constr
-R3080:3083 TypmaEval.Typma <> TStr constr
-R3086:3094 Coq.Strings.String <> substring def
-R3107:3109 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R3099:3104 Coq.Strings.String <> length def
-R3120:3123 TypmaEval.Typma <> TStr constr
-R3128:3132 TypmaEval.Typma <> TBool constr
-R3139:3142 TypmaEval.Typma <> TNat constr
-R3154:3156 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R3145:3150 TypmaEval.Typma <> to_nat def
-R3152:3153 TypmaEval.Typma <> t1:25 var
-R3157:3162 TypmaEval.Typma <> to_nat def
-R3164:3165 TypmaEval.Typma <> t2:26 var
-R3172:3175 TypmaEval.Typma <> TStr constr
-R3181:3184 TypmaEval.Typma <> TStr constr
-R3192:3195 TypmaEval.Typma <> TNat constr
-R3207:3209 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
-R3198:3203 TypmaEval.Typma <> to_nat def
-R3205:3206 TypmaEval.Typma <> t1:25 var
-R3210:3215 TypmaEval.Typma <> to_nat def
-R3217:3218 TypmaEval.Typma <> t2:26 var
-def 3284:3293 <> typma_mult
-R3304:3308 TypmaEval.Typma <> typma ind
-binder 3296:3297 <> t1:29
-binder 3299:3300 <> t2:30
-R3313:3317 TypmaEval.Typma <> typma ind
-R3334:3335 TypmaEval.Typma <> t2:30 var
-R3330:3331 TypmaEval.Typma <> t1:29 var
-R3346:3349 TypmaEval.Typma <> TNat constr
-R3355:3358 TypmaEval.Typma <> TNat constr
-R3366:3369 TypmaEval.Typma <> TNat constr
-R3374:3376 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3385:3388 TypmaEval.Typma <> TNat constr
-R3393:3397 TypmaEval.Typma <> TBool constr
-R3404:3407 TypmaEval.Typma <> TNat constr
-R3411:3413 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3414:3419 TypmaEval.Typma <> to_nat def
-R3421:3422 TypmaEval.Typma <> t2:30 var
-R3429:3432 TypmaEval.Typma <> TNat constr
-R3437:3440 TypmaEval.Typma <> TStr constr
-R3447:3450 TypmaEval.Typma <> TNat constr
-R3454:3456 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3457:3462 TypmaEval.Typma <> to_nat def
-R3464:3465 TypmaEval.Typma <> t2:30 var
-R3472:3476 TypmaEval.Typma <> TBool constr
-R3481:3484 TypmaEval.Typma <> TNat constr
-R3491:3494 TypmaEval.Typma <> TNat constr
-R3498:3500 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3501:3506 TypmaEval.Typma <> to_nat def
-R3508:3509 TypmaEval.Typma <> t1:29 var
-R3516:3520 TypmaEval.Typma <> TBool constr
-R3526:3530 TypmaEval.Typma <> TBool constr
-R3538:3541 TypmaEval.Typma <> TNat constr
-R3553:3555 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3544:3549 TypmaEval.Typma <> to_nat def
-R3551:3552 TypmaEval.Typma <> t1:29 var
-R3556:3561 TypmaEval.Typma <> to_nat def
-R3563:3564 TypmaEval.Typma <> t2:30 var
-R3571:3575 TypmaEval.Typma <> TBool constr
-R3580:3583 TypmaEval.Typma <> TStr constr
-R3590:3593 TypmaEval.Typma <> TNat constr
-R3605:3607 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R3596:3601 TypmaEval.Typma <> to_nat def
-R3603:3604 TypmaEval.Typma <> t1:29 var
-R3608:3613 TypmaEval.Typma <> to_nat def
-R3615:3616 TypmaEval.Typma <> t2:30 var
-R3623:3626 TypmaEval.Typma <> TStr constr
-R3631:3634 TypmaEval.Typma <> TNat constr
-R3641:3644 TypmaEval.Typma <> TStr constr
-R3648:3651 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R3658:3661 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R3662:3667 TypmaEval.Typma <> to_str def
-R3669:3670 TypmaEval.Typma <> t2:30 var
-R3677:3680 TypmaEval.Typma <> TStr constr
-R3685:3689 TypmaEval.Typma <> TBool constr
-R3696:3699 TypmaEval.Typma <> TStr constr
-R3703:3706 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R3713:3716 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R3717:3722 TypmaEval.Typma <> to_str def
-R3724:3725 TypmaEval.Typma <> t2:30 var
-R3732:3735 TypmaEval.Typma <> TStr constr
-R3741:3744 TypmaEval.Typma <> TStr constr
-R3752:3755 TypmaEval.Typma <> TStr constr
-R3760:3763 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R3770:3773 Coq.Strings.String <> ::string_scope:x_'++'_x not
-def 3871:3879 <> typma_div
-R3890:3894 TypmaEval.Typma <> typma ind
-binder 3882:3883 <> t1:33
-binder 3885:3886 <> t2:34
-R3899:3903 TypmaEval.Typma <> typma ind
-R3920:3921 TypmaEval.Typma <> t2:34 var
-R3916:3917 TypmaEval.Typma <> t1:33 var
-R3932:3935 TypmaEval.Typma <> TNat constr
-R3941:3944 TypmaEval.Typma <> TNat constr
-R3958:3961 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R3986:3989 TypmaEval.Typma <> TNat constr
-R3994:3996 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R3970:3973 TypmaEval.Typma <> TStr constr
-R3975:3979 TypmaEval.Typma <> pacer def
-R4005:4008 TypmaEval.Typma <> TNat constr
-R4013:4017 TypmaEval.Typma <> TBool constr
-R4019:4023 Coq.Init.Datatypes <> false constr
-R4028:4031 TypmaEval.Typma <> TStr constr
-R4033:4037 TypmaEval.Typma <> pacer def
-R4043:4046 TypmaEval.Typma <> TNat constr
-R4051:4055 TypmaEval.Typma <> TBool constr
-R4062:4065 TypmaEval.Typma <> TNat constr
-R4069:4072 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4089:4089 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4073:4078 TypmaEval.Typma <> to_nat def
-R4081:4085 TypmaEval.Typma <> TBool constr
-R4096:4099 TypmaEval.Typma <> TNat constr
-R4104:4107 TypmaEval.Typma <> TStr constr
-R4115:4118 TypmaEval.Typma <> TStr constr
-R4120:4124 TypmaEval.Typma <> pacer def
-R4130:4133 TypmaEval.Typma <> TNat constr
-R4138:4141 TypmaEval.Typma <> TStr constr
-R4148:4151 TypmaEval.Typma <> TNat constr
-R4155:4158 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4174:4174 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4159:4164 TypmaEval.Typma <> to_nat def
-R4167:4170 TypmaEval.Typma <> TStr constr
-R4181:4185 TypmaEval.Typma <> TBool constr
-R4190:4193 TypmaEval.Typma <> TNat constr
-R4205:4208 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R4233:4236 TypmaEval.Typma <> TNat constr
-R4240:4243 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4260:4260 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4244:4249 TypmaEval.Typma <> to_nat def
-R4252:4256 TypmaEval.Typma <> TBool constr
-R4217:4220 TypmaEval.Typma <> TStr constr
-R4222:4226 TypmaEval.Typma <> pacer def
-R4267:4271 TypmaEval.Typma <> TBool constr
-R4276:4280 TypmaEval.Typma <> TBool constr
-R4282:4286 Coq.Init.Datatypes <> false constr
-R4291:4294 TypmaEval.Typma <> TStr constr
-R4296:4300 TypmaEval.Typma <> pacer def
-R4306:4310 TypmaEval.Typma <> TBool constr
-R4316:4320 TypmaEval.Typma <> TBool constr
-R4328:4331 TypmaEval.Typma <> TNat constr
-R4334:4334 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4352:4356 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4374:4374 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4335:4340 TypmaEval.Typma <> to_nat def
-R4343:4347 TypmaEval.Typma <> TBool constr
-R4357:4362 TypmaEval.Typma <> to_nat def
-R4365:4369 TypmaEval.Typma <> TBool constr
-R4381:4385 TypmaEval.Typma <> TBool constr
-R4390:4393 TypmaEval.Typma <> TStr constr
-R4401:4404 TypmaEval.Typma <> TStr constr
-R4406:4410 TypmaEval.Typma <> pacer def
-R4416:4420 TypmaEval.Typma <> TBool constr
-R4425:4428 TypmaEval.Typma <> TStr constr
-R4435:4438 TypmaEval.Typma <> TNat constr
-R4441:4441 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4458:4462 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4478:4478 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4442:4447 TypmaEval.Typma <> to_nat def
-R4450:4454 TypmaEval.Typma <> TBool constr
-R4463:4468 TypmaEval.Typma <> to_nat def
-R4471:4474 TypmaEval.Typma <> TStr constr
-R4485:4488 TypmaEval.Typma <> TStr constr
-R4493:4496 TypmaEval.Typma <> TNat constr
-R4508:4511 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R4536:4539 TypmaEval.Typma <> TNat constr
-R4542:4542 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4558:4561 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4543:4548 TypmaEval.Typma <> to_nat def
-R4551:4554 TypmaEval.Typma <> TStr constr
-R4520:4523 TypmaEval.Typma <> TStr constr
-R4525:4529 TypmaEval.Typma <> pacer def
-R4569:4572 TypmaEval.Typma <> TStr constr
-R4577:4581 TypmaEval.Typma <> TBool constr
-R4583:4587 Coq.Init.Datatypes <> false constr
-R4592:4595 TypmaEval.Typma <> TStr constr
-R4597:4601 TypmaEval.Typma <> pacer def
-R4607:4610 TypmaEval.Typma <> TStr constr
-R4615:4619 TypmaEval.Typma <> TBool constr
-R4626:4629 TypmaEval.Typma <> TNat constr
-R4632:4632 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4648:4652 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4669:4669 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4633:4638 TypmaEval.Typma <> to_nat def
-R4641:4644 TypmaEval.Typma <> TStr constr
-R4653:4658 TypmaEval.Typma <> to_nat def
-R4661:4665 TypmaEval.Typma <> TBool constr
-R4676:4679 TypmaEval.Typma <> TStr constr
-R4685:4688 TypmaEval.Typma <> TStr constr
-R4696:4699 TypmaEval.Typma <> TNat constr
-R4702:4702 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4719:4723 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4740:4740 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
-R4703:4708 TypmaEval.Typma <> to_nat def
-R4711:4714 TypmaEval.Typma <> TStr constr
-R4724:4729 TypmaEval.Typma <> to_nat def
-R4732:4735 TypmaEval.Typma <> TStr constr
-def 4760:4770 <> typma_equal
-R4781:4785 TypmaEval.Typma <> typma ind
-binder 4773:4774 <> t1:37
-binder 4776:4777 <> t2:38
-R4790:4794 TypmaEval.Typma <> typma ind
-R4809:4810 TypmaEval.Typma <> t2:38 var
-R4805:4806 TypmaEval.Typma <> t1:37 var
-R4821:4824 TypmaEval.Typma <> TNat constr
-R4830:4833 TypmaEval.Typma <> TNat constr
-R4841:4845 TypmaEval.Typma <> TBool constr
-R4850:4853 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R4862:4865 TypmaEval.Typma <> TNat constr
-R4870:4874 TypmaEval.Typma <> TBool constr
-R4883:4887 TypmaEval.Typma <> TBool constr
-R4892:4895 TypmaEval.Typma <> TNat constr
-R4902:4906 TypmaEval.Typma <> TBool constr
-R4909:4916 Coq.Bool.Bool <> eqb def
-R4919:4925 TypmaEval.Typma <> to_bool def
-R4928:4931 TypmaEval.Typma <> TNat constr
-R4902:4906 TypmaEval.Typma <> TBool constr
-R4909:4916 Coq.Bool.Bool <> eqb def
-R4919:4925 TypmaEval.Typma <> to_bool def
-R4928:4931 TypmaEval.Typma <> TNat constr
-R4944:4947 TypmaEval.Typma <> TNat constr
-R4952:4955 TypmaEval.Typma <> TStr constr
-R4962:4966 TypmaEval.Typma <> TBool constr
-R4970:4974 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R4990:4990 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R4975:4980 TypmaEval.Typma <> to_nat def
-R4983:4986 TypmaEval.Typma <> TStr constr
-R4997:5001 TypmaEval.Typma <> TBool constr
-R5007:5011 TypmaEval.Typma <> TBool constr
-R5019:5023 TypmaEval.Typma <> TBool constr
-R5026:5033 Coq.Bool.Bool <> eqb def
-R5046:5049 TypmaEval.Typma <> TStr constr
-R5054:5058 TypmaEval.Typma <> TBool constr
-R5066:5070 TypmaEval.Typma <> TBool constr
-R5075:5078 TypmaEval.Typma <> TStr constr
-R5085:5089 TypmaEval.Typma <> TBool constr
-R5092:5099 Coq.Bool.Bool <> eqb def
-R5104:5110 TypmaEval.Typma <> to_bool def
-R5113:5116 TypmaEval.Typma <> TStr constr
-R5085:5089 TypmaEval.Typma <> TBool constr
-R5092:5099 Coq.Bool.Bool <> eqb def
-R5104:5110 TypmaEval.Typma <> to_bool def
-R5113:5116 TypmaEval.Typma <> TStr constr
-R5127:5130 TypmaEval.Typma <> TStr constr
-R5135:5138 TypmaEval.Typma <> TNat constr
-R5145:5149 TypmaEval.Typma <> TBool constr
-R5167:5170 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
-R5152:5157 TypmaEval.Typma <> to_nat def
-R5160:5163 TypmaEval.Typma <> TStr constr
-R5178:5181 TypmaEval.Typma <> TStr constr
-R5187:5190 TypmaEval.Typma <> TStr constr
-R5198:5202 TypmaEval.Typma <> TBool constr
-R5205:5214 Coq.Strings.String <> eqb def
-def 5240:5247 <> typma_le
-R5258:5262 TypmaEval.Typma <> typma ind
-binder 5250:5251 <> t1:41
-binder 5253:5254 <> t2:42
-R5267:5271 TypmaEval.Typma <> typma ind
-R5288:5289 TypmaEval.Typma <> t2:42 var
-R5284:5285 TypmaEval.Typma <> t1:41 var
-R5300:5303 TypmaEval.Typma <> TNat constr
-R5309:5312 TypmaEval.Typma <> TNat constr
-R5320:5324 TypmaEval.Typma <> TBool constr
-R5329:5332 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5341:5344 TypmaEval.Typma <> TNat constr
-R5349:5353 TypmaEval.Typma <> TBool constr
-R5360:5364 TypmaEval.Typma <> TBool constr
-R5368:5372 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5389:5389 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5373:5378 TypmaEval.Typma <> to_nat def
-R5381:5385 TypmaEval.Typma <> TBool constr
-R5396:5399 TypmaEval.Typma <> TNat constr
-R5404:5407 TypmaEval.Typma <> TStr constr
-R5414:5418 TypmaEval.Typma <> TBool constr
-R5422:5426 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5442:5442 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5427:5432 TypmaEval.Typma <> to_nat def
-R5435:5438 TypmaEval.Typma <> TStr constr
-R5449:5453 TypmaEval.Typma <> TBool constr
-R5458:5461 TypmaEval.Typma <> TNat constr
-R5468:5472 TypmaEval.Typma <> TBool constr
-R5475:5475 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5492:5496 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5476:5481 TypmaEval.Typma <> to_nat def
-R5484:5488 TypmaEval.Typma <> TBool constr
-R5504:5508 TypmaEval.Typma <> TBool constr
-R5514:5518 TypmaEval.Typma <> TBool constr
-R5526:5530 TypmaEval.Typma <> TBool constr
-R5533:5533 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5551:5556 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5574:5574 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5534:5539 TypmaEval.Typma <> to_nat def
-R5542:5546 TypmaEval.Typma <> TBool constr
-R5557:5562 TypmaEval.Typma <> to_nat def
-R5565:5569 TypmaEval.Typma <> TBool constr
-R5581:5585 TypmaEval.Typma <> TBool constr
-R5590:5593 TypmaEval.Typma <> TStr constr
-R5600:5604 TypmaEval.Typma <> TBool constr
-R5607:5607 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5640:5645 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5661:5661 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5608:5613 TypmaEval.Typma <> to_nat def
-R5616:5619 TypmaEval.Typma <> TStr constr
-R5622:5627 TypmaEval.Typma <> to_str def
-R5630:5634 TypmaEval.Typma <> TBool constr
-R5646:5651 TypmaEval.Typma <> to_nat def
-R5654:5657 TypmaEval.Typma <> TStr constr
-R5668:5671 TypmaEval.Typma <> TStr constr
-R5676:5679 TypmaEval.Typma <> TNat constr
-R5686:5690 TypmaEval.Typma <> TBool constr
-R5708:5711 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5693:5698 TypmaEval.Typma <> to_nat def
-R5701:5704 TypmaEval.Typma <> TStr constr
-R5719:5722 TypmaEval.Typma <> TStr constr
-R5727:5731 TypmaEval.Typma <> TBool constr
-R5738:5742 TypmaEval.Typma <> TBool constr
-R5745:5745 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5761:5766 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5799:5799 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5746:5751 TypmaEval.Typma <> to_nat def
-R5754:5757 TypmaEval.Typma <> TStr constr
-R5767:5772 TypmaEval.Typma <> to_nat def
-R5775:5778 TypmaEval.Typma <> TStr constr
-R5781:5786 TypmaEval.Typma <> to_str def
-R5789:5793 TypmaEval.Typma <> TBool constr
-R5806:5809 TypmaEval.Typma <> TStr constr
-R5815:5818 TypmaEval.Typma <> TStr constr
-R5826:5830 TypmaEval.Typma <> TBool constr
-R5833:5833 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5850:5855 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5872:5872 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
-R5834:5839 TypmaEval.Typma <> to_nat def
-R5842:5845 TypmaEval.Typma <> TStr constr
-R5856:5861 TypmaEval.Typma <> to_nat def
-R5864:5867 TypmaEval.Typma <> TStr constr
-def 5890:5893 <> fact
-R5900:5902 Coq.Init.Datatypes <> nat ind
-binder 5896:5896 <> n:45
-R5907:5909 Coq.Init.Datatypes <> nat ind
-R5922:5922 TypmaEval.Typma <> n:45 var
-R5938:5938 Coq.Init.Datatypes <> S constr
-R5946:5946 Coq.Init.Datatypes <> S constr
-R5955:5957 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R5954:5954 TypmaEval.Typma <> n:45 var
-R5958:5961 TypmaEval.Typma <> fact:46 def
-def 5987:5995 <> typma_not
-R6002:6006 TypmaEval.Typma <> typma ind
-binder 5998:5998 <> t:48
-R6011:6015 TypmaEval.Typma <> typma ind
-R6028:6028 TypmaEval.Typma <> t:48 var
-R6039:6042 TypmaEval.Typma <> TNat constr
-R6049:6052 TypmaEval.Typma <> TNat constr
-R6055:6058 TypmaEval.Typma <> fact def
-R6067:6071 TypmaEval.Typma <> TBool constr
-R6073:6076 Coq.Init.Datatypes <> true constr
-R6081:6085 TypmaEval.Typma <> TBool constr
-R6087:6091 Coq.Init.Datatypes <> false constr
-R6097:6101 TypmaEval.Typma <> TBool constr
-R6103:6107 Coq.Init.Datatypes <> false constr
-R6112:6116 TypmaEval.Typma <> TBool constr
-R6118:6121 Coq.Init.Datatypes <> true constr
-R6127:6130 TypmaEval.Typma <> TStr constr
-R6137:6140 TypmaEval.Typma <> TStr constr
-R6146:6149 Coq.Strings.String <> ::string_scope:x_'++'_x not
-def 6172:6180 <> typma_and
-R6191:6195 TypmaEval.Typma <> typma ind
-binder 6183:6184 <> t1:50
-binder 6186:6187 <> t2:51
-R6200:6204 TypmaEval.Typma <> typma ind
-R6221:6222 TypmaEval.Typma <> t2:51 var
-R6217:6218 TypmaEval.Typma <> t1:50 var
-R6233:6236 TypmaEval.Typma <> TNat constr
-R6242:6245 TypmaEval.Typma <> TNat constr
-R6253:6257 TypmaEval.Typma <> TBool constr
-R6277:6280 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6260:6266 TypmaEval.Typma <> to_bool def
-R6269:6272 TypmaEval.Typma <> TNat constr
-R6281:6287 TypmaEval.Typma <> to_bool def
-R6290:6293 TypmaEval.Typma <> TNat constr
-R6304:6307 TypmaEval.Typma <> TNat constr
-R6312:6316 TypmaEval.Typma <> TBool constr
-R6325:6329 TypmaEval.Typma <> TBool constr
-R6334:6337 TypmaEval.Typma <> TNat constr
-R6344:6348 TypmaEval.Typma <> TBool constr
-R6367:6370 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6351:6357 TypmaEval.Typma <> to_bool def
-R6360:6363 TypmaEval.Typma <> TNat constr
-R6344:6348 TypmaEval.Typma <> TBool constr
-R6367:6370 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6351:6357 TypmaEval.Typma <> to_bool def
-R6360:6363 TypmaEval.Typma <> TNat constr
-R6378:6381 TypmaEval.Typma <> TNat constr
-R6386:6389 TypmaEval.Typma <> TStr constr
-R6398:6401 TypmaEval.Typma <> TStr constr
-R6406:6409 TypmaEval.Typma <> TNat constr
-R6416:6420 TypmaEval.Typma <> TBool constr
-R6439:6442 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6423:6429 TypmaEval.Typma <> to_bool def
-R6432:6435 TypmaEval.Typma <> TNat constr
-R6443:6449 TypmaEval.Typma <> to_bool def
-R6452:6455 TypmaEval.Typma <> TStr constr
-R6416:6420 TypmaEval.Typma <> TBool constr
-R6439:6442 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6423:6429 TypmaEval.Typma <> to_bool def
-R6432:6435 TypmaEval.Typma <> TNat constr
-R6443:6449 TypmaEval.Typma <> to_bool def
-R6452:6455 TypmaEval.Typma <> TStr constr
-R6465:6469 TypmaEval.Typma <> TBool constr
-R6475:6479 TypmaEval.Typma <> TBool constr
-R6487:6491 TypmaEval.Typma <> TBool constr
-R6496:6499 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R6508:6512 TypmaEval.Typma <> TBool constr
-R6517:6520 TypmaEval.Typma <> TStr constr
-R6527:6530 TypmaEval.Typma <> TStr constr
-R6549:6552 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R6533:6538 TypmaEval.Typma <> to_str def
-R6541:6545 TypmaEval.Typma <> TBool constr
-R6560:6563 TypmaEval.Typma <> TStr constr
-R6568:6572 TypmaEval.Typma <> TBool constr
-R6579:6582 TypmaEval.Typma <> TStr constr
-R6586:6589 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R6590:6595 TypmaEval.Typma <> to_str def
-R6598:6602 TypmaEval.Typma <> TBool constr
-R6612:6615 TypmaEval.Typma <> TStr constr
-R6621:6624 TypmaEval.Typma <> TStr constr
-R6632:6635 TypmaEval.Typma <> TStr constr
-R6640:6643 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R6648:6651 Coq.Strings.String <> ::string_scope:x_'++'_x not
-def 6675:6682 <> typma_or
-R6693:6697 TypmaEval.Typma <> typma ind
-binder 6685:6686 <> t1:54
-binder 6688:6689 <> t2:55
-R6702:6706 TypmaEval.Typma <> typma ind
-R6723:6724 TypmaEval.Typma <> t2:55 var
-R6719:6720 TypmaEval.Typma <> t1:54 var
-R6735:6738 TypmaEval.Typma <> TNat constr
-R6744:6747 TypmaEval.Typma <> TNat constr
-R6755:6759 TypmaEval.Typma <> TBool constr
-R6779:6782 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R6762:6768 TypmaEval.Typma <> to_bool def
-R6771:6774 TypmaEval.Typma <> TNat constr
-R6783:6789 TypmaEval.Typma <> to_bool def
-R6792:6795 TypmaEval.Typma <> TNat constr
-R6806:6809 TypmaEval.Typma <> TNat constr
-R6814:6818 TypmaEval.Typma <> TBool constr
-R6827:6831 TypmaEval.Typma <> TBool constr
+R97:110 Coq.Strings.String <> <> lib
+R137:145 Coq.Bool.Bool <> <> lib
+R172:179 Coq.Init.Nat <> <> lib
+R206:216 Coq.Arith.Arith <> <> lib
+R243:253 Coq.Arith.EqNat <> <> lib
+R292:294 Coq.micromega.Lia <> <> lib
+R321:330 Coq.Lists.List <> <> lib
+mod 363:367 <> Pacer
+def 400:404 Pacer pacer
+R407:419 Coq.Strings.String <> string ind
+def 1023:1026 Pacer succ
+R1029:1034 Coq.Strings.String <> string ind
+def 1060:1066 Pacer no_succ
+R1069:1074 Coq.Strings.String <> string ind
+def 1103:1104 Pacer fs
+R1107:1112 Coq.Strings.String <> string ind
+def 1139:1140 Pacer ts
+R1143:1148 Coq.Strings.String <> string ind
+def 1174:1175 Pacer ms
+R1178:1183 Coq.Strings.String <> string ind
+def 1209:1212 Pacer nots
+R1215:1220 Coq.Strings.String <> string ind
+def 1243:1246 Pacer ands
+R1249:1254 Coq.Strings.String <> string ind
+def 1278:1280 Pacer ors
+R1283:1288 Coq.Strings.String <> string ind
+R1303:1307 TypmaEval.Typma Pacer <> mod
+ind 1373:1377 <> typma
+constr 1393:1396 <> TNat
+constr 1412:1416 <> TBool
+constr 1433:1436 <> TStr
+R1403:1405 Coq.Init.Datatypes <> nat ind
+binder 1399:1399 <> n:3
+R1423:1426 Coq.Init.Datatypes <> bool ind
+binder 1419:1419 <> b:4
+R1443:1455 Coq.Strings.String <> string ind
+binder 1439:1439 <> s:5
+def 1503:1511 <> total_map
+binder 1514:1514 <> A:6
+R1540:1543 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1544:1544 TypmaEval.Typma <> A:6 var
+R1527:1539 Coq.Strings.String <> string ind
+def 1558:1562 <> state
+R1567:1575 TypmaEval.Typma <> total_map def
+R1577:1581 TypmaEval.Typma <> typma ind
+def 1595:1601 <> t_empty
+binder 1604:1604 <> A:7
+R1619:1619 TypmaEval.Typma <> A:7 var
+binder 1615:1615 <> v:8
+R1624:1632 TypmaEval.Typma <> total_map def
+R1634:1634 TypmaEval.Typma <> A:7 var
+R1649:1649 TypmaEval.Typma <> v:8 var
+def 1664:1671 <> t_update
+binder 1674:1674 <> A:9
+R1689:1697 TypmaEval.Typma <> total_map def
+R1699:1699 TypmaEval.Typma <> A:9 var
+binder 1685:1685 <> m:10
+R1707:1719 Coq.Strings.String <> string ind
+binder 1703:1703 <> x:11
+R1727:1727 TypmaEval.Typma <> A:9 var
+binder 1723:1723 <> v:12
+binder 1737:1738 <> x':13
+R1746:1755 Coq.Strings.String <> eqb def
+R1759:1760 TypmaEval.Typma <> x':13 var
+R1757:1757 TypmaEval.Typma <> x:11 var
+R1774:1774 TypmaEval.Typma <> m:10 var
+R1776:1777 TypmaEval.Typma <> x':13 var
+R1767:1767 TypmaEval.Typma <> v:12 var
+def 1837:1842 <> to_nat
+R1849:1853 TypmaEval.Typma <> typma ind
+binder 1845:1845 <> t:14
+R1858:1860 Coq.Init.Datatypes <> nat ind
+R1873:1873 TypmaEval.Typma <> t:14 var
+R1884:1887 TypmaEval.Typma <> TNat constr
+R1900:1904 TypmaEval.Typma <> TBool constr
+R1906:1909 Coq.Init.Datatypes <> true constr
+R1920:1924 TypmaEval.Typma <> TBool constr
+R1926:1930 Coq.Init.Datatypes <> false constr
+R1941:1944 TypmaEval.Typma <> TStr constr
+R1951:1963 Coq.Strings.String <> length def
+def 2032:2038 <> to_bool
+R2045:2049 TypmaEval.Typma <> typma ind
+binder 2041:2041 <> t:16
+R2054:2057 Coq.Init.Datatypes <> bool ind
+R2070:2070 TypmaEval.Typma <> t:16 var
+R2081:2084 TypmaEval.Typma <> TNat constr
+R2093:2096 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R2104:2108 TypmaEval.Typma <> TBool constr
+R2121:2124 TypmaEval.Typma <> TStr constr
+R2133:2136 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R2137:2149 Coq.Strings.String <> length def
+def 2219:2224 <> to_str
+R2231:2235 TypmaEval.Typma <> typma ind
+binder 2227:2227 <> t:18
+R2240:2252 Coq.Strings.String <> string ind
+R2265:2265 TypmaEval.Typma <> t:18 var
+R2276:2279 TypmaEval.Typma <> TNat constr
+R2291:2294 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R2322:2331 TypmaEval.Typma <> succ def
+R2303:2315 TypmaEval.Typma <> no_succ def
+R2337:2341 TypmaEval.Typma <> TBool constr
+R2371:2375 Coq.Init.Datatypes <> false constr
+R2380:2387 TypmaEval.Typma <> fs def
+R2395:2398 Coq.Init.Datatypes <> true constr
+R2403:2410 TypmaEval.Typma <> ts def
+R2424:2427 TypmaEval.Typma <> TStr constr
+def 2563:2571 <> typma_add
+R2582:2586 TypmaEval.Typma <> typma ind
+binder 2574:2575 <> t1:21
+binder 2577:2578 <> t2:22
+R2591:2595 TypmaEval.Typma <> typma ind
+R2612:2613 TypmaEval.Typma <> t2:22 var
+R2608:2609 TypmaEval.Typma <> t1:21 var
+R2624:2627 TypmaEval.Typma <> TNat constr
+R2633:2636 TypmaEval.Typma <> TNat constr
+R2644:2647 TypmaEval.Typma <> TNat constr
+R2652:2654 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2663:2666 TypmaEval.Typma <> TNat constr
+R2671:2675 TypmaEval.Typma <> TBool constr
+R2682:2685 TypmaEval.Typma <> TNat constr
+R2689:2691 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2692:2697 TypmaEval.Typma <> to_nat def
+R2699:2700 TypmaEval.Typma <> t2:22 var
+R2707:2710 TypmaEval.Typma <> TNat constr
+R2715:2718 TypmaEval.Typma <> TStr constr
+R2725:2728 TypmaEval.Typma <> TNat constr
+R2732:2734 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2735:2740 TypmaEval.Typma <> to_nat def
+R2742:2743 TypmaEval.Typma <> t2:22 var
+R2750:2754 TypmaEval.Typma <> TBool constr
+R2759:2762 TypmaEval.Typma <> TNat constr
+R2769:2772 TypmaEval.Typma <> TNat constr
+R2776:2778 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2779:2784 TypmaEval.Typma <> to_nat def
+R2786:2787 TypmaEval.Typma <> t1:21 var
+R2794:2798 TypmaEval.Typma <> TBool constr
+R2804:2808 TypmaEval.Typma <> TBool constr
+R2816:2819 TypmaEval.Typma <> TNat constr
+R2831:2833 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2822:2827 TypmaEval.Typma <> to_nat def
+R2829:2830 TypmaEval.Typma <> t1:21 var
+R2834:2839 TypmaEval.Typma <> to_nat def
+R2841:2842 TypmaEval.Typma <> t2:22 var
+R2849:2853 TypmaEval.Typma <> TBool constr
+R2858:2861 TypmaEval.Typma <> TStr constr
+R2868:2871 TypmaEval.Typma <> TStr constr
+R2874:2886 Coq.Strings.String <> append def
+R2889:2894 TypmaEval.Typma <> to_str def
+R2896:2897 TypmaEval.Typma <> t1:21 var
+R2907:2910 TypmaEval.Typma <> TStr constr
+R2915:2918 TypmaEval.Typma <> TNat constr
+R2925:2928 TypmaEval.Typma <> TStr constr
+R2931:2943 Coq.Strings.String <> append def
+R2948:2953 TypmaEval.Typma <> to_str def
+R2955:2956 TypmaEval.Typma <> t2:22 var
+R2964:2967 TypmaEval.Typma <> TStr constr
+R2972:2976 TypmaEval.Typma <> TBool constr
+R2983:2986 TypmaEval.Typma <> TStr constr
+R2989:3001 Coq.Strings.String <> append def
+R3006:3011 TypmaEval.Typma <> to_str def
+R3013:3014 TypmaEval.Typma <> t2:22 var
+R3022:3025 TypmaEval.Typma <> TStr constr
+R3031:3034 TypmaEval.Typma <> TStr constr
+R3042:3045 TypmaEval.Typma <> TStr constr
+R3048:3060 Coq.Strings.String <> append def
+def 3131:3141 <> typma_minus
+R3152:3156 TypmaEval.Typma <> typma ind
+binder 3144:3145 <> t1:25
+binder 3147:3148 <> t2:26
+R3161:3165 TypmaEval.Typma <> typma ind
+R3182:3183 TypmaEval.Typma <> t2:26 var
+R3178:3179 TypmaEval.Typma <> t1:25 var
+R3194:3197 TypmaEval.Typma <> TNat constr
+R3203:3206 TypmaEval.Typma <> TNat constr
+R3214:3217 TypmaEval.Typma <> TNat constr
+R3222:3224 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3233:3236 TypmaEval.Typma <> TNat constr
+R3241:3245 TypmaEval.Typma <> TBool constr
+R3252:3255 TypmaEval.Typma <> TNat constr
+R3259:3261 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3262:3267 TypmaEval.Typma <> to_nat def
+R3269:3270 TypmaEval.Typma <> t2:26 var
+R3277:3280 TypmaEval.Typma <> TNat constr
+R3285:3288 TypmaEval.Typma <> TStr constr
+R3295:3298 TypmaEval.Typma <> TNat constr
+R3302:3304 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3305:3310 TypmaEval.Typma <> to_nat def
+R3312:3313 TypmaEval.Typma <> t2:26 var
+R3320:3324 TypmaEval.Typma <> TBool constr
+R3329:3332 TypmaEval.Typma <> TNat constr
+R3339:3342 TypmaEval.Typma <> TNat constr
+R3354:3356 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3345:3350 TypmaEval.Typma <> to_nat def
+R3352:3353 TypmaEval.Typma <> t1:25 var
+R3364:3368 TypmaEval.Typma <> TBool constr
+R3374:3378 TypmaEval.Typma <> TBool constr
+R3386:3389 TypmaEval.Typma <> TNat constr
+R3401:3403 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3392:3397 TypmaEval.Typma <> to_nat def
+R3399:3400 TypmaEval.Typma <> t1:25 var
+R3404:3409 TypmaEval.Typma <> to_nat def
+R3411:3412 TypmaEval.Typma <> t2:26 var
+R3419:3423 TypmaEval.Typma <> TBool constr
+R3428:3431 TypmaEval.Typma <> TStr constr
+R3438:3441 TypmaEval.Typma <> TNat constr
+R3453:3455 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3444:3449 TypmaEval.Typma <> to_nat def
+R3451:3452 TypmaEval.Typma <> t1:25 var
+R3456:3461 TypmaEval.Typma <> to_nat def
+R3463:3464 TypmaEval.Typma <> t2:26 var
+R3471:3474 TypmaEval.Typma <> TStr constr
+R3479:3482 TypmaEval.Typma <> TNat constr
+R3489:3492 TypmaEval.Typma <> TStr constr
+R3495:3510 Coq.Strings.String <> substring def
+R3530:3532 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3515:3527 Coq.Strings.String <> length def
+R3543:3546 TypmaEval.Typma <> TStr constr
+R3551:3555 TypmaEval.Typma <> TBool constr
+R3562:3565 TypmaEval.Typma <> TNat constr
+R3577:3579 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3568:3573 TypmaEval.Typma <> to_nat def
+R3575:3576 TypmaEval.Typma <> t1:25 var
+R3580:3585 TypmaEval.Typma <> to_nat def
+R3587:3588 TypmaEval.Typma <> t2:26 var
+R3595:3598 TypmaEval.Typma <> TStr constr
+R3604:3607 TypmaEval.Typma <> TStr constr
+R3615:3618 TypmaEval.Typma <> TNat constr
+R3630:3632 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R3621:3626 TypmaEval.Typma <> to_nat def
+R3628:3629 TypmaEval.Typma <> t1:25 var
+R3633:3638 TypmaEval.Typma <> to_nat def
+R3640:3641 TypmaEval.Typma <> t2:26 var
+def 3707:3716 <> typma_mult
+R3727:3731 TypmaEval.Typma <> typma ind
+binder 3719:3720 <> t1:29
+binder 3722:3723 <> t2:30
+R3736:3740 TypmaEval.Typma <> typma ind
+R3757:3758 TypmaEval.Typma <> t2:30 var
+R3753:3754 TypmaEval.Typma <> t1:29 var
+R3769:3772 TypmaEval.Typma <> TNat constr
+R3778:3781 TypmaEval.Typma <> TNat constr
+R3789:3792 TypmaEval.Typma <> TNat constr
+R3797:3799 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3808:3811 TypmaEval.Typma <> TNat constr
+R3816:3820 TypmaEval.Typma <> TBool constr
+R3827:3830 TypmaEval.Typma <> TNat constr
+R3834:3836 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3837:3842 TypmaEval.Typma <> to_nat def
+R3844:3845 TypmaEval.Typma <> t2:30 var
+R3852:3855 TypmaEval.Typma <> TNat constr
+R3860:3863 TypmaEval.Typma <> TStr constr
+R3870:3873 TypmaEval.Typma <> TNat constr
+R3877:3879 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3880:3885 TypmaEval.Typma <> to_nat def
+R3887:3888 TypmaEval.Typma <> t2:30 var
+R3895:3899 TypmaEval.Typma <> TBool constr
+R3904:3907 TypmaEval.Typma <> TNat constr
+R3914:3917 TypmaEval.Typma <> TNat constr
+R3921:3923 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3924:3929 TypmaEval.Typma <> to_nat def
+R3931:3932 TypmaEval.Typma <> t1:29 var
+R3939:3943 TypmaEval.Typma <> TBool constr
+R3949:3953 TypmaEval.Typma <> TBool constr
+R3961:3964 TypmaEval.Typma <> TNat constr
+R3976:3978 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R3967:3972 TypmaEval.Typma <> to_nat def
+R3974:3975 TypmaEval.Typma <> t1:29 var
+R3979:3984 TypmaEval.Typma <> to_nat def
+R3986:3987 TypmaEval.Typma <> t2:30 var
+R3994:3998 TypmaEval.Typma <> TBool constr
+R4003:4006 TypmaEval.Typma <> TStr constr
+R4013:4016 TypmaEval.Typma <> TNat constr
+R4028:4030 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R4019:4024 TypmaEval.Typma <> to_nat def
+R4026:4027 TypmaEval.Typma <> t1:29 var
+R4031:4036 TypmaEval.Typma <> to_nat def
+R4038:4039 TypmaEval.Typma <> t2:30 var
+R4046:4049 TypmaEval.Typma <> TStr constr
+R4054:4057 TypmaEval.Typma <> TNat constr
+R4064:4067 TypmaEval.Typma <> TStr constr
+R4070:4082 Coq.Strings.String <> append def
+R4087:4099 Coq.Strings.String <> append def
+R4111:4116 TypmaEval.Typma <> to_str def
+R4118:4119 TypmaEval.Typma <> t2:30 var
+R4101:4108 TypmaEval.Typma <> ms def
+R4128:4131 TypmaEval.Typma <> TStr constr
+R4136:4140 TypmaEval.Typma <> TBool constr
+R4147:4150 TypmaEval.Typma <> TStr constr
+R4153:4165 Coq.Strings.String <> append def
+R4170:4182 Coq.Strings.String <> append def
+R4194:4199 TypmaEval.Typma <> to_str def
+R4201:4202 TypmaEval.Typma <> t2:30 var
+R4184:4191 TypmaEval.Typma <> ms def
+R4211:4214 TypmaEval.Typma <> TStr constr
+R4220:4223 TypmaEval.Typma <> TStr constr
+R4231:4234 TypmaEval.Typma <> TStr constr
+R4237:4249 Coq.Strings.String <> append def
+R4255:4267 Coq.Strings.String <> append def
+R4269:4276 TypmaEval.Typma <> ms def
+def 4376:4384 <> typma_div
+R4395:4399 TypmaEval.Typma <> typma ind
+binder 4387:4388 <> t1:33
+binder 4390:4391 <> t2:34
+R4404:4408 TypmaEval.Typma <> typma ind
+R4425:4426 TypmaEval.Typma <> t2:34 var
+R4421:4422 TypmaEval.Typma <> t1:33 var
+R4437:4440 TypmaEval.Typma <> TNat constr
+R4446:4449 TypmaEval.Typma <> TNat constr
+R4463:4466 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R4497:4500 TypmaEval.Typma <> TNat constr
+R4505:4507 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4475:4478 TypmaEval.Typma <> TStr constr
+R4480:4490 TypmaEval.Typma <> pacer def
+R4516:4519 TypmaEval.Typma <> TNat constr
+R4524:4528 TypmaEval.Typma <> TBool constr
+R4530:4534 Coq.Init.Datatypes <> false constr
+R4539:4542 TypmaEval.Typma <> TStr constr
+R4544:4554 TypmaEval.Typma <> pacer def
+R4560:4563 TypmaEval.Typma <> TNat constr
+R4568:4572 TypmaEval.Typma <> TBool constr
+R4579:4582 TypmaEval.Typma <> TNat constr
+R4586:4589 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4606:4606 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4590:4595 TypmaEval.Typma <> to_nat def
+R4598:4602 TypmaEval.Typma <> TBool constr
+R4613:4616 TypmaEval.Typma <> TNat constr
+R4621:4624 TypmaEval.Typma <> TStr constr
+R4636:4639 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R4640:4652 Coq.Strings.String <> length def
+R4696:4699 TypmaEval.Typma <> TStr constr
+R4701:4711 TypmaEval.Typma <> pacer def
+R4662:4665 TypmaEval.Typma <> TNat constr
+R4669:4672 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4688:4688 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4673:4678 TypmaEval.Typma <> to_nat def
+R4681:4684 TypmaEval.Typma <> TStr constr
+R4717:4721 TypmaEval.Typma <> TBool constr
+R4726:4729 TypmaEval.Typma <> TNat constr
+R4741:4744 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R4775:4778 TypmaEval.Typma <> TNat constr
+R4782:4785 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4802:4802 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4786:4791 TypmaEval.Typma <> to_nat def
+R4794:4798 TypmaEval.Typma <> TBool constr
+R4753:4756 TypmaEval.Typma <> TStr constr
+R4758:4768 TypmaEval.Typma <> pacer def
+R4809:4813 TypmaEval.Typma <> TBool constr
+R4818:4822 TypmaEval.Typma <> TBool constr
+R4824:4828 Coq.Init.Datatypes <> false constr
+R4833:4836 TypmaEval.Typma <> TStr constr
+R4838:4848 TypmaEval.Typma <> pacer def
+R4854:4858 TypmaEval.Typma <> TBool constr
+R4864:4868 TypmaEval.Typma <> TBool constr
+R4876:4879 TypmaEval.Typma <> TNat constr
+R4882:4882 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4900:4904 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4922:4922 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4883:4888 TypmaEval.Typma <> to_nat def
+R4891:4895 TypmaEval.Typma <> TBool constr
+R4905:4910 TypmaEval.Typma <> to_nat def
+R4913:4917 TypmaEval.Typma <> TBool constr
+R4929:4933 TypmaEval.Typma <> TBool constr
+R4938:4941 TypmaEval.Typma <> TStr constr
+R4953:4956 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R4957:4969 Coq.Strings.String <> length def
+R5030:5033 TypmaEval.Typma <> TStr constr
+R5035:5045 TypmaEval.Typma <> pacer def
+R4979:4982 TypmaEval.Typma <> TNat constr
+R4985:4985 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5002:5006 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5022:5022 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R4986:4991 TypmaEval.Typma <> to_nat def
+R4994:4998 TypmaEval.Typma <> TBool constr
+R5007:5012 TypmaEval.Typma <> to_nat def
+R5015:5018 TypmaEval.Typma <> TStr constr
+R5051:5054 TypmaEval.Typma <> TStr constr
+R5059:5062 TypmaEval.Typma <> TNat constr
+R5074:5077 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R5108:5111 TypmaEval.Typma <> TNat constr
+R5114:5114 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5130:5133 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5115:5120 TypmaEval.Typma <> to_nat def
+R5123:5126 TypmaEval.Typma <> TStr constr
+R5086:5089 TypmaEval.Typma <> TStr constr
+R5091:5101 TypmaEval.Typma <> pacer def
+R5141:5144 TypmaEval.Typma <> TStr constr
+R5149:5153 TypmaEval.Typma <> TBool constr
+R5155:5159 Coq.Init.Datatypes <> false constr
+R5164:5167 TypmaEval.Typma <> TStr constr
+R5169:5179 TypmaEval.Typma <> pacer def
+R5185:5188 TypmaEval.Typma <> TStr constr
+R5193:5197 TypmaEval.Typma <> TBool constr
+R5204:5207 TypmaEval.Typma <> TNat constr
+R5210:5210 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5226:5230 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5247:5247 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5211:5216 TypmaEval.Typma <> to_nat def
+R5219:5222 TypmaEval.Typma <> TStr constr
+R5231:5236 TypmaEval.Typma <> to_nat def
+R5239:5243 TypmaEval.Typma <> TBool constr
+R5254:5257 TypmaEval.Typma <> TStr constr
+R5263:5266 TypmaEval.Typma <> TStr constr
+R5274:5277 TypmaEval.Typma <> TNat constr
+R5280:5280 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5297:5301 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5318:5318 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R5281:5286 TypmaEval.Typma <> to_nat def
+R5289:5292 TypmaEval.Typma <> TStr constr
+R5302:5307 TypmaEval.Typma <> to_nat def
+R5310:5313 TypmaEval.Typma <> TStr constr
+def 5338:5348 <> typma_equal
+R5359:5363 TypmaEval.Typma <> typma ind
+binder 5351:5352 <> t1:37
+binder 5354:5355 <> t2:38
+R5368:5372 TypmaEval.Typma <> typma ind
+R5387:5388 TypmaEval.Typma <> t2:38 var
+R5383:5384 TypmaEval.Typma <> t1:37 var
+R5399:5402 TypmaEval.Typma <> TNat constr
+R5408:5411 TypmaEval.Typma <> TNat constr
+R5419:5423 TypmaEval.Typma <> TBool constr
+R5428:5431 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R5440:5443 TypmaEval.Typma <> TNat constr
+R5448:5452 TypmaEval.Typma <> TBool constr
+R5461:5465 TypmaEval.Typma <> TBool constr
+R5470:5473 TypmaEval.Typma <> TNat constr
+R5480:5484 TypmaEval.Typma <> TBool constr
+R5487:5494 Coq.Bool.Bool <> eqb def
+R5497:5503 TypmaEval.Typma <> to_bool def
+R5506:5509 TypmaEval.Typma <> TNat constr
+R5480:5484 TypmaEval.Typma <> TBool constr
+R5487:5494 Coq.Bool.Bool <> eqb def
+R5497:5503 TypmaEval.Typma <> to_bool def
+R5506:5509 TypmaEval.Typma <> TNat constr
+R5522:5525 TypmaEval.Typma <> TNat constr
+R5530:5533 TypmaEval.Typma <> TStr constr
+R5540:5544 TypmaEval.Typma <> TBool constr
+R5548:5552 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R5568:5568 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R5553:5558 TypmaEval.Typma <> to_nat def
+R5561:5564 TypmaEval.Typma <> TStr constr
+R5575:5579 TypmaEval.Typma <> TBool constr
+R5585:5589 TypmaEval.Typma <> TBool constr
+R5597:5601 TypmaEval.Typma <> TBool constr
+R5604:5611 Coq.Bool.Bool <> eqb def
+R5624:5627 TypmaEval.Typma <> TStr constr
+R5632:5636 TypmaEval.Typma <> TBool constr
+R5644:5648 TypmaEval.Typma <> TBool constr
+R5653:5656 TypmaEval.Typma <> TStr constr
+R5663:5667 TypmaEval.Typma <> TBool constr
+R5670:5677 Coq.Bool.Bool <> eqb def
+R5682:5688 TypmaEval.Typma <> to_bool def
+R5691:5694 TypmaEval.Typma <> TStr constr
+R5663:5667 TypmaEval.Typma <> TBool constr
+R5670:5677 Coq.Bool.Bool <> eqb def
+R5682:5688 TypmaEval.Typma <> to_bool def
+R5691:5694 TypmaEval.Typma <> TStr constr
+R5705:5708 TypmaEval.Typma <> TStr constr
+R5713:5716 TypmaEval.Typma <> TNat constr
+R5723:5727 TypmaEval.Typma <> TBool constr
+R5745:5748 Coq.Init.Nat <> ::nat_scope:x_'=?'_x not
+R5730:5735 TypmaEval.Typma <> to_nat def
+R5738:5741 TypmaEval.Typma <> TStr constr
+R5756:5759 TypmaEval.Typma <> TStr constr
+R5765:5768 TypmaEval.Typma <> TStr constr
+R5776:5780 TypmaEval.Typma <> TBool constr
+R5783:5792 Coq.Strings.String <> eqb def
+def 5818:5825 <> typma_le
+R5836:5840 TypmaEval.Typma <> typma ind
+binder 5828:5829 <> t1:41
+binder 5831:5832 <> t2:42
+R5845:5849 TypmaEval.Typma <> typma ind
+R5866:5867 TypmaEval.Typma <> t2:42 var
+R5862:5863 TypmaEval.Typma <> t1:41 var
+R5878:5881 TypmaEval.Typma <> TNat constr
+R5887:5890 TypmaEval.Typma <> TNat constr
+R5898:5902 TypmaEval.Typma <> TBool constr
+R5907:5910 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R5919:5922 TypmaEval.Typma <> TNat constr
+R5927:5931 TypmaEval.Typma <> TBool constr
+R5938:5942 TypmaEval.Typma <> TBool constr
+R5946:5950 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R5967:5967 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R5951:5956 TypmaEval.Typma <> to_nat def
+R5959:5963 TypmaEval.Typma <> TBool constr
+R5974:5977 TypmaEval.Typma <> TNat constr
+R5982:5985 TypmaEval.Typma <> TStr constr
+R5992:5996 TypmaEval.Typma <> TBool constr
+R6000:6004 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6020:6020 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6005:6010 TypmaEval.Typma <> to_nat def
+R6013:6016 TypmaEval.Typma <> TStr constr
+R6027:6031 TypmaEval.Typma <> TBool constr
+R6036:6039 TypmaEval.Typma <> TNat constr
+R6046:6050 TypmaEval.Typma <> TBool constr
+R6053:6053 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6070:6074 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6054:6059 TypmaEval.Typma <> to_nat def
+R6062:6066 TypmaEval.Typma <> TBool constr
+R6082:6086 TypmaEval.Typma <> TBool constr
+R6092:6096 TypmaEval.Typma <> TBool constr
+R6104:6108 TypmaEval.Typma <> TBool constr
+R6111:6111 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6129:6134 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6152:6152 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6112:6117 TypmaEval.Typma <> to_nat def
+R6120:6124 TypmaEval.Typma <> TBool constr
+R6135:6140 TypmaEval.Typma <> to_nat def
+R6143:6147 TypmaEval.Typma <> TBool constr
+R6159:6163 TypmaEval.Typma <> TBool constr
+R6168:6171 TypmaEval.Typma <> TStr constr
+R6178:6182 TypmaEval.Typma <> TBool constr
+R6185:6185 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6218:6223 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6239:6239 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6186:6191 TypmaEval.Typma <> to_nat def
+R6194:6197 TypmaEval.Typma <> TStr constr
+R6200:6205 TypmaEval.Typma <> to_str def
+R6208:6212 TypmaEval.Typma <> TBool constr
+R6224:6229 TypmaEval.Typma <> to_nat def
+R6232:6235 TypmaEval.Typma <> TStr constr
+R6246:6249 TypmaEval.Typma <> TStr constr
+R6254:6257 TypmaEval.Typma <> TNat constr
+R6264:6268 TypmaEval.Typma <> TBool constr
+R6286:6289 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6271:6276 TypmaEval.Typma <> to_nat def
+R6279:6282 TypmaEval.Typma <> TStr constr
+R6297:6300 TypmaEval.Typma <> TStr constr
+R6305:6309 TypmaEval.Typma <> TBool constr
+R6316:6320 TypmaEval.Typma <> TBool constr
+R6323:6323 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6339:6344 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6377:6377 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6324:6329 TypmaEval.Typma <> to_nat def
+R6332:6335 TypmaEval.Typma <> TStr constr
+R6345:6350 TypmaEval.Typma <> to_nat def
+R6353:6356 TypmaEval.Typma <> TStr constr
+R6359:6364 TypmaEval.Typma <> to_str def
+R6367:6371 TypmaEval.Typma <> TBool constr
+R6384:6387 TypmaEval.Typma <> TStr constr
+R6393:6396 TypmaEval.Typma <> TStr constr
+R6404:6408 TypmaEval.Typma <> TBool constr
+R6411:6411 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6428:6433 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6450:6450 Coq.Init.Nat <> ::nat_scope:x_'<?'_x not
+R6412:6417 TypmaEval.Typma <> to_nat def
+R6420:6423 TypmaEval.Typma <> TStr constr
+R6434:6439 TypmaEval.Typma <> to_nat def
+R6442:6445 TypmaEval.Typma <> TStr constr
+def 6468:6471 <> fact
+R6478:6480 Coq.Init.Datatypes <> nat ind
+binder 6474:6474 <> n:45
+R6485:6487 Coq.Init.Datatypes <> nat ind
+R6500:6500 TypmaEval.Typma <> n:45 var
+R6516:6516 Coq.Init.Datatypes <> S constr
+R6524:6524 Coq.Init.Datatypes <> S constr
+R6533:6535 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R6532:6532 TypmaEval.Typma <> n:45 var
+R6536:6539 TypmaEval.Typma <> fact:46 def
+def 6565:6573 <> typma_not
+R6580:6584 TypmaEval.Typma <> typma ind
+binder 6576:6576 <> t:48
+R6589:6593 TypmaEval.Typma <> typma ind
+R6606:6606 TypmaEval.Typma <> t:48 var
+R6617:6620 TypmaEval.Typma <> TNat constr
+R6627:6630 TypmaEval.Typma <> TNat constr
+R6633:6636 TypmaEval.Typma <> fact def
+R6645:6649 TypmaEval.Typma <> TBool constr
+R6651:6654 Coq.Init.Datatypes <> true constr
+R6659:6663 TypmaEval.Typma <> TBool constr
+R6665:6669 Coq.Init.Datatypes <> false constr
+R6675:6679 TypmaEval.Typma <> TBool constr
+R6681:6685 Coq.Init.Datatypes <> false constr
+R6690:6694 TypmaEval.Typma <> TBool constr
+R6696:6699 Coq.Init.Datatypes <> true constr
+R6705:6708 TypmaEval.Typma <> TStr constr
+R6715:6718 TypmaEval.Typma <> TStr constr
+R6721:6733 Coq.Strings.String <> append def
+R6735:6742 TypmaEval.Typma <> ts def
+def 6766:6774 <> typma_and
+R6785:6789 TypmaEval.Typma <> typma ind
+binder 6777:6778 <> t1:50
+binder 6780:6781 <> t2:51
+R6794:6798 TypmaEval.Typma <> typma ind
+R6815:6816 TypmaEval.Typma <> t2:51 var
+R6811:6812 TypmaEval.Typma <> t1:50 var
+R6827:6830 TypmaEval.Typma <> TNat constr
 R6836:6839 TypmaEval.Typma <> TNat constr
-R6846:6850 TypmaEval.Typma <> TBool constr
-R6869:6872 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R6853:6859 TypmaEval.Typma <> to_bool def
-R6862:6865 TypmaEval.Typma <> TNat constr
-R6846:6850 TypmaEval.Typma <> TBool constr
-R6869:6872 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R6853:6859 TypmaEval.Typma <> to_bool def
-R6862:6865 TypmaEval.Typma <> TNat constr
-R6880:6883 TypmaEval.Typma <> TNat constr
-R6888:6891 TypmaEval.Typma <> TStr constr
-R6900:6903 TypmaEval.Typma <> TStr constr
-R6908:6911 TypmaEval.Typma <> TNat constr
-R6918:6922 TypmaEval.Typma <> TBool constr
-R6941:6944 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R6925:6931 TypmaEval.Typma <> to_bool def
-R6934:6937 TypmaEval.Typma <> TNat constr
+R6847:6851 TypmaEval.Typma <> TBool constr
+R6871:6874 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R6854:6860 TypmaEval.Typma <> to_bool def
+R6863:6866 TypmaEval.Typma <> TNat constr
+R6875:6881 TypmaEval.Typma <> to_bool def
+R6884:6887 TypmaEval.Typma <> TNat constr
+R6898:6901 TypmaEval.Typma <> TNat constr
+R6906:6910 TypmaEval.Typma <> TBool constr
+R6919:6923 TypmaEval.Typma <> TBool constr
+R6928:6931 TypmaEval.Typma <> TNat constr
+R6938:6942 TypmaEval.Typma <> TBool constr
+R6961:6964 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
 R6945:6951 TypmaEval.Typma <> to_bool def
-R6954:6957 TypmaEval.Typma <> TStr constr
-R6918:6922 TypmaEval.Typma <> TBool constr
-R6941:6944 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R6925:6931 TypmaEval.Typma <> to_bool def
-R6934:6937 TypmaEval.Typma <> TNat constr
+R6954:6957 TypmaEval.Typma <> TNat constr
+R6938:6942 TypmaEval.Typma <> TBool constr
+R6961:6964 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
 R6945:6951 TypmaEval.Typma <> to_bool def
-R6954:6957 TypmaEval.Typma <> TStr constr
-R6967:6971 TypmaEval.Typma <> TBool constr
-R6977:6981 TypmaEval.Typma <> TBool constr
-R6989:6993 TypmaEval.Typma <> TBool constr
-R6998:7001 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R6954:6957 TypmaEval.Typma <> TNat constr
+R6972:6975 TypmaEval.Typma <> TNat constr
+R6980:6983 TypmaEval.Typma <> TStr constr
+R6992:6995 TypmaEval.Typma <> TStr constr
+R7000:7003 TypmaEval.Typma <> TNat constr
 R7010:7014 TypmaEval.Typma <> TBool constr
-R7019:7022 TypmaEval.Typma <> TStr constr
-R7030:7033 TypmaEval.Typma <> TStr constr
-R7038:7042 TypmaEval.Typma <> TBool constr
-R7049:7053 TypmaEval.Typma <> TBool constr
-R7057:7060 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R7061:7067 TypmaEval.Typma <> to_bool def
-R7070:7073 TypmaEval.Typma <> TStr constr
-R7049:7053 TypmaEval.Typma <> TBool constr
-R7057:7060 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R7061:7067 TypmaEval.Typma <> to_bool def
-R7070:7073 TypmaEval.Typma <> TStr constr
-R7083:7086 TypmaEval.Typma <> TStr constr
-R7092:7095 TypmaEval.Typma <> TStr constr
-R7103:7106 TypmaEval.Typma <> TStr constr
-R7111:7114 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R7119:7122 Coq.Strings.String <> ::string_scope:x_'++'_x not
-ind 7175:7177 <> exp
-constr 7193:7196 <> ENat
-constr 7212:7216 <> EBool
-constr 7233:7236 <> EStr
-constr 7255:7257 <> EId
-constr 7276:7280 <> EPlus
-constr 7300:7305 <> EMinus
-constr 7325:7329 <> EMult
-constr 7349:7352 <> EDiv
-constr 7372:7374 <> EEq
-constr 7394:7396 <> ELe
-constr 7416:7419 <> ENot
-constr 7435:7438 <> EAnd
-constr 7458:7460 <> EOr
-R7203:7205 Coq.Init.Datatypes <> nat ind
-binder 7199:7199 <> n:60
-R7223:7226 Coq.Init.Datatypes <> bool ind
-binder 7219:7219 <> b:61
-R7243:7248 Coq.Strings.String <> string ind
-binder 7239:7239 <> s:62
-R7264:7269 Coq.Strings.String <> string ind
-binder 7260:7260 <> x:63
-R7291:7293 TypmaEval.Typma <> exp:58 ind
-binder 7283:7284 <> e1:64
-binder 7286:7287 <> e2:65
-R7316:7318 TypmaEval.Typma <> exp:58 ind
-binder 7308:7309 <> e1:66
-binder 7311:7312 <> e2:67
-R7340:7342 TypmaEval.Typma <> exp:58 ind
-binder 7332:7333 <> e1:68
-binder 7335:7336 <> e2:69
-R7363:7365 TypmaEval.Typma <> exp:58 ind
-binder 7355:7356 <> e1:70
-binder 7358:7359 <> e2:71
-R7385:7387 TypmaEval.Typma <> exp:58 ind
-binder 7377:7378 <> e1:72
-binder 7380:7381 <> e2:73
-R7407:7409 TypmaEval.Typma <> exp:58 ind
-binder 7399:7400 <> e1:74
-binder 7402:7403 <> e2:75
-R7426:7428 TypmaEval.Typma <> exp:58 ind
-binder 7422:7422 <> e:76
-R7449:7451 TypmaEval.Typma <> exp:58 ind
-binder 7441:7442 <> e1:77
-binder 7444:7445 <> e2:78
-R7471:7473 TypmaEval.Typma <> exp:58 ind
-binder 7463:7464 <> e1:79
-binder 7466:7467 <> e2:80
-def 7529:7534 <> exeval
-R7542:7546 TypmaEval.Typma <> state def
-binder 7537:7538 <> st:81
-R7554:7556 TypmaEval.Typma <> exp ind
-binder 7550:7550 <> e:82
-R7561:7565 TypmaEval.Typma <> typma ind
-R7578:7578 TypmaEval.Typma <> e:82 var
-R7589:7592 TypmaEval.Typma <> ENat constr
-R7599:7602 TypmaEval.Typma <> TNat constr
-R7610:7614 TypmaEval.Typma <> EBool constr
-R7621:7625 TypmaEval.Typma <> TBool constr
-R7633:7636 TypmaEval.Typma <> EStr constr
-R7643:7646 TypmaEval.Typma <> TStr constr
-R7654:7656 TypmaEval.Typma <> EId constr
-R7663:7664 TypmaEval.Typma <> st:81 var
-R7704:7708 TypmaEval.Typma <> EPlus constr
-R7719:7727 TypmaEval.Typma <> typma_add def
-R7745:7750 TypmaEval.Typma <> exeval:83 def
-R7752:7753 TypmaEval.Typma <> st:81 var
-R7730:7735 TypmaEval.Typma <> exeval:83 def
-R7737:7738 TypmaEval.Typma <> st:81 var
-R7763:7768 TypmaEval.Typma <> EMinus constr
-R7779:7789 TypmaEval.Typma <> typma_minus def
-R7807:7812 TypmaEval.Typma <> exeval:83 def
-R7814:7815 TypmaEval.Typma <> st:81 var
-R7792:7797 TypmaEval.Typma <> exeval:83 def
-R7799:7800 TypmaEval.Typma <> st:81 var
-R7825:7829 TypmaEval.Typma <> EMult constr
-R7840:7849 TypmaEval.Typma <> typma_mult def
-R7867:7872 TypmaEval.Typma <> exeval:83 def
-R7874:7875 TypmaEval.Typma <> st:81 var
-R7852:7857 TypmaEval.Typma <> exeval:83 def
-R7859:7860 TypmaEval.Typma <> st:81 var
-R7885:7888 TypmaEval.Typma <> EDiv constr
-R7899:7907 TypmaEval.Typma <> typma_div def
-R7925:7930 TypmaEval.Typma <> exeval:83 def
-R7932:7933 TypmaEval.Typma <> st:81 var
-R7910:7915 TypmaEval.Typma <> exeval:83 def
-R7917:7918 TypmaEval.Typma <> st:81 var
-R7943:7945 TypmaEval.Typma <> EEq constr
-R7956:7966 TypmaEval.Typma <> typma_equal def
-R7984:7989 TypmaEval.Typma <> exeval:83 def
-R7991:7992 TypmaEval.Typma <> st:81 var
-R7969:7974 TypmaEval.Typma <> exeval:83 def
-R7976:7977 TypmaEval.Typma <> st:81 var
-R8002:8004 TypmaEval.Typma <> ELe constr
-R8015:8022 TypmaEval.Typma <> typma_le def
-R8040:8045 TypmaEval.Typma <> exeval:83 def
-R8047:8048 TypmaEval.Typma <> st:81 var
-R8025:8030 TypmaEval.Typma <> exeval:83 def
-R8032:8033 TypmaEval.Typma <> st:81 var
-R8058:8061 TypmaEval.Typma <> ENot constr
-R8068:8076 TypmaEval.Typma <> typma_not def
-R8079:8084 TypmaEval.Typma <> exeval:83 def
-R8089:8089 TypmaEval.Typma <> e:82 var
-R8086:8087 TypmaEval.Typma <> st:81 var
-R8096:8099 TypmaEval.Typma <> EAnd constr
-R8110:8118 TypmaEval.Typma <> typma_and def
-R8136:8141 TypmaEval.Typma <> exeval:83 def
-R8143:8144 TypmaEval.Typma <> st:81 var
-R8121:8126 TypmaEval.Typma <> exeval:83 def
-R8128:8129 TypmaEval.Typma <> st:81 var
-R8154:8156 TypmaEval.Typma <> EOr constr
-R8167:8174 TypmaEval.Typma <> typma_or def
-R8192:8197 TypmaEval.Typma <> exeval:83 def
-R8199:8200 TypmaEval.Typma <> st:81 var
-R8177:8182 TypmaEval.Typma <> exeval:83 def
-R8184:8185 TypmaEval.Typma <> st:81 var
-ind 8224:8230 <> exevalR
-constr 8271:8276 <> E_ENat
-constr 8339:8345 <> E_EBool
-constr 8411:8416 <> E_EStr
-constr 8482:8486 <> E_EId
-constr 8549:8555 <> E_EPlus
-constr 8702:8709 <> E_EMinus
-constr 8859:8865 <> E_EMult
-constr 9013:9018 <> E_EDiv
-constr 9164:9168 <> E_EEq
-constr 9315:9319 <> E_ELe
-constr 9463:9468 <> E_ENot
-constr 9572:9577 <> E_EAnd
-constr 9723:9727 <> E_EOr
-R8237:8240 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8246:8249 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8255:8258 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8250:8254 TypmaEval.Typma <> typma ind
-R8241:8245 TypmaEval.Typma <> state def
-R8234:8236 TypmaEval.Typma <> exp ind
-R8283:8285 Coq.Init.Datatypes <> nat ind
-binder 8279:8279 <> n:87
-R8294:8298 TypmaEval.Typma <> state def
-binder 8289:8290 <> st:88
-R8306:8312 TypmaEval.Typma <> exevalR:85 ind
-R8327:8330 TypmaEval.Typma <> TNat constr
-R8332:8332 TypmaEval.Typma <> n:87 var
-R8323:8324 TypmaEval.Typma <> st:88 var
-R8315:8318 TypmaEval.Typma <> ENat constr
-R8320:8320 TypmaEval.Typma <> n:87 var
-R8352:8355 Coq.Init.Datatypes <> bool ind
-binder 8348:8348 <> b:89
-R8364:8368 TypmaEval.Typma <> state def
-binder 8359:8360 <> st:90
-R8376:8382 TypmaEval.Typma <> exevalR:85 ind
-R8398:8402 TypmaEval.Typma <> TBool constr
-R8404:8404 TypmaEval.Typma <> b:89 var
-R8394:8395 TypmaEval.Typma <> st:90 var
-R8385:8389 TypmaEval.Typma <> EBool constr
-R8391:8391 TypmaEval.Typma <> b:89 var
-R8423:8428 Coq.Strings.String <> string ind
-binder 8419:8419 <> s:91
-R8437:8441 TypmaEval.Typma <> state def
-binder 8432:8433 <> st:92
-R8449:8455 TypmaEval.Typma <> exevalR:85 ind
-R8470:8473 TypmaEval.Typma <> TStr constr
-R8475:8475 TypmaEval.Typma <> s:91 var
-R8466:8467 TypmaEval.Typma <> st:92 var
-R8458:8461 TypmaEval.Typma <> EStr constr
-R8463:8463 TypmaEval.Typma <> s:91 var
-R8493:8498 Coq.Strings.String <> string ind
-binder 8489:8489 <> x:93
-R8507:8511 TypmaEval.Typma <> state def
-binder 8502:8503 <> st:94
-R8519:8525 TypmaEval.Typma <> exevalR:85 ind
-R8539:8540 TypmaEval.Typma <> st:94 var
-R8542:8542 TypmaEval.Typma <> x:93 var
-R8535:8536 TypmaEval.Typma <> st:94 var
-R8528:8530 TypmaEval.Typma <> EId constr
-R8532:8532 TypmaEval.Typma <> x:93 var
-R8566:8568 TypmaEval.Typma <> exp ind
-binder 8558:8559 <> e1:95
-binder 8561:8562 <> e2:96
-R8580:8584 TypmaEval.Typma <> typma ind
-binder 8572:8573 <> t1:97
-binder 8575:8576 <> t2:98
-R8593:8597 TypmaEval.Typma <> state def
-binder 8588:8589 <> st:99
-R8608:8614 TypmaEval.Typma <> exevalR:85 ind
-R8622:8623 TypmaEval.Typma <> t1:97 var
-R8619:8620 TypmaEval.Typma <> st:99 var
-R8616:8617 TypmaEval.Typma <> e1:95 var
-binder 8603:8604 <> H1:100
-R8632:8638 TypmaEval.Typma <> exevalR:85 ind
-R8646:8647 TypmaEval.Typma <> t2:98 var
-R8643:8644 TypmaEval.Typma <> st:99 var
-R8640:8641 TypmaEval.Typma <> e2:96 var
-binder 8627:8628 <> H2:101
-R8655:8661 TypmaEval.Typma <> exevalR:85 ind
-R8681:8689 TypmaEval.Typma <> typma_add def
-R8694:8695 TypmaEval.Typma <> t2:98 var
-R8691:8692 TypmaEval.Typma <> t1:97 var
-R8677:8678 TypmaEval.Typma <> st:99 var
-R8664:8668 TypmaEval.Typma <> EPlus constr
-R8673:8674 TypmaEval.Typma <> e2:96 var
-R8670:8671 TypmaEval.Typma <> e1:95 var
-R8720:8722 TypmaEval.Typma <> exp ind
-binder 8712:8713 <> e1:102
-binder 8715:8716 <> e2:103
-R8734:8738 TypmaEval.Typma <> typma ind
-binder 8726:8727 <> t1:104
-binder 8729:8730 <> t2:105
-R8747:8751 TypmaEval.Typma <> state def
-binder 8742:8743 <> st:106
-R8762:8768 TypmaEval.Typma <> exevalR:85 ind
-R8776:8777 TypmaEval.Typma <> t1:104 var
-R8773:8774 TypmaEval.Typma <> st:106 var
-R8770:8771 TypmaEval.Typma <> e1:102 var
-binder 8757:8758 <> H1:107
-R8786:8792 TypmaEval.Typma <> exevalR:85 ind
-R8800:8801 TypmaEval.Typma <> t2:105 var
-R8797:8798 TypmaEval.Typma <> st:106 var
-R8794:8795 TypmaEval.Typma <> e2:103 var
-binder 8781:8782 <> H2:108
-R8809:8815 TypmaEval.Typma <> exevalR:85 ind
-R8836:8846 TypmaEval.Typma <> typma_minus def
-R8851:8852 TypmaEval.Typma <> t2:105 var
-R8848:8849 TypmaEval.Typma <> t1:104 var
-R8832:8833 TypmaEval.Typma <> st:106 var
-R8818:8823 TypmaEval.Typma <> EMinus constr
-R8828:8829 TypmaEval.Typma <> e2:103 var
-R8825:8826 TypmaEval.Typma <> e1:102 var
-R8876:8878 TypmaEval.Typma <> exp ind
-binder 8868:8869 <> e1:109
-binder 8871:8872 <> e2:110
-R8890:8894 TypmaEval.Typma <> typma ind
-binder 8882:8883 <> t1:111
-binder 8885:8886 <> t2:112
-R8903:8907 TypmaEval.Typma <> state def
-binder 8898:8899 <> st:113
-R8918:8924 TypmaEval.Typma <> exevalR:85 ind
-R8932:8933 TypmaEval.Typma <> t1:111 var
-R8929:8930 TypmaEval.Typma <> st:113 var
-R8926:8927 TypmaEval.Typma <> e1:109 var
-binder 8913:8914 <> H1:114
-R8942:8948 TypmaEval.Typma <> exevalR:85 ind
-R8956:8957 TypmaEval.Typma <> t2:112 var
-R8953:8954 TypmaEval.Typma <> st:113 var
-R8950:8951 TypmaEval.Typma <> e2:110 var
-binder 8937:8938 <> H2:115
-R8965:8971 TypmaEval.Typma <> exevalR:85 ind
-R8991:9000 TypmaEval.Typma <> typma_mult def
-R9005:9006 TypmaEval.Typma <> t2:112 var
-R9002:9003 TypmaEval.Typma <> t1:111 var
-R8987:8988 TypmaEval.Typma <> st:113 var
-R8974:8978 TypmaEval.Typma <> EMult constr
-R8983:8984 TypmaEval.Typma <> e2:110 var
-R8980:8981 TypmaEval.Typma <> e1:109 var
-R9029:9031 TypmaEval.Typma <> exp ind
-binder 9021:9022 <> e1:116
-binder 9024:9025 <> e2:117
-R9043:9047 TypmaEval.Typma <> typma ind
-binder 9035:9036 <> t1:118
-binder 9038:9039 <> t2:119
-R9056:9060 TypmaEval.Typma <> state def
-binder 9051:9052 <> st:120
-R9071:9077 TypmaEval.Typma <> exevalR:85 ind
-R9085:9086 TypmaEval.Typma <> t1:118 var
-R9082:9083 TypmaEval.Typma <> st:120 var
-R9079:9080 TypmaEval.Typma <> e1:116 var
-binder 9066:9067 <> H1:121
-R9095:9101 TypmaEval.Typma <> exevalR:85 ind
-R9109:9110 TypmaEval.Typma <> t2:119 var
-R9106:9107 TypmaEval.Typma <> st:120 var
-R9103:9104 TypmaEval.Typma <> e2:117 var
-binder 9090:9091 <> H2:122
-R9118:9124 TypmaEval.Typma <> exevalR:85 ind
-R9143:9151 TypmaEval.Typma <> typma_div def
-R9156:9157 TypmaEval.Typma <> t2:119 var
-R9153:9154 TypmaEval.Typma <> t1:118 var
-R9139:9140 TypmaEval.Typma <> st:120 var
-R9127:9130 TypmaEval.Typma <> EDiv constr
-R9135:9136 TypmaEval.Typma <> e2:117 var
-R9132:9133 TypmaEval.Typma <> e1:116 var
-R9179:9181 TypmaEval.Typma <> exp ind
-binder 9171:9172 <> e1:123
-binder 9174:9175 <> e2:124
-R9193:9197 TypmaEval.Typma <> typma ind
-binder 9185:9186 <> t1:125
-binder 9188:9189 <> t2:126
-R9206:9210 TypmaEval.Typma <> state def
-binder 9201:9202 <> st:127
-R9221:9227 TypmaEval.Typma <> exevalR:85 ind
-R9235:9236 TypmaEval.Typma <> t1:125 var
-R9232:9233 TypmaEval.Typma <> st:127 var
-R9229:9230 TypmaEval.Typma <> e1:123 var
-binder 9216:9217 <> H1:128
-R9245:9251 TypmaEval.Typma <> exevalR:85 ind
-R9259:9260 TypmaEval.Typma <> t2:126 var
-R9256:9257 TypmaEval.Typma <> st:127 var
-R9253:9254 TypmaEval.Typma <> e2:124 var
-binder 9240:9241 <> H2:129
-R9268:9274 TypmaEval.Typma <> exevalR:85 ind
-R9292:9302 TypmaEval.Typma <> typma_equal def
-R9307:9308 TypmaEval.Typma <> t2:126 var
-R9304:9305 TypmaEval.Typma <> t1:125 var
-R9288:9289 TypmaEval.Typma <> st:127 var
-R9277:9279 TypmaEval.Typma <> EEq constr
-R9284:9285 TypmaEval.Typma <> e2:124 var
-R9281:9282 TypmaEval.Typma <> e1:123 var
-R9330:9332 TypmaEval.Typma <> exp ind
-binder 9322:9323 <> e1:130
-binder 9325:9326 <> e2:131
-R9344:9348 TypmaEval.Typma <> typma ind
-binder 9336:9337 <> t1:132
-binder 9339:9340 <> t2:133
-R9357:9361 TypmaEval.Typma <> state def
-binder 9352:9353 <> st:134
-R9372:9378 TypmaEval.Typma <> exevalR:85 ind
-R9386:9387 TypmaEval.Typma <> t1:132 var
-R9383:9384 TypmaEval.Typma <> st:134 var
-R9380:9381 TypmaEval.Typma <> e1:130 var
-binder 9367:9368 <> H1:135
-R9396:9402 TypmaEval.Typma <> exevalR:85 ind
-R9410:9411 TypmaEval.Typma <> t2:133 var
-R9407:9408 TypmaEval.Typma <> st:134 var
-R9404:9405 TypmaEval.Typma <> e2:131 var
-binder 9391:9392 <> H2:136
-R9419:9425 TypmaEval.Typma <> exevalR:85 ind
-R9443:9450 TypmaEval.Typma <> typma_le def
-R9455:9456 TypmaEval.Typma <> t2:133 var
-R9452:9453 TypmaEval.Typma <> t1:132 var
-R9439:9440 TypmaEval.Typma <> st:134 var
-R9428:9430 TypmaEval.Typma <> ELe constr
-R9435:9436 TypmaEval.Typma <> e2:131 var
-R9432:9433 TypmaEval.Typma <> e1:130 var
-R9475:9477 TypmaEval.Typma <> exp ind
-binder 9471:9471 <> e:137
-R9485:9489 TypmaEval.Typma <> typma ind
-binder 9481:9481 <> t:138
-R9498:9502 TypmaEval.Typma <> state def
-binder 9493:9494 <> st:139
-R9513:9519 TypmaEval.Typma <> exevalR:85 ind
-R9526:9526 TypmaEval.Typma <> t:138 var
-R9523:9524 TypmaEval.Typma <> st:139 var
-R9521:9521 TypmaEval.Typma <> e:137 var
-binder 9508:9509 <> H1:140
-R9534:9540 TypmaEval.Typma <> exevalR:85 ind
-R9555:9563 TypmaEval.Typma <> typma_not def
-R9565:9565 TypmaEval.Typma <> t:138 var
-R9551:9552 TypmaEval.Typma <> st:139 var
-R9543:9546 TypmaEval.Typma <> ENot constr
-R9548:9548 TypmaEval.Typma <> e:137 var
-R9588:9590 TypmaEval.Typma <> exp ind
-binder 9580:9581 <> e1:141
-binder 9583:9584 <> e2:142
-R9602:9606 TypmaEval.Typma <> typma ind
-binder 9594:9595 <> t1:143
-binder 9597:9598 <> t2:144
-R9615:9619 TypmaEval.Typma <> state def
-binder 9610:9611 <> st:145
-R9630:9636 TypmaEval.Typma <> exevalR:85 ind
-R9644:9645 TypmaEval.Typma <> t1:143 var
-R9641:9642 TypmaEval.Typma <> st:145 var
-R9638:9639 TypmaEval.Typma <> e1:141 var
-binder 9625:9626 <> H1:146
-R9654:9660 TypmaEval.Typma <> exevalR:85 ind
-R9668:9669 TypmaEval.Typma <> t2:144 var
-R9665:9666 TypmaEval.Typma <> st:145 var
-R9662:9663 TypmaEval.Typma <> e2:142 var
-binder 9649:9650 <> H2:147
-R9677:9683 TypmaEval.Typma <> exevalR:85 ind
-R9702:9710 TypmaEval.Typma <> typma_and def
-R9715:9716 TypmaEval.Typma <> t2:144 var
-R9712:9713 TypmaEval.Typma <> t1:143 var
-R9698:9699 TypmaEval.Typma <> st:145 var
-R9686:9689 TypmaEval.Typma <> EAnd constr
-R9694:9695 TypmaEval.Typma <> e2:142 var
-R9691:9692 TypmaEval.Typma <> e1:141 var
-R9738:9740 TypmaEval.Typma <> exp ind
-binder 9730:9731 <> e1:148
-binder 9733:9734 <> e2:149
-R9752:9756 TypmaEval.Typma <> typma ind
-binder 9744:9745 <> t1:150
-binder 9747:9748 <> t2:151
-R9765:9769 TypmaEval.Typma <> state def
-binder 9760:9761 <> st:152
-R9780:9786 TypmaEval.Typma <> exevalR:85 ind
-R9794:9795 TypmaEval.Typma <> t1:150 var
-R9791:9792 TypmaEval.Typma <> st:152 var
-R9788:9789 TypmaEval.Typma <> e1:148 var
-binder 9775:9776 <> H1:153
-R9804:9810 TypmaEval.Typma <> exevalR:85 ind
-R9818:9819 TypmaEval.Typma <> t2:151 var
-R9815:9816 TypmaEval.Typma <> st:152 var
-R9812:9813 TypmaEval.Typma <> e2:149 var
-binder 9799:9800 <> H2:154
-R9827:9833 TypmaEval.Typma <> exevalR:85 ind
-R9851:9858 TypmaEval.Typma <> typma_or def
-R9863:9864 TypmaEval.Typma <> t2:151 var
-R9860:9861 TypmaEval.Typma <> t1:150 var
-R9847:9848 TypmaEval.Typma <> st:152 var
-R9836:9838 TypmaEval.Typma <> EOr constr
-R9843:9844 TypmaEval.Typma <> e2:149 var
-R9840:9841 TypmaEval.Typma <> e1:148 var
-prf 9878:9895 <> exeval_iff_exevalR
-binder 9906:9906 <> e:155
-binder 9908:9909 <> st:156
-binder 9911:9911 <> t:157
-R9916:9916 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
-R9931:9936 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
-R9917:9923 TypmaEval.Typma <> exevalR ind
-R9930:9930 TypmaEval.Typma <> t:157 var
-R9927:9928 TypmaEval.Typma <> st:156 var
-R9925:9925 TypmaEval.Typma <> e:155 var
-R9948:9950 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R9937:9942 TypmaEval.Typma <> exeval def
-R9947:9947 TypmaEval.Typma <> e:155 var
-R9944:9945 TypmaEval.Typma <> st:156 var
-R9951:9951 TypmaEval.Typma <> t:157 var
-ind 10219:10221 <> com
-constr 10237:10241 <> CSkip
-constr 10247:10251 <> CAsgn
-constr 10280:10283 <> CSeq
-constr 10303:10305 <> CIf
-constr 10335:10340 <> CWhile
-R10258:10263 Coq.Strings.String <> string ind
-binder 10254:10254 <> x:160
-R10271:10273 TypmaEval.Typma <> exp ind
-binder 10267:10267 <> e:161
-R10294:10296 TypmaEval.Typma <> com:158 ind
-binder 10286:10287 <> c1:162
-binder 10289:10290 <> c2:163
-R10312:10314 TypmaEval.Typma <> exp ind
-binder 10308:10308 <> e:164
-R10326:10328 TypmaEval.Typma <> com:158 ind
-binder 10318:10319 <> c1:165
-binder 10321:10322 <> c2:166
-R10347:10349 TypmaEval.Typma <> exp ind
-binder 10343:10343 <> e:167
-R10357:10359 TypmaEval.Typma <> com:158 ind
-binder 10353:10353 <> c:168
-ind 10406:10410 <> ceval
-constr 10451:10456 <> E_Skip
-constr 10497:10502 <> E_Asgn
-constr 10593:10597 <> E_Seq
-constr 10710:10717 <> E_IfTrue
-constr 10838:10846 <> E_IfFalse
-constr 10968:10979 <> E_WhileFalse
-constr 11068:11078 <> E_WhileTrue
-R10417:10420 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10426:10429 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10435:10438 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10430:10434 TypmaEval.Typma <> state def
-R10421:10425 TypmaEval.Typma <> state def
-R10414:10416 TypmaEval.Typma <> com ind
-binder 10467:10468 <> st:171
-R10475:10479 TypmaEval.Typma <> ceval:169 ind
-R10490:10491 TypmaEval.Typma <> st:171 var
-R10487:10488 TypmaEval.Typma <> st:171 var
-R10481:10485 TypmaEval.Typma <> CSkip constr
-binder 10513:10514 <> st:172
-binder 10516:10516 <> e:173
-binder 10518:10518 <> t:174
-binder 10520:10520 <> x:175
-R10542:10549 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10550:10554 TypmaEval.Typma <> ceval:169 ind
-R10572:10579 TypmaEval.Typma <> t_update def
-R10586:10586 TypmaEval.Typma <> t:174 var
-R10584:10584 TypmaEval.Typma <> x:175 var
-R10581:10582 TypmaEval.Typma <> st:172 var
-R10568:10569 TypmaEval.Typma <> st:172 var
-R10557:10561 TypmaEval.Typma <> CAsgn constr
-R10565:10565 TypmaEval.Typma <> e:173 var
-R10563:10563 TypmaEval.Typma <> x:175 var
-R10538:10540 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R10527:10532 TypmaEval.Typma <> exeval def
-R10537:10537 TypmaEval.Typma <> e:173 var
-R10534:10535 TypmaEval.Typma <> st:172 var
-R10541:10541 TypmaEval.Typma <> t:174 var
-binder 10608:10609 <> c1:176
-binder 10611:10612 <> c2:177
-binder 10614:10615 <> st:178
-binder 10617:10619 <> st':179
-binder 10621:10624 <> st'':180
-R10646:10653 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10671:10678 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10679:10683 TypmaEval.Typma <> ceval:169 ind
-R10701:10704 TypmaEval.Typma <> st'':180 var
-R10698:10699 TypmaEval.Typma <> st:178 var
-R10686:10689 TypmaEval.Typma <> CSeq constr
-R10694:10695 TypmaEval.Typma <> c2:177 var
-R10691:10692 TypmaEval.Typma <> c1:176 var
-R10654:10658 TypmaEval.Typma <> ceval:169 ind
-R10667:10670 TypmaEval.Typma <> st'':180 var
-R10663:10665 TypmaEval.Typma <> st':179 var
-R10660:10661 TypmaEval.Typma <> c2:177 var
-R10631:10635 TypmaEval.Typma <> ceval:169 ind
-R10643:10645 TypmaEval.Typma <> st':179 var
-R10640:10641 TypmaEval.Typma <> st:178 var
-R10637:10638 TypmaEval.Typma <> c1:176 var
-binder 10728:10729 <> st:181
-binder 10731:10733 <> st':182
-binder 10735:10735 <> t:183
-binder 10737:10738 <> c1:184
-binder 10740:10741 <> c2:185
-R10776:10783 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10799:10806 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10807:10811 TypmaEval.Typma <> ceval:169 ind
-R10830:10832 TypmaEval.Typma <> st':182 var
-R10827:10828 TypmaEval.Typma <> st:181 var
-R10814:10816 TypmaEval.Typma <> CIf constr
-R10823:10824 TypmaEval.Typma <> c2:185 var
-R10820:10821 TypmaEval.Typma <> c1:184 var
-R10818:10818 TypmaEval.Typma <> t:183 var
-R10784:10788 TypmaEval.Typma <> ceval:169 ind
-R10796:10798 TypmaEval.Typma <> st':182 var
-R10793:10794 TypmaEval.Typma <> st:181 var
-R10790:10791 TypmaEval.Typma <> c1:184 var
-R10769:10771 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R10748:10754 TypmaEval.Typma <> to_bool def
-R10757:10762 TypmaEval.Typma <> exeval def
-R10767:10767 TypmaEval.Typma <> t:183 var
-R10764:10765 TypmaEval.Typma <> st:181 var
-R10772:10775 Coq.Init.Datatypes <> true constr
-binder 10857:10858 <> st:186
-binder 10860:10862 <> st':187
-binder 10864:10864 <> t:188
-binder 10866:10867 <> c1:189
-binder 10869:10870 <> c2:190
-R10906:10913 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10929:10936 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10937:10941 TypmaEval.Typma <> ceval:169 ind
-R10960:10962 TypmaEval.Typma <> st':187 var
-R10957:10958 TypmaEval.Typma <> st:186 var
-R10944:10946 TypmaEval.Typma <> CIf constr
-R10953:10954 TypmaEval.Typma <> c2:190 var
-R10950:10951 TypmaEval.Typma <> c1:189 var
-R10948:10948 TypmaEval.Typma <> t:188 var
-R10914:10918 TypmaEval.Typma <> ceval:169 ind
-R10926:10928 TypmaEval.Typma <> st':187 var
-R10923:10924 TypmaEval.Typma <> st:186 var
-R10920:10921 TypmaEval.Typma <> c2:190 var
-R10898:10900 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R10877:10883 TypmaEval.Typma <> to_bool def
-R10886:10891 TypmaEval.Typma <> exeval def
-R10896:10896 TypmaEval.Typma <> t:188 var
-R10893:10894 TypmaEval.Typma <> st:186 var
-R10901:10905 Coq.Init.Datatypes <> false constr
-binder 10990:10990 <> t:191
-binder 10992:10993 <> st:192
-binder 10995:10995 <> c:193
-R11031:11038 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11039:11043 TypmaEval.Typma <> ceval:169 ind
-R11061:11062 TypmaEval.Typma <> st:192 var
-R11058:11059 TypmaEval.Typma <> st:192 var
-R11046:11051 TypmaEval.Typma <> CWhile constr
-R11055:11055 TypmaEval.Typma <> c:193 var
-R11053:11053 TypmaEval.Typma <> t:191 var
-R11023:11025 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R11002:11008 TypmaEval.Typma <> to_bool def
-R11011:11016 TypmaEval.Typma <> exeval def
-R11021:11021 TypmaEval.Typma <> t:191 var
-R11018:11019 TypmaEval.Typma <> st:192 var
-R11026:11030 Coq.Init.Datatypes <> false constr
-binder 11089:11090 <> st:194
-binder 11092:11094 <> st':195
-binder 11096:11099 <> st'':196
-binder 11101:11101 <> t:197
-binder 11103:11103 <> c:198
-R11138:11145 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11160:11167 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11195:11202 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11203:11207 TypmaEval.Typma <> ceval:169 ind
-R11225:11228 TypmaEval.Typma <> st'':196 var
-R11222:11223 TypmaEval.Typma <> st:194 var
-R11210:11215 TypmaEval.Typma <> CWhile constr
-R11219:11219 TypmaEval.Typma <> c:198 var
-R11217:11217 TypmaEval.Typma <> t:197 var
-R11168:11172 TypmaEval.Typma <> ceval:169 ind
-R11191:11194 TypmaEval.Typma <> st'':196 var
-R11187:11189 TypmaEval.Typma <> st':195 var
-R11175:11180 TypmaEval.Typma <> CWhile constr
-R11184:11184 TypmaEval.Typma <> c:198 var
-R11182:11182 TypmaEval.Typma <> t:197 var
-R11146:11150 TypmaEval.Typma <> ceval:169 ind
-R11157:11159 TypmaEval.Typma <> st':195 var
-R11154:11155 TypmaEval.Typma <> st:194 var
-R11152:11152 TypmaEval.Typma <> c:198 var
-R11131:11133 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R11110:11116 TypmaEval.Typma <> to_bool def
-R11119:11124 TypmaEval.Typma <> exeval def
-R11129:11129 TypmaEval.Typma <> t:197 var
-R11126:11127 TypmaEval.Typma <> st:194 var
-R11134:11137 Coq.Init.Datatypes <> true constr
-def 11241:11250 <> ceval_step
-R11258:11262 TypmaEval.Typma <> state def
-binder 11253:11254 <> st:199
-R11270:11272 TypmaEval.Typma <> com ind
-binder 11266:11266 <> c:200
-R11280:11282 Coq.Init.Datatypes <> nat ind
-binder 11276:11276 <> i:201
-R11287:11292 Coq.Init.Datatypes <> option ind
-R11294:11298 TypmaEval.Typma <> state def
-R11309:11309 TypmaEval.Typma <> i:201 var
-R11320:11320 Coq.Init.Datatypes <> O constr
-R11325:11328 Coq.Init.Datatypes <> None constr
-R11334:11334 Coq.Init.Datatypes <> S constr
-R11350:11350 TypmaEval.Typma <> c:200 var
-R11363:11367 TypmaEval.Typma <> CSkip constr
-R11377:11380 Coq.Init.Datatypes <> Some constr
-R11382:11383 TypmaEval.Typma <> st:199 var
-R11391:11395 TypmaEval.Typma <> CAsgn constr
-R11409:11412 Coq.Init.Datatypes <> Some constr
-R11415:11422 TypmaEval.Typma <> t_update def
-R11430:11435 TypmaEval.Typma <> exeval def
-R11437:11438 TypmaEval.Typma <> st:199 var
-R11424:11425 TypmaEval.Typma <> st:199 var
-R11451:11454 TypmaEval.Typma <> CSeq constr
-R11476:11485 TypmaEval.Typma <> ceval_step:202 def
-R11487:11488 TypmaEval.Typma <> st:199 var
-R11510:11513 Coq.Init.Datatypes <> Some constr
-R11522:11531 TypmaEval.Typma <> ceval_step:202 def
-R11551:11554 Coq.Init.Datatypes <> None constr
-R11559:11562 Coq.Init.Datatypes <> None constr
-R11576:11578 TypmaEval.Typma <> CIf constr
-R11596:11602 TypmaEval.Typma <> to_bool def
-R11605:11610 TypmaEval.Typma <> exeval def
-R11612:11613 TypmaEval.Typma <> st:199 var
-R11652:11661 TypmaEval.Typma <> ceval_step:202 def
-R11663:11664 TypmaEval.Typma <> st:199 var
-R11625:11634 TypmaEval.Typma <> ceval_step:202 def
-R11636:11637 TypmaEval.Typma <> st:199 var
-R11676:11681 TypmaEval.Typma <> CWhile constr
-R11697:11703 TypmaEval.Typma <> to_bool def
-R11706:11711 TypmaEval.Typma <> exeval def
-R11713:11714 TypmaEval.Typma <> st:199 var
-R11826:11829 Coq.Init.Datatypes <> Some constr
-R11831:11832 TypmaEval.Typma <> st:199 var
-R11734:11743 TypmaEval.Typma <> ceval_step:202 def
-R11745:11746 TypmaEval.Typma <> st:199 var
-R11764:11767 Coq.Init.Datatypes <> Some constr
-R11776:11785 TypmaEval.Typma <> ceval_step:202 def
-R11791:11791 TypmaEval.Typma <> c:200 var
-R11800:11803 Coq.Init.Datatypes <> None constr
-R11808:11811 Coq.Init.Datatypes <> None constr
-prf 11854:11870 <> ceval_step__ceval
-binder 11880:11880 <> c:205
-binder 11882:11883 <> st:206
-binder 11885:11887 <> st':207
-R11892:11892 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11931:11935 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11936:11940 TypmaEval.Typma <> ceval ind
-R11947:11949 TypmaEval.Typma <> st':207 var
-R11944:11945 TypmaEval.Typma <> st:206 var
-R11942:11942 TypmaEval.Typma <> c:205 var
-R11893:11899 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R11901:11902 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 11900:11900 <> i:208
-R11920:11922 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R11903:11912 TypmaEval.Typma <> ceval_step def
-R11919:11919 TypmaEval.Typma <> i:208 var
-R11917:11917 TypmaEval.Typma <> c:205 var
-R11914:11915 TypmaEval.Typma <> st:206 var
-R11923:11926 Coq.Init.Datatypes <> Some constr
-R11928:11930 TypmaEval.Typma <> st':207 var
-R12267:12272 TypmaEval.Typma <> E_Skip constr
-R12267:12272 TypmaEval.Typma <> E_Skip constr
-R12296:12301 TypmaEval.Typma <> E_Asgn constr
-R12296:12301 TypmaEval.Typma <> E_Asgn constr
-R12348:12357 TypmaEval.Typma <> ceval_step def
-R12348:12357 TypmaEval.Typma <> ceval_step def
-R12445:12449 TypmaEval.Typma <> E_Seq constr
-R12445:12449 TypmaEval.Typma <> E_Seq constr
-R12641:12647 TypmaEval.Typma <> to_bool def
-R12650:12655 TypmaEval.Typma <> exeval def
-R12641:12647 TypmaEval.Typma <> to_bool def
-R12650:12655 TypmaEval.Typma <> exeval def
-R12711:12718 TypmaEval.Typma <> E_IfTrue constr
-R12711:12718 TypmaEval.Typma <> E_IfTrue constr
-R12818:12826 TypmaEval.Typma <> E_IfFalse constr
-R12818:12826 TypmaEval.Typma <> E_IfFalse constr
-R12917:12923 TypmaEval.Typma <> to_bool def
-R12926:12931 TypmaEval.Typma <> exeval def
-R12917:12923 TypmaEval.Typma <> to_bool def
-R12926:12931 TypmaEval.Typma <> exeval def
-R12991:13000 TypmaEval.Typma <> ceval_step def
-R12991:13000 TypmaEval.Typma <> ceval_step def
-R13064:13074 TypmaEval.Typma <> E_WhileTrue constr
-R13064:13074 TypmaEval.Typma <> E_WhileTrue constr
-R13329:13340 TypmaEval.Typma <> E_WhileFalse constr
-R13329:13340 TypmaEval.Typma <> E_WhileFalse constr
-prf 13369:13383 <> ceval_step_more
-binder 13393:13394 <> i1:209
-binder 13396:13397 <> i2:210
-binder 13399:13400 <> st:211
-binder 13402:13404 <> st':212
-binder 13406:13406 <> c:213
-R13419:13424 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R13454:13459 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R13478:13480 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13460:13469 TypmaEval.Typma <> ceval_step def
-R13476:13477 TypmaEval.Typma <> i2:210 var
-R13474:13474 TypmaEval.Typma <> c:213 var
-R13471:13472 TypmaEval.Typma <> st:211 var
-R13481:13484 Coq.Init.Datatypes <> Some constr
-R13486:13488 TypmaEval.Typma <> st':212 var
-R13443:13445 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13425:13434 TypmaEval.Typma <> ceval_step def
-R13441:13442 TypmaEval.Typma <> i1:209 var
-R13439:13439 TypmaEval.Typma <> c:213 var
-R13436:13437 TypmaEval.Typma <> st:211 var
-R13446:13449 Coq.Init.Datatypes <> Some constr
-R13451:13453 TypmaEval.Typma <> st':212 var
-R13413:13416 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R13411:13412 TypmaEval.Typma <> i1:209 var
-R13417:13418 TypmaEval.Typma <> i2:210 var
-R13696:13699 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R13696:13699 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R13941:13950 TypmaEval.Typma <> ceval_step def
-R13941:13950 TypmaEval.Typma <> ceval_step def
-R14280:14286 TypmaEval.Typma <> to_bool def
-R14289:14294 TypmaEval.Typma <> exeval def
-R14280:14286 TypmaEval.Typma <> to_bool def
-R14289:14294 TypmaEval.Typma <> exeval def
-R14418:14424 TypmaEval.Typma <> to_bool def
-R14427:14432 TypmaEval.Typma <> exeval def
-R14418:14424 TypmaEval.Typma <> to_bool def
-R14427:14432 TypmaEval.Typma <> exeval def
-R14474:14483 TypmaEval.Typma <> ceval_step def
-R14474:14483 TypmaEval.Typma <> ceval_step def
-prf 14785:14801 <> ceval__ceval_step
-binder 14811:14811 <> c:214
-binder 14813:14814 <> st:215
-binder 14816:14818 <> st':216
-R14837:14842 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14843:14849 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R14851:14852 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 14850:14850 <> i:217
-R14870:14872 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14853:14862 TypmaEval.Typma <> ceval_step def
-R14869:14869 TypmaEval.Typma <> i:217 var
-R14867:14867 TypmaEval.Typma <> c:214 var
-R14864:14865 TypmaEval.Typma <> st:215 var
-R14873:14876 Coq.Init.Datatypes <> Some constr
-R14878:14880 TypmaEval.Typma <> st':216 var
-R14823:14827 TypmaEval.Typma <> ceval ind
-R14834:14836 TypmaEval.Typma <> st':216 var
-R14831:14832 TypmaEval.Typma <> st:215 var
-R14829:14829 TypmaEval.Typma <> c:214 var
-R15066:15066 Coq.Init.Datatypes <> S constr
-R15070:15072 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15066:15066 Coq.Init.Datatypes <> S constr
-R15070:15072 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15099:15102 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15104:15106 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15099:15102 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15104:15106 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15132:15146 TypmaEval.Typma <> ceval_step_more thm
-R15132:15146 TypmaEval.Typma <> ceval_step_more thm
-R15193:15196 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15198:15200 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15193:15196 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15198:15200 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15226:15240 TypmaEval.Typma <> ceval_step_more thm
-R15226:15240 TypmaEval.Typma <> ceval_step_more thm
-R15297:15297 Coq.Init.Datatypes <> S constr
-R15297:15297 Coq.Init.Datatypes <> S constr
-R15356:15356 Coq.Init.Datatypes <> S constr
-R15356:15356 Coq.Init.Datatypes <> S constr
-R15477:15477 Coq.Init.Datatypes <> S constr
-R15481:15483 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15477:15477 Coq.Init.Datatypes <> S constr
-R15481:15483 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15521:15524 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15526:15528 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15521:15524 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15526:15528 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15556:15559 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15561:15563 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15556:15559 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R15561:15563 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R15589:15603 TypmaEval.Typma <> ceval_step_more thm
-R15589:15603 TypmaEval.Typma <> ceval_step_more thm
-R15647:15661 TypmaEval.Typma <> ceval_step_more thm
-R15647:15661 TypmaEval.Typma <> ceval_step_more thm
-prf 15705:15733 <> ceval_and_ceval_step_coincide
-binder 15743:15743 <> c:218
-binder 15745:15746 <> st:219
-binder 15748:15750 <> st':220
-R15769:15775 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
-R15755:15759 TypmaEval.Typma <> ceval ind
-R15766:15768 TypmaEval.Typma <> st':220 var
-R15763:15764 TypmaEval.Typma <> st:219 var
-R15761:15761 TypmaEval.Typma <> c:218 var
-R15776:15782 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R15784:15785 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 15783:15783 <> i:221
-R15803:15805 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R15786:15795 TypmaEval.Typma <> ceval_step def
-R15802:15802 TypmaEval.Typma <> i:221 var
-R15800:15800 TypmaEval.Typma <> c:218 var
-R15797:15798 TypmaEval.Typma <> st:219 var
-R15806:15809 Coq.Init.Datatypes <> Some constr
-R15811:15813 TypmaEval.Typma <> st':220 var
-R15857:15873 TypmaEval.Typma <> ceval__ceval_step thm
-R15857:15873 TypmaEval.Typma <> ceval__ceval_step thm
-R15882:15898 TypmaEval.Typma <> ceval_step__ceval thm
-R15882:15898 TypmaEval.Typma <> ceval_step__ceval thm
-prf 15915:15934 <> ceval_deterministic'
-binder 15945:15945 <> c:222
-binder 15947:15948 <> st:223
-binder 15950:15952 <> st1:224
-binder 15954:15956 <> st2:225
-R15975:15980 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R15995:16000 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16004:16006 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16001:16003 TypmaEval.Typma <> st1:224 var
-R16007:16009 TypmaEval.Typma <> st2:225 var
-R15981:15985 TypmaEval.Typma <> ceval ind
-R15992:15994 TypmaEval.Typma <> st2:225 var
-R15989:15990 TypmaEval.Typma <> st:223 var
-R15987:15987 TypmaEval.Typma <> c:222 var
-R15961:15965 TypmaEval.Typma <> ceval ind
-R15972:15974 TypmaEval.Typma <> st1:224 var
-R15969:15970 TypmaEval.Typma <> st:223 var
-R15967:15967 TypmaEval.Typma <> c:222 var
-R16058:16074 TypmaEval.Typma <> ceval__ceval_step thm
-R16058:16074 TypmaEval.Typma <> ceval__ceval_step thm
-R16092:16108 TypmaEval.Typma <> ceval__ceval_step thm
-R16092:16108 TypmaEval.Typma <> ceval__ceval_step thm
-R16212:16214 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16182:16196 TypmaEval.Typma <> ceval_step_more thm
-R16212:16214 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16182:16196 TypmaEval.Typma <> ceval_step_more thm
-R16264:16266 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16234:16248 TypmaEval.Typma <> ceval_step_more thm
-R16264:16266 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16234:16248 TypmaEval.Typma <> ceval_step_more thm
-R16348:16352 TypmaEval.Typma Typma <> sec
+R7033:7036 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7017:7023 TypmaEval.Typma <> to_bool def
+R7026:7029 TypmaEval.Typma <> TNat constr
+R7037:7043 TypmaEval.Typma <> to_bool def
+R7046:7049 TypmaEval.Typma <> TStr constr
+R7010:7014 TypmaEval.Typma <> TBool constr
+R7033:7036 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7017:7023 TypmaEval.Typma <> to_bool def
+R7026:7029 TypmaEval.Typma <> TNat constr
+R7037:7043 TypmaEval.Typma <> to_bool def
+R7046:7049 TypmaEval.Typma <> TStr constr
+R7059:7063 TypmaEval.Typma <> TBool constr
+R7069:7073 TypmaEval.Typma <> TBool constr
+R7081:7085 TypmaEval.Typma <> TBool constr
+R7090:7093 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7102:7106 TypmaEval.Typma <> TBool constr
+R7111:7114 TypmaEval.Typma <> TStr constr
+R7121:7124 TypmaEval.Typma <> TStr constr
+R7127:7139 Coq.Strings.String <> append def
+R7142:7147 TypmaEval.Typma <> to_str def
+R7150:7154 TypmaEval.Typma <> TBool constr
+R7167:7170 TypmaEval.Typma <> TStr constr
+R7175:7179 TypmaEval.Typma <> TBool constr
+R7186:7189 TypmaEval.Typma <> TStr constr
+R7192:7204 Coq.Strings.String <> append def
+R7209:7214 TypmaEval.Typma <> to_str def
+R7217:7221 TypmaEval.Typma <> TBool constr
+R7232:7235 TypmaEval.Typma <> TStr constr
+R7241:7244 TypmaEval.Typma <> TStr constr
+R7252:7255 TypmaEval.Typma <> TStr constr
+R7258:7270 Coq.Strings.String <> append def
+R7276:7288 Coq.Strings.String <> append def
+R7290:7299 TypmaEval.Typma <> ands def
+def 7325:7332 <> typma_or
+R7343:7347 TypmaEval.Typma <> typma ind
+binder 7335:7336 <> t1:54
+binder 7338:7339 <> t2:55
+R7352:7356 TypmaEval.Typma <> typma ind
+R7373:7374 TypmaEval.Typma <> t2:55 var
+R7369:7370 TypmaEval.Typma <> t1:54 var
+R7385:7388 TypmaEval.Typma <> TNat constr
+R7394:7397 TypmaEval.Typma <> TNat constr
+R7405:7409 TypmaEval.Typma <> TBool constr
+R7429:7432 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7412:7418 TypmaEval.Typma <> to_bool def
+R7421:7424 TypmaEval.Typma <> TNat constr
+R7433:7439 TypmaEval.Typma <> to_bool def
+R7442:7445 TypmaEval.Typma <> TNat constr
+R7456:7459 TypmaEval.Typma <> TNat constr
+R7464:7468 TypmaEval.Typma <> TBool constr
+R7477:7481 TypmaEval.Typma <> TBool constr
+R7486:7489 TypmaEval.Typma <> TNat constr
+R7496:7500 TypmaEval.Typma <> TBool constr
+R7519:7522 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7503:7509 TypmaEval.Typma <> to_bool def
+R7512:7515 TypmaEval.Typma <> TNat constr
+R7496:7500 TypmaEval.Typma <> TBool constr
+R7519:7522 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7503:7509 TypmaEval.Typma <> to_bool def
+R7512:7515 TypmaEval.Typma <> TNat constr
+R7530:7533 TypmaEval.Typma <> TNat constr
+R7538:7541 TypmaEval.Typma <> TStr constr
+R7550:7553 TypmaEval.Typma <> TStr constr
+R7558:7561 TypmaEval.Typma <> TNat constr
+R7568:7572 TypmaEval.Typma <> TBool constr
+R7591:7594 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7575:7581 TypmaEval.Typma <> to_bool def
+R7584:7587 TypmaEval.Typma <> TNat constr
+R7595:7601 TypmaEval.Typma <> to_bool def
+R7604:7607 TypmaEval.Typma <> TStr constr
+R7568:7572 TypmaEval.Typma <> TBool constr
+R7591:7594 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7575:7581 TypmaEval.Typma <> to_bool def
+R7584:7587 TypmaEval.Typma <> TNat constr
+R7595:7601 TypmaEval.Typma <> to_bool def
+R7604:7607 TypmaEval.Typma <> TStr constr
+R7617:7621 TypmaEval.Typma <> TBool constr
+R7627:7631 TypmaEval.Typma <> TBool constr
+R7639:7643 TypmaEval.Typma <> TBool constr
+R7648:7651 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7660:7664 TypmaEval.Typma <> TBool constr
+R7669:7672 TypmaEval.Typma <> TStr constr
+R7680:7683 TypmaEval.Typma <> TStr constr
+R7688:7692 TypmaEval.Typma <> TBool constr
+R7699:7703 TypmaEval.Typma <> TBool constr
+R7707:7710 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7711:7717 TypmaEval.Typma <> to_bool def
+R7720:7723 TypmaEval.Typma <> TStr constr
+R7699:7703 TypmaEval.Typma <> TBool constr
+R7707:7710 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R7711:7717 TypmaEval.Typma <> to_bool def
+R7720:7723 TypmaEval.Typma <> TStr constr
+R7733:7736 TypmaEval.Typma <> TStr constr
+R7742:7745 TypmaEval.Typma <> TStr constr
+R7753:7756 TypmaEval.Typma <> TStr constr
+R7759:7771 Coq.Strings.String <> append def
+R7777:7789 Coq.Strings.String <> append def
+R7791:7799 TypmaEval.Typma <> ors def
+ind 7854:7856 <> exp
+constr 7872:7875 <> ENat
+constr 7891:7895 <> EBool
+constr 7912:7915 <> EStr
+constr 7941:7943 <> EId
+constr 7969:7973 <> EPlus
+constr 7993:7998 <> EMinus
+constr 8018:8022 <> EMult
+constr 8042:8045 <> EDiv
+constr 8065:8067 <> EEq
+constr 8087:8089 <> ELe
+constr 8109:8112 <> ENot
+constr 8128:8131 <> EAnd
+constr 8151:8153 <> EOr
+R7882:7884 Coq.Init.Datatypes <> nat ind
+binder 7878:7878 <> n:60
+R7902:7905 Coq.Init.Datatypes <> bool ind
+binder 7898:7898 <> b:61
+R7922:7934 Coq.Strings.String <> string ind
+binder 7918:7918 <> s:62
+R7950:7962 Coq.Strings.String <> string ind
+binder 7946:7946 <> x:63
+R7984:7986 TypmaEval.Typma <> exp:58 ind
+binder 7976:7977 <> e1:64
+binder 7979:7980 <> e2:65
+R8009:8011 TypmaEval.Typma <> exp:58 ind
+binder 8001:8002 <> e1:66
+binder 8004:8005 <> e2:67
+R8033:8035 TypmaEval.Typma <> exp:58 ind
+binder 8025:8026 <> e1:68
+binder 8028:8029 <> e2:69
+R8056:8058 TypmaEval.Typma <> exp:58 ind
+binder 8048:8049 <> e1:70
+binder 8051:8052 <> e2:71
+R8078:8080 TypmaEval.Typma <> exp:58 ind
+binder 8070:8071 <> e1:72
+binder 8073:8074 <> e2:73
+R8100:8102 TypmaEval.Typma <> exp:58 ind
+binder 8092:8093 <> e1:74
+binder 8095:8096 <> e2:75
+R8119:8121 TypmaEval.Typma <> exp:58 ind
+binder 8115:8115 <> e:76
+R8142:8144 TypmaEval.Typma <> exp:58 ind
+binder 8134:8135 <> e1:77
+binder 8137:8138 <> e2:78
+R8164:8166 TypmaEval.Typma <> exp:58 ind
+binder 8156:8157 <> e1:79
+binder 8159:8160 <> e2:80
+def 8222:8227 <> exeval
+R8235:8239 TypmaEval.Typma <> state def
+binder 8230:8231 <> st:81
+R8247:8249 TypmaEval.Typma <> exp ind
+binder 8243:8243 <> e:82
+R8254:8258 TypmaEval.Typma <> typma ind
+R8271:8271 TypmaEval.Typma <> e:82 var
+R8282:8285 TypmaEval.Typma <> ENat constr
+R8292:8295 TypmaEval.Typma <> TNat constr
+R8303:8307 TypmaEval.Typma <> EBool constr
+R8314:8318 TypmaEval.Typma <> TBool constr
+R8326:8329 TypmaEval.Typma <> EStr constr
+R8336:8339 TypmaEval.Typma <> TStr constr
+R8347:8349 TypmaEval.Typma <> EId constr
+R8356:8357 TypmaEval.Typma <> st:81 var
+R8397:8401 TypmaEval.Typma <> EPlus constr
+R8412:8420 TypmaEval.Typma <> typma_add def
+R8438:8443 TypmaEval.Typma <> exeval:83 def
+R8445:8446 TypmaEval.Typma <> st:81 var
+R8423:8428 TypmaEval.Typma <> exeval:83 def
+R8430:8431 TypmaEval.Typma <> st:81 var
+R8456:8461 TypmaEval.Typma <> EMinus constr
+R8472:8482 TypmaEval.Typma <> typma_minus def
+R8500:8505 TypmaEval.Typma <> exeval:83 def
+R8507:8508 TypmaEval.Typma <> st:81 var
+R8485:8490 TypmaEval.Typma <> exeval:83 def
+R8492:8493 TypmaEval.Typma <> st:81 var
+R8518:8522 TypmaEval.Typma <> EMult constr
+R8533:8542 TypmaEval.Typma <> typma_mult def
+R8560:8565 TypmaEval.Typma <> exeval:83 def
+R8567:8568 TypmaEval.Typma <> st:81 var
+R8545:8550 TypmaEval.Typma <> exeval:83 def
+R8552:8553 TypmaEval.Typma <> st:81 var
+R8578:8581 TypmaEval.Typma <> EDiv constr
+R8592:8600 TypmaEval.Typma <> typma_div def
+R8618:8623 TypmaEval.Typma <> exeval:83 def
+R8625:8626 TypmaEval.Typma <> st:81 var
+R8603:8608 TypmaEval.Typma <> exeval:83 def
+R8610:8611 TypmaEval.Typma <> st:81 var
+R8636:8638 TypmaEval.Typma <> EEq constr
+R8649:8659 TypmaEval.Typma <> typma_equal def
+R8677:8682 TypmaEval.Typma <> exeval:83 def
+R8684:8685 TypmaEval.Typma <> st:81 var
+R8662:8667 TypmaEval.Typma <> exeval:83 def
+R8669:8670 TypmaEval.Typma <> st:81 var
+R8695:8697 TypmaEval.Typma <> ELe constr
+R8708:8715 TypmaEval.Typma <> typma_le def
+R8733:8738 TypmaEval.Typma <> exeval:83 def
+R8740:8741 TypmaEval.Typma <> st:81 var
+R8718:8723 TypmaEval.Typma <> exeval:83 def
+R8725:8726 TypmaEval.Typma <> st:81 var
+R8751:8754 TypmaEval.Typma <> ENot constr
+R8761:8769 TypmaEval.Typma <> typma_not def
+R8772:8777 TypmaEval.Typma <> exeval:83 def
+R8782:8782 TypmaEval.Typma <> e:82 var
+R8779:8780 TypmaEval.Typma <> st:81 var
+R8789:8792 TypmaEval.Typma <> EAnd constr
+R8803:8811 TypmaEval.Typma <> typma_and def
+R8829:8834 TypmaEval.Typma <> exeval:83 def
+R8836:8837 TypmaEval.Typma <> st:81 var
+R8814:8819 TypmaEval.Typma <> exeval:83 def
+R8821:8822 TypmaEval.Typma <> st:81 var
+R8847:8849 TypmaEval.Typma <> EOr constr
+R8860:8867 TypmaEval.Typma <> typma_or def
+R8885:8890 TypmaEval.Typma <> exeval:83 def
+R8892:8893 TypmaEval.Typma <> st:81 var
+R8870:8875 TypmaEval.Typma <> exeval:83 def
+R8877:8878 TypmaEval.Typma <> st:81 var
+ind 8917:8923 <> exevalR
+constr 8964:8969 <> E_ENat
+constr 9032:9038 <> E_EBool
+constr 9104:9109 <> E_EStr
+constr 9182:9186 <> E_EId
+constr 9256:9262 <> E_EPlus
+constr 9409:9416 <> E_EMinus
+constr 9566:9572 <> E_EMult
+constr 9720:9725 <> E_EDiv
+constr 9871:9875 <> E_EEq
+constr 10022:10026 <> E_ELe
+constr 10170:10175 <> E_ENot
+constr 10279:10284 <> E_EAnd
+constr 10430:10434 <> E_EOr
+R8930:8933 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8939:8942 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8948:8951 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8943:8947 TypmaEval.Typma <> typma ind
+R8934:8938 TypmaEval.Typma <> state def
+R8927:8929 TypmaEval.Typma <> exp ind
+R8976:8978 Coq.Init.Datatypes <> nat ind
+binder 8972:8972 <> n:87
+R8987:8991 TypmaEval.Typma <> state def
+binder 8982:8983 <> st:88
+R8999:9005 TypmaEval.Typma <> exevalR:85 ind
+R9020:9023 TypmaEval.Typma <> TNat constr
+R9025:9025 TypmaEval.Typma <> n:87 var
+R9016:9017 TypmaEval.Typma <> st:88 var
+R9008:9011 TypmaEval.Typma <> ENat constr
+R9013:9013 TypmaEval.Typma <> n:87 var
+R9045:9048 Coq.Init.Datatypes <> bool ind
+binder 9041:9041 <> b:89
+R9057:9061 TypmaEval.Typma <> state def
+binder 9052:9053 <> st:90
+R9069:9075 TypmaEval.Typma <> exevalR:85 ind
+R9091:9095 TypmaEval.Typma <> TBool constr
+R9097:9097 TypmaEval.Typma <> b:89 var
+R9087:9088 TypmaEval.Typma <> st:90 var
+R9078:9082 TypmaEval.Typma <> EBool constr
+R9084:9084 TypmaEval.Typma <> b:89 var
+R9116:9128 Coq.Strings.String <> string ind
+binder 9112:9112 <> s:91
+R9137:9141 TypmaEval.Typma <> state def
+binder 9132:9133 <> st:92
+R9149:9155 TypmaEval.Typma <> exevalR:85 ind
+R9170:9173 TypmaEval.Typma <> TStr constr
+R9175:9175 TypmaEval.Typma <> s:91 var
+R9166:9167 TypmaEval.Typma <> st:92 var
+R9158:9161 TypmaEval.Typma <> EStr constr
+R9163:9163 TypmaEval.Typma <> s:91 var
+R9193:9205 Coq.Strings.String <> string ind
+binder 9189:9189 <> x:93
+R9214:9218 TypmaEval.Typma <> state def
+binder 9209:9210 <> st:94
+R9226:9232 TypmaEval.Typma <> exevalR:85 ind
+R9246:9247 TypmaEval.Typma <> st:94 var
+R9249:9249 TypmaEval.Typma <> x:93 var
+R9242:9243 TypmaEval.Typma <> st:94 var
+R9235:9237 TypmaEval.Typma <> EId constr
+R9239:9239 TypmaEval.Typma <> x:93 var
+R9273:9275 TypmaEval.Typma <> exp ind
+binder 9265:9266 <> e1:95
+binder 9268:9269 <> e2:96
+R9287:9291 TypmaEval.Typma <> typma ind
+binder 9279:9280 <> t1:97
+binder 9282:9283 <> t2:98
+R9300:9304 TypmaEval.Typma <> state def
+binder 9295:9296 <> st:99
+R9315:9321 TypmaEval.Typma <> exevalR:85 ind
+R9329:9330 TypmaEval.Typma <> t1:97 var
+R9326:9327 TypmaEval.Typma <> st:99 var
+R9323:9324 TypmaEval.Typma <> e1:95 var
+binder 9310:9311 <> H1:100
+R9339:9345 TypmaEval.Typma <> exevalR:85 ind
+R9353:9354 TypmaEval.Typma <> t2:98 var
+R9350:9351 TypmaEval.Typma <> st:99 var
+R9347:9348 TypmaEval.Typma <> e2:96 var
+binder 9334:9335 <> H2:101
+R9362:9368 TypmaEval.Typma <> exevalR:85 ind
+R9388:9396 TypmaEval.Typma <> typma_add def
+R9401:9402 TypmaEval.Typma <> t2:98 var
+R9398:9399 TypmaEval.Typma <> t1:97 var
+R9384:9385 TypmaEval.Typma <> st:99 var
+R9371:9375 TypmaEval.Typma <> EPlus constr
+R9380:9381 TypmaEval.Typma <> e2:96 var
+R9377:9378 TypmaEval.Typma <> e1:95 var
+R9427:9429 TypmaEval.Typma <> exp ind
+binder 9419:9420 <> e1:102
+binder 9422:9423 <> e2:103
+R9441:9445 TypmaEval.Typma <> typma ind
+binder 9433:9434 <> t1:104
+binder 9436:9437 <> t2:105
+R9454:9458 TypmaEval.Typma <> state def
+binder 9449:9450 <> st:106
+R9469:9475 TypmaEval.Typma <> exevalR:85 ind
+R9483:9484 TypmaEval.Typma <> t1:104 var
+R9480:9481 TypmaEval.Typma <> st:106 var
+R9477:9478 TypmaEval.Typma <> e1:102 var
+binder 9464:9465 <> H1:107
+R9493:9499 TypmaEval.Typma <> exevalR:85 ind
+R9507:9508 TypmaEval.Typma <> t2:105 var
+R9504:9505 TypmaEval.Typma <> st:106 var
+R9501:9502 TypmaEval.Typma <> e2:103 var
+binder 9488:9489 <> H2:108
+R9516:9522 TypmaEval.Typma <> exevalR:85 ind
+R9543:9553 TypmaEval.Typma <> typma_minus def
+R9558:9559 TypmaEval.Typma <> t2:105 var
+R9555:9556 TypmaEval.Typma <> t1:104 var
+R9539:9540 TypmaEval.Typma <> st:106 var
+R9525:9530 TypmaEval.Typma <> EMinus constr
+R9535:9536 TypmaEval.Typma <> e2:103 var
+R9532:9533 TypmaEval.Typma <> e1:102 var
+R9583:9585 TypmaEval.Typma <> exp ind
+binder 9575:9576 <> e1:109
+binder 9578:9579 <> e2:110
+R9597:9601 TypmaEval.Typma <> typma ind
+binder 9589:9590 <> t1:111
+binder 9592:9593 <> t2:112
+R9610:9614 TypmaEval.Typma <> state def
+binder 9605:9606 <> st:113
+R9625:9631 TypmaEval.Typma <> exevalR:85 ind
+R9639:9640 TypmaEval.Typma <> t1:111 var
+R9636:9637 TypmaEval.Typma <> st:113 var
+R9633:9634 TypmaEval.Typma <> e1:109 var
+binder 9620:9621 <> H1:114
+R9649:9655 TypmaEval.Typma <> exevalR:85 ind
+R9663:9664 TypmaEval.Typma <> t2:112 var
+R9660:9661 TypmaEval.Typma <> st:113 var
+R9657:9658 TypmaEval.Typma <> e2:110 var
+binder 9644:9645 <> H2:115
+R9672:9678 TypmaEval.Typma <> exevalR:85 ind
+R9698:9707 TypmaEval.Typma <> typma_mult def
+R9712:9713 TypmaEval.Typma <> t2:112 var
+R9709:9710 TypmaEval.Typma <> t1:111 var
+R9694:9695 TypmaEval.Typma <> st:113 var
+R9681:9685 TypmaEval.Typma <> EMult constr
+R9690:9691 TypmaEval.Typma <> e2:110 var
+R9687:9688 TypmaEval.Typma <> e1:109 var
+R9736:9738 TypmaEval.Typma <> exp ind
+binder 9728:9729 <> e1:116
+binder 9731:9732 <> e2:117
+R9750:9754 TypmaEval.Typma <> typma ind
+binder 9742:9743 <> t1:118
+binder 9745:9746 <> t2:119
+R9763:9767 TypmaEval.Typma <> state def
+binder 9758:9759 <> st:120
+R9778:9784 TypmaEval.Typma <> exevalR:85 ind
+R9792:9793 TypmaEval.Typma <> t1:118 var
+R9789:9790 TypmaEval.Typma <> st:120 var
+R9786:9787 TypmaEval.Typma <> e1:116 var
+binder 9773:9774 <> H1:121
+R9802:9808 TypmaEval.Typma <> exevalR:85 ind
+R9816:9817 TypmaEval.Typma <> t2:119 var
+R9813:9814 TypmaEval.Typma <> st:120 var
+R9810:9811 TypmaEval.Typma <> e2:117 var
+binder 9797:9798 <> H2:122
+R9825:9831 TypmaEval.Typma <> exevalR:85 ind
+R9850:9858 TypmaEval.Typma <> typma_div def
+R9863:9864 TypmaEval.Typma <> t2:119 var
+R9860:9861 TypmaEval.Typma <> t1:118 var
+R9846:9847 TypmaEval.Typma <> st:120 var
+R9834:9837 TypmaEval.Typma <> EDiv constr
+R9842:9843 TypmaEval.Typma <> e2:117 var
+R9839:9840 TypmaEval.Typma <> e1:116 var
+R9886:9888 TypmaEval.Typma <> exp ind
+binder 9878:9879 <> e1:123
+binder 9881:9882 <> e2:124
+R9900:9904 TypmaEval.Typma <> typma ind
+binder 9892:9893 <> t1:125
+binder 9895:9896 <> t2:126
+R9913:9917 TypmaEval.Typma <> state def
+binder 9908:9909 <> st:127
+R9928:9934 TypmaEval.Typma <> exevalR:85 ind
+R9942:9943 TypmaEval.Typma <> t1:125 var
+R9939:9940 TypmaEval.Typma <> st:127 var
+R9936:9937 TypmaEval.Typma <> e1:123 var
+binder 9923:9924 <> H1:128
+R9952:9958 TypmaEval.Typma <> exevalR:85 ind
+R9966:9967 TypmaEval.Typma <> t2:126 var
+R9963:9964 TypmaEval.Typma <> st:127 var
+R9960:9961 TypmaEval.Typma <> e2:124 var
+binder 9947:9948 <> H2:129
+R9975:9981 TypmaEval.Typma <> exevalR:85 ind
+R9999:10009 TypmaEval.Typma <> typma_equal def
+R10014:10015 TypmaEval.Typma <> t2:126 var
+R10011:10012 TypmaEval.Typma <> t1:125 var
+R9995:9996 TypmaEval.Typma <> st:127 var
+R9984:9986 TypmaEval.Typma <> EEq constr
+R9991:9992 TypmaEval.Typma <> e2:124 var
+R9988:9989 TypmaEval.Typma <> e1:123 var
+R10037:10039 TypmaEval.Typma <> exp ind
+binder 10029:10030 <> e1:130
+binder 10032:10033 <> e2:131
+R10051:10055 TypmaEval.Typma <> typma ind
+binder 10043:10044 <> t1:132
+binder 10046:10047 <> t2:133
+R10064:10068 TypmaEval.Typma <> state def
+binder 10059:10060 <> st:134
+R10079:10085 TypmaEval.Typma <> exevalR:85 ind
+R10093:10094 TypmaEval.Typma <> t1:132 var
+R10090:10091 TypmaEval.Typma <> st:134 var
+R10087:10088 TypmaEval.Typma <> e1:130 var
+binder 10074:10075 <> H1:135
+R10103:10109 TypmaEval.Typma <> exevalR:85 ind
+R10117:10118 TypmaEval.Typma <> t2:133 var
+R10114:10115 TypmaEval.Typma <> st:134 var
+R10111:10112 TypmaEval.Typma <> e2:131 var
+binder 10098:10099 <> H2:136
+R10126:10132 TypmaEval.Typma <> exevalR:85 ind
+R10150:10157 TypmaEval.Typma <> typma_le def
+R10162:10163 TypmaEval.Typma <> t2:133 var
+R10159:10160 TypmaEval.Typma <> t1:132 var
+R10146:10147 TypmaEval.Typma <> st:134 var
+R10135:10137 TypmaEval.Typma <> ELe constr
+R10142:10143 TypmaEval.Typma <> e2:131 var
+R10139:10140 TypmaEval.Typma <> e1:130 var
+R10182:10184 TypmaEval.Typma <> exp ind
+binder 10178:10178 <> e:137
+R10192:10196 TypmaEval.Typma <> typma ind
+binder 10188:10188 <> t:138
+R10205:10209 TypmaEval.Typma <> state def
+binder 10200:10201 <> st:139
+R10220:10226 TypmaEval.Typma <> exevalR:85 ind
+R10233:10233 TypmaEval.Typma <> t:138 var
+R10230:10231 TypmaEval.Typma <> st:139 var
+R10228:10228 TypmaEval.Typma <> e:137 var
+binder 10215:10216 <> H1:140
+R10241:10247 TypmaEval.Typma <> exevalR:85 ind
+R10262:10270 TypmaEval.Typma <> typma_not def
+R10272:10272 TypmaEval.Typma <> t:138 var
+R10258:10259 TypmaEval.Typma <> st:139 var
+R10250:10253 TypmaEval.Typma <> ENot constr
+R10255:10255 TypmaEval.Typma <> e:137 var
+R10295:10297 TypmaEval.Typma <> exp ind
+binder 10287:10288 <> e1:141
+binder 10290:10291 <> e2:142
+R10309:10313 TypmaEval.Typma <> typma ind
+binder 10301:10302 <> t1:143
+binder 10304:10305 <> t2:144
+R10322:10326 TypmaEval.Typma <> state def
+binder 10317:10318 <> st:145
+R10337:10343 TypmaEval.Typma <> exevalR:85 ind
+R10351:10352 TypmaEval.Typma <> t1:143 var
+R10348:10349 TypmaEval.Typma <> st:145 var
+R10345:10346 TypmaEval.Typma <> e1:141 var
+binder 10332:10333 <> H1:146
+R10361:10367 TypmaEval.Typma <> exevalR:85 ind
+R10375:10376 TypmaEval.Typma <> t2:144 var
+R10372:10373 TypmaEval.Typma <> st:145 var
+R10369:10370 TypmaEval.Typma <> e2:142 var
+binder 10356:10357 <> H2:147
+R10384:10390 TypmaEval.Typma <> exevalR:85 ind
+R10409:10417 TypmaEval.Typma <> typma_and def
+R10422:10423 TypmaEval.Typma <> t2:144 var
+R10419:10420 TypmaEval.Typma <> t1:143 var
+R10405:10406 TypmaEval.Typma <> st:145 var
+R10393:10396 TypmaEval.Typma <> EAnd constr
+R10401:10402 TypmaEval.Typma <> e2:142 var
+R10398:10399 TypmaEval.Typma <> e1:141 var
+R10445:10447 TypmaEval.Typma <> exp ind
+binder 10437:10438 <> e1:148
+binder 10440:10441 <> e2:149
+R10459:10463 TypmaEval.Typma <> typma ind
+binder 10451:10452 <> t1:150
+binder 10454:10455 <> t2:151
+R10472:10476 TypmaEval.Typma <> state def
+binder 10467:10468 <> st:152
+R10487:10493 TypmaEval.Typma <> exevalR:85 ind
+R10501:10502 TypmaEval.Typma <> t1:150 var
+R10498:10499 TypmaEval.Typma <> st:152 var
+R10495:10496 TypmaEval.Typma <> e1:148 var
+binder 10482:10483 <> H1:153
+R10511:10517 TypmaEval.Typma <> exevalR:85 ind
+R10525:10526 TypmaEval.Typma <> t2:151 var
+R10522:10523 TypmaEval.Typma <> st:152 var
+R10519:10520 TypmaEval.Typma <> e2:149 var
+binder 10506:10507 <> H2:154
+R10534:10540 TypmaEval.Typma <> exevalR:85 ind
+R10558:10565 TypmaEval.Typma <> typma_or def
+R10570:10571 TypmaEval.Typma <> t2:151 var
+R10567:10568 TypmaEval.Typma <> t1:150 var
+R10554:10555 TypmaEval.Typma <> st:152 var
+R10543:10545 TypmaEval.Typma <> EOr constr
+R10550:10551 TypmaEval.Typma <> e2:149 var
+R10547:10548 TypmaEval.Typma <> e1:148 var
+prf 10585:10602 <> exeval_iff_exevalR
+binder 10613:10613 <> e:155
+binder 10615:10616 <> st:156
+binder 10618:10618 <> t:157
+R10623:10623 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R10638:10643 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R10624:10630 TypmaEval.Typma <> exevalR ind
+R10637:10637 TypmaEval.Typma <> t:157 var
+R10634:10635 TypmaEval.Typma <> st:156 var
+R10632:10632 TypmaEval.Typma <> e:155 var
+R10655:10657 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10644:10649 TypmaEval.Typma <> exeval def
+R10654:10654 TypmaEval.Typma <> e:155 var
+R10651:10652 TypmaEval.Typma <> st:156 var
+R10658:10658 TypmaEval.Typma <> t:157 var
+ind 10926:10928 <> com
+constr 10944:10948 <> CSkip
+constr 10954:10958 <> CAsgn
+constr 10994:10997 <> CSeq
+constr 11017:11019 <> CIf
+constr 11049:11054 <> CWhile
+R10965:10977 Coq.Strings.String <> string ind
+binder 10961:10961 <> x:160
+R10985:10987 TypmaEval.Typma <> exp ind
+binder 10981:10981 <> e:161
+R11008:11010 TypmaEval.Typma <> com:158 ind
+binder 11000:11001 <> c1:162
+binder 11003:11004 <> c2:163
+R11026:11028 TypmaEval.Typma <> exp ind
+binder 11022:11022 <> e:164
+R11040:11042 TypmaEval.Typma <> com:158 ind
+binder 11032:11033 <> c1:165
+binder 11035:11036 <> c2:166
+R11061:11063 TypmaEval.Typma <> exp ind
+binder 11057:11057 <> e:167
+R11071:11073 TypmaEval.Typma <> com:158 ind
+binder 11067:11067 <> c:168
+ind 11120:11124 <> ceval
+constr 11165:11170 <> E_Skip
+constr 11211:11216 <> E_Asgn
+constr 11307:11311 <> E_Seq
+constr 11424:11431 <> E_IfTrue
+constr 11552:11560 <> E_IfFalse
+constr 11682:11693 <> E_WhileFalse
+constr 11782:11792 <> E_WhileTrue
+R11131:11134 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11140:11143 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11149:11152 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11144:11148 TypmaEval.Typma <> state def
+R11135:11139 TypmaEval.Typma <> state def
+R11128:11130 TypmaEval.Typma <> com ind
+binder 11181:11182 <> st:171
+R11189:11193 TypmaEval.Typma <> ceval:169 ind
+R11204:11205 TypmaEval.Typma <> st:171 var
+R11201:11202 TypmaEval.Typma <> st:171 var
+R11195:11199 TypmaEval.Typma <> CSkip constr
+binder 11227:11228 <> st:172
+binder 11230:11230 <> e:173
+binder 11232:11232 <> t:174
+binder 11234:11234 <> x:175
+R11256:11263 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11264:11268 TypmaEval.Typma <> ceval:169 ind
+R11286:11293 TypmaEval.Typma <> t_update def
+R11300:11300 TypmaEval.Typma <> t:174 var
+R11298:11298 TypmaEval.Typma <> x:175 var
+R11295:11296 TypmaEval.Typma <> st:172 var
+R11282:11283 TypmaEval.Typma <> st:172 var
+R11271:11275 TypmaEval.Typma <> CAsgn constr
+R11279:11279 TypmaEval.Typma <> e:173 var
+R11277:11277 TypmaEval.Typma <> x:175 var
+R11252:11254 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11241:11246 TypmaEval.Typma <> exeval def
+R11251:11251 TypmaEval.Typma <> e:173 var
+R11248:11249 TypmaEval.Typma <> st:172 var
+R11255:11255 TypmaEval.Typma <> t:174 var
+binder 11322:11323 <> c1:176
+binder 11325:11326 <> c2:177
+binder 11328:11329 <> st:178
+binder 11331:11333 <> st':179
+binder 11335:11338 <> st'':180
+R11360:11367 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11385:11392 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11393:11397 TypmaEval.Typma <> ceval:169 ind
+R11415:11418 TypmaEval.Typma <> st'':180 var
+R11412:11413 TypmaEval.Typma <> st:178 var
+R11400:11403 TypmaEval.Typma <> CSeq constr
+R11408:11409 TypmaEval.Typma <> c2:177 var
+R11405:11406 TypmaEval.Typma <> c1:176 var
+R11368:11372 TypmaEval.Typma <> ceval:169 ind
+R11381:11384 TypmaEval.Typma <> st'':180 var
+R11377:11379 TypmaEval.Typma <> st':179 var
+R11374:11375 TypmaEval.Typma <> c2:177 var
+R11345:11349 TypmaEval.Typma <> ceval:169 ind
+R11357:11359 TypmaEval.Typma <> st':179 var
+R11354:11355 TypmaEval.Typma <> st:178 var
+R11351:11352 TypmaEval.Typma <> c1:176 var
+binder 11442:11443 <> st:181
+binder 11445:11447 <> st':182
+binder 11449:11449 <> t:183
+binder 11451:11452 <> c1:184
+binder 11454:11455 <> c2:185
+R11490:11497 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11513:11520 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11521:11525 TypmaEval.Typma <> ceval:169 ind
+R11544:11546 TypmaEval.Typma <> st':182 var
+R11541:11542 TypmaEval.Typma <> st:181 var
+R11528:11530 TypmaEval.Typma <> CIf constr
+R11537:11538 TypmaEval.Typma <> c2:185 var
+R11534:11535 TypmaEval.Typma <> c1:184 var
+R11532:11532 TypmaEval.Typma <> t:183 var
+R11498:11502 TypmaEval.Typma <> ceval:169 ind
+R11510:11512 TypmaEval.Typma <> st':182 var
+R11507:11508 TypmaEval.Typma <> st:181 var
+R11504:11505 TypmaEval.Typma <> c1:184 var
+R11483:11485 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11462:11468 TypmaEval.Typma <> to_bool def
+R11471:11476 TypmaEval.Typma <> exeval def
+R11481:11481 TypmaEval.Typma <> t:183 var
+R11478:11479 TypmaEval.Typma <> st:181 var
+R11486:11489 Coq.Init.Datatypes <> true constr
+binder 11571:11572 <> st:186
+binder 11574:11576 <> st':187
+binder 11578:11578 <> t:188
+binder 11580:11581 <> c1:189
+binder 11583:11584 <> c2:190
+R11620:11627 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11643:11650 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11651:11655 TypmaEval.Typma <> ceval:169 ind
+R11674:11676 TypmaEval.Typma <> st':187 var
+R11671:11672 TypmaEval.Typma <> st:186 var
+R11658:11660 TypmaEval.Typma <> CIf constr
+R11667:11668 TypmaEval.Typma <> c2:190 var
+R11664:11665 TypmaEval.Typma <> c1:189 var
+R11662:11662 TypmaEval.Typma <> t:188 var
+R11628:11632 TypmaEval.Typma <> ceval:169 ind
+R11640:11642 TypmaEval.Typma <> st':187 var
+R11637:11638 TypmaEval.Typma <> st:186 var
+R11634:11635 TypmaEval.Typma <> c2:190 var
+R11612:11614 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11591:11597 TypmaEval.Typma <> to_bool def
+R11600:11605 TypmaEval.Typma <> exeval def
+R11610:11610 TypmaEval.Typma <> t:188 var
+R11607:11608 TypmaEval.Typma <> st:186 var
+R11615:11619 Coq.Init.Datatypes <> false constr
+binder 11704:11704 <> t:191
+binder 11706:11707 <> st:192
+binder 11709:11709 <> c:193
+R11745:11752 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11753:11757 TypmaEval.Typma <> ceval:169 ind
+R11775:11776 TypmaEval.Typma <> st:192 var
+R11772:11773 TypmaEval.Typma <> st:192 var
+R11760:11765 TypmaEval.Typma <> CWhile constr
+R11769:11769 TypmaEval.Typma <> c:193 var
+R11767:11767 TypmaEval.Typma <> t:191 var
+R11737:11739 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11716:11722 TypmaEval.Typma <> to_bool def
+R11725:11730 TypmaEval.Typma <> exeval def
+R11735:11735 TypmaEval.Typma <> t:191 var
+R11732:11733 TypmaEval.Typma <> st:192 var
+R11740:11744 Coq.Init.Datatypes <> false constr
+binder 11803:11804 <> st:194
+binder 11806:11808 <> st':195
+binder 11810:11813 <> st'':196
+binder 11815:11815 <> t:197
+binder 11817:11817 <> c:198
+R11852:11859 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11874:11881 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11909:11916 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11917:11921 TypmaEval.Typma <> ceval:169 ind
+R11939:11942 TypmaEval.Typma <> st'':196 var
+R11936:11937 TypmaEval.Typma <> st:194 var
+R11924:11929 TypmaEval.Typma <> CWhile constr
+R11933:11933 TypmaEval.Typma <> c:198 var
+R11931:11931 TypmaEval.Typma <> t:197 var
+R11882:11886 TypmaEval.Typma <> ceval:169 ind
+R11905:11908 TypmaEval.Typma <> st'':196 var
+R11901:11903 TypmaEval.Typma <> st':195 var
+R11889:11894 TypmaEval.Typma <> CWhile constr
+R11898:11898 TypmaEval.Typma <> c:198 var
+R11896:11896 TypmaEval.Typma <> t:197 var
+R11860:11864 TypmaEval.Typma <> ceval:169 ind
+R11871:11873 TypmaEval.Typma <> st':195 var
+R11868:11869 TypmaEval.Typma <> st:194 var
+R11866:11866 TypmaEval.Typma <> c:198 var
+R11845:11847 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11824:11830 TypmaEval.Typma <> to_bool def
+R11833:11838 TypmaEval.Typma <> exeval def
+R11843:11843 TypmaEval.Typma <> t:197 var
+R11840:11841 TypmaEval.Typma <> st:194 var
+R11848:11851 Coq.Init.Datatypes <> true constr
+def 11955:11964 <> ceval_step
+R11972:11976 TypmaEval.Typma <> state def
+binder 11967:11968 <> st:199
+R11984:11986 TypmaEval.Typma <> com ind
+binder 11980:11980 <> c:200
+R11994:11996 Coq.Init.Datatypes <> nat ind
+binder 11990:11990 <> i:201
+R12001:12006 Coq.Init.Datatypes <> option ind
+R12008:12012 TypmaEval.Typma <> state def
+R12023:12023 TypmaEval.Typma <> i:201 var
+R12034:12034 Coq.Init.Datatypes <> O constr
+R12039:12042 Coq.Init.Datatypes <> None constr
+R12048:12048 Coq.Init.Datatypes <> S constr
+R12064:12064 TypmaEval.Typma <> c:200 var
+R12077:12081 TypmaEval.Typma <> CSkip constr
+R12091:12094 Coq.Init.Datatypes <> Some constr
+R12096:12097 TypmaEval.Typma <> st:199 var
+R12105:12109 TypmaEval.Typma <> CAsgn constr
+R12123:12126 Coq.Init.Datatypes <> Some constr
+R12129:12136 TypmaEval.Typma <> t_update def
+R12144:12149 TypmaEval.Typma <> exeval def
+R12151:12152 TypmaEval.Typma <> st:199 var
+R12138:12139 TypmaEval.Typma <> st:199 var
+R12165:12168 TypmaEval.Typma <> CSeq constr
+R12190:12199 TypmaEval.Typma <> ceval_step:202 def
+R12201:12202 TypmaEval.Typma <> st:199 var
+R12224:12227 Coq.Init.Datatypes <> Some constr
+R12236:12245 TypmaEval.Typma <> ceval_step:202 def
+R12265:12268 Coq.Init.Datatypes <> None constr
+R12273:12276 Coq.Init.Datatypes <> None constr
+R12290:12292 TypmaEval.Typma <> CIf constr
+R12310:12316 TypmaEval.Typma <> to_bool def
+R12319:12324 TypmaEval.Typma <> exeval def
+R12326:12327 TypmaEval.Typma <> st:199 var
+R12366:12375 TypmaEval.Typma <> ceval_step:202 def
+R12377:12378 TypmaEval.Typma <> st:199 var
+R12339:12348 TypmaEval.Typma <> ceval_step:202 def
+R12350:12351 TypmaEval.Typma <> st:199 var
+R12390:12395 TypmaEval.Typma <> CWhile constr
+R12411:12417 TypmaEval.Typma <> to_bool def
+R12420:12425 TypmaEval.Typma <> exeval def
+R12427:12428 TypmaEval.Typma <> st:199 var
+R12540:12543 Coq.Init.Datatypes <> Some constr
+R12545:12546 TypmaEval.Typma <> st:199 var
+R12448:12457 TypmaEval.Typma <> ceval_step:202 def
+R12459:12460 TypmaEval.Typma <> st:199 var
+R12478:12481 Coq.Init.Datatypes <> Some constr
+R12490:12499 TypmaEval.Typma <> ceval_step:202 def
+R12505:12505 TypmaEval.Typma <> c:200 var
+R12514:12517 Coq.Init.Datatypes <> None constr
+R12522:12525 Coq.Init.Datatypes <> None constr
+prf 12568:12584 <> ceval_step__ceval
+binder 12594:12594 <> c:205
+binder 12596:12597 <> st:206
+binder 12599:12601 <> st':207
+R12606:12606 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12645:12649 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12650:12654 TypmaEval.Typma <> ceval ind
+R12661:12663 TypmaEval.Typma <> st':207 var
+R12658:12659 TypmaEval.Typma <> st:206 var
+R12656:12656 TypmaEval.Typma <> c:205 var
+R12607:12613 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12615:12616 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 12614:12614 <> i:208
+R12634:12636 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12617:12626 TypmaEval.Typma <> ceval_step def
+R12633:12633 TypmaEval.Typma <> i:208 var
+R12631:12631 TypmaEval.Typma <> c:205 var
+R12628:12629 TypmaEval.Typma <> st:206 var
+R12637:12640 Coq.Init.Datatypes <> Some constr
+R12642:12644 TypmaEval.Typma <> st':207 var
+R12981:12986 TypmaEval.Typma <> E_Skip constr
+R12981:12986 TypmaEval.Typma <> E_Skip constr
+R13010:13015 TypmaEval.Typma <> E_Asgn constr
+R13010:13015 TypmaEval.Typma <> E_Asgn constr
+R13062:13071 TypmaEval.Typma <> ceval_step def
+R13062:13071 TypmaEval.Typma <> ceval_step def
+R13159:13163 TypmaEval.Typma <> E_Seq constr
+R13159:13163 TypmaEval.Typma <> E_Seq constr
+R13355:13361 TypmaEval.Typma <> to_bool def
+R13364:13369 TypmaEval.Typma <> exeval def
+R13355:13361 TypmaEval.Typma <> to_bool def
+R13364:13369 TypmaEval.Typma <> exeval def
+R13425:13432 TypmaEval.Typma <> E_IfTrue constr
+R13425:13432 TypmaEval.Typma <> E_IfTrue constr
+R13532:13540 TypmaEval.Typma <> E_IfFalse constr
+R13532:13540 TypmaEval.Typma <> E_IfFalse constr
+R13631:13637 TypmaEval.Typma <> to_bool def
+R13640:13645 TypmaEval.Typma <> exeval def
+R13631:13637 TypmaEval.Typma <> to_bool def
+R13640:13645 TypmaEval.Typma <> exeval def
+R13705:13714 TypmaEval.Typma <> ceval_step def
+R13705:13714 TypmaEval.Typma <> ceval_step def
+R13778:13788 TypmaEval.Typma <> E_WhileTrue constr
+R13778:13788 TypmaEval.Typma <> E_WhileTrue constr
+R14043:14054 TypmaEval.Typma <> E_WhileFalse constr
+R14043:14054 TypmaEval.Typma <> E_WhileFalse constr
+prf 14083:14097 <> ceval_step_more
+binder 14107:14108 <> i1:209
+binder 14110:14111 <> i2:210
+binder 14113:14114 <> st:211
+binder 14116:14118 <> st':212
+binder 14120:14120 <> c:213
+R14133:14138 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14168:14173 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14192:14194 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14174:14183 TypmaEval.Typma <> ceval_step def
+R14190:14191 TypmaEval.Typma <> i2:210 var
+R14188:14188 TypmaEval.Typma <> c:213 var
+R14185:14186 TypmaEval.Typma <> st:211 var
+R14195:14198 Coq.Init.Datatypes <> Some constr
+R14200:14202 TypmaEval.Typma <> st':212 var
+R14157:14159 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14139:14148 TypmaEval.Typma <> ceval_step def
+R14155:14156 TypmaEval.Typma <> i1:209 var
+R14153:14153 TypmaEval.Typma <> c:213 var
+R14150:14151 TypmaEval.Typma <> st:211 var
+R14160:14163 Coq.Init.Datatypes <> Some constr
+R14165:14167 TypmaEval.Typma <> st':212 var
+R14127:14130 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14125:14126 TypmaEval.Typma <> i1:209 var
+R14131:14132 TypmaEval.Typma <> i2:210 var
+R14410:14413 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14410:14413 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14655:14664 TypmaEval.Typma <> ceval_step def
+R14655:14664 TypmaEval.Typma <> ceval_step def
+R14994:15000 TypmaEval.Typma <> to_bool def
+R15003:15008 TypmaEval.Typma <> exeval def
+R14994:15000 TypmaEval.Typma <> to_bool def
+R15003:15008 TypmaEval.Typma <> exeval def
+R15132:15138 TypmaEval.Typma <> to_bool def
+R15141:15146 TypmaEval.Typma <> exeval def
+R15132:15138 TypmaEval.Typma <> to_bool def
+R15141:15146 TypmaEval.Typma <> exeval def
+R15188:15197 TypmaEval.Typma <> ceval_step def
+R15188:15197 TypmaEval.Typma <> ceval_step def
+prf 15499:15515 <> ceval__ceval_step
+binder 15525:15525 <> c:214
+binder 15527:15528 <> st:215
+binder 15530:15532 <> st':216
+R15551:15556 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15557:15563 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R15565:15566 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 15564:15564 <> i:217
+R15584:15586 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R15567:15576 TypmaEval.Typma <> ceval_step def
+R15583:15583 TypmaEval.Typma <> i:217 var
+R15581:15581 TypmaEval.Typma <> c:214 var
+R15578:15579 TypmaEval.Typma <> st:215 var
+R15587:15590 Coq.Init.Datatypes <> Some constr
+R15592:15594 TypmaEval.Typma <> st':216 var
+R15537:15541 TypmaEval.Typma <> ceval ind
+R15548:15550 TypmaEval.Typma <> st':216 var
+R15545:15546 TypmaEval.Typma <> st:215 var
+R15543:15543 TypmaEval.Typma <> c:214 var
+R15759:15759 Coq.Init.Datatypes <> S constr
+R15763:15765 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15759:15759 Coq.Init.Datatypes <> S constr
+R15763:15765 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15792:15795 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R15797:15799 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15792:15795 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R15797:15799 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15825:15839 TypmaEval.Typma <> ceval_step_more thm
+R15825:15839 TypmaEval.Typma <> ceval_step_more thm
+R15886:15889 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R15891:15893 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15886:15889 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R15891:15893 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15919:15933 TypmaEval.Typma <> ceval_step_more thm
+R15919:15933 TypmaEval.Typma <> ceval_step_more thm
+R15990:15990 Coq.Init.Datatypes <> S constr
+R15990:15990 Coq.Init.Datatypes <> S constr
+R16049:16049 Coq.Init.Datatypes <> S constr
+R16049:16049 Coq.Init.Datatypes <> S constr
+R16170:16170 Coq.Init.Datatypes <> S constr
+R16174:16176 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16170:16170 Coq.Init.Datatypes <> S constr
+R16174:16176 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16214:16217 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R16219:16221 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16214:16217 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R16219:16221 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16249:16252 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R16254:16256 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16249:16252 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R16254:16256 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16282:16296 TypmaEval.Typma <> ceval_step_more thm
+R16282:16296 TypmaEval.Typma <> ceval_step_more thm
+R16340:16354 TypmaEval.Typma <> ceval_step_more thm
+R16340:16354 TypmaEval.Typma <> ceval_step_more thm
+prf 16398:16426 <> ceval_and_ceval_step_coincide
+binder 16436:16436 <> c:218
+binder 16438:16439 <> st:219
+binder 16441:16443 <> st':220
+R16462:16468 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R16448:16452 TypmaEval.Typma <> ceval ind
+R16459:16461 TypmaEval.Typma <> st':220 var
+R16456:16457 TypmaEval.Typma <> st:219 var
+R16454:16454 TypmaEval.Typma <> c:218 var
+R16469:16475 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16477:16478 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16476:16476 <> i:221
+R16496:16498 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16479:16488 TypmaEval.Typma <> ceval_step def
+R16495:16495 TypmaEval.Typma <> i:221 var
+R16493:16493 TypmaEval.Typma <> c:218 var
+R16490:16491 TypmaEval.Typma <> st:219 var
+R16499:16502 Coq.Init.Datatypes <> Some constr
+R16504:16506 TypmaEval.Typma <> st':220 var
+R16550:16566 TypmaEval.Typma <> ceval__ceval_step thm
+R16550:16566 TypmaEval.Typma <> ceval__ceval_step thm
+R16575:16591 TypmaEval.Typma <> ceval_step__ceval thm
+R16575:16591 TypmaEval.Typma <> ceval_step__ceval thm
+prf 16608:16627 <> ceval_deterministic'
+binder 16638:16638 <> c:222
+binder 16640:16641 <> st:223
+binder 16643:16645 <> st1:224
+binder 16647:16649 <> st2:225
+R16668:16673 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16688:16693 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16697:16699 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16694:16696 TypmaEval.Typma <> st1:224 var
+R16700:16702 TypmaEval.Typma <> st2:225 var
+R16674:16678 TypmaEval.Typma <> ceval ind
+R16685:16687 TypmaEval.Typma <> st2:225 var
+R16682:16683 TypmaEval.Typma <> st:223 var
+R16680:16680 TypmaEval.Typma <> c:222 var
+R16654:16658 TypmaEval.Typma <> ceval ind
+R16665:16667 TypmaEval.Typma <> st1:224 var
+R16662:16663 TypmaEval.Typma <> st:223 var
+R16660:16660 TypmaEval.Typma <> c:222 var
+R16751:16767 TypmaEval.Typma <> ceval__ceval_step thm
+R16751:16767 TypmaEval.Typma <> ceval__ceval_step thm
+R16785:16801 TypmaEval.Typma <> ceval__ceval_step thm
+R16785:16801 TypmaEval.Typma <> ceval__ceval_step thm
+R16905:16907 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16875:16889 TypmaEval.Typma <> ceval_step_more thm
+R16905:16907 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16875:16889 TypmaEval.Typma <> ceval_step_more thm
+R16957:16959 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16927:16941 TypmaEval.Typma <> ceval_step_more thm
+R16957:16959 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16927:16941 TypmaEval.Typma <> ceval_step_more thm

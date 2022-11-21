@@ -1,9 +1,9 @@
 (coq.extraction
 	(prelude Extract)
-	(extracted_modules Datatypes Typma Bool Nat String)
+	(extracted_modules Datatypes Typma Bool Nat)
 	(theories TypmaEval))
 (library
 	(name typ)
 	(public_name typ)
 	(libraries zarith)
-	(flags (:standard -w -33)))
+	(flags (:standard -w -33 -w -3 -w -39)))

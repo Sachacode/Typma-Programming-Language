@@ -1,5 +1,0 @@
-(executables
-	(names main)
-	(modules main)
-	(libraries core typ)
-	(preprocess (pps ppx_jane)))

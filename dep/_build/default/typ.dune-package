@@ -11,8 +11,6 @@
    META
    Nat.ml
    Nat.mli
-   String.ml
-   String.mli
    Typma.ml
    Typma.mli
    dune-package
@@ -36,10 +34,6 @@
    typ__Nat.cmt
    typ__Nat.cmti
    typ__Nat.cmx
-   typ__String.cmi
-   typ__String.cmt
-   typ__String.cmti
-   typ__String.cmx
    typ__Typma.cmi
    typ__Typma.cmt
    typ__Typma.cmti
@@ -67,7 +61,6 @@
      (impl)
      (intf))
     ((name Nat) (obj_name typ__Nat) (visibility public) (impl) (intf))
-    ((name String) (obj_name typ__String) (visibility public) (impl) (intf))
     ((name Typma) (obj_name typ__Typma) (visibility public) (impl) (intf)))
    (alias_module
     (name Typ)

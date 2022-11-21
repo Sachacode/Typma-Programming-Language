@@ -1,9 +1,0 @@
-(coq.extraction
-	(prelude Extract)
-	(extracted_modules Datatypes Test)
-	(theories TypmaTest))
-(library
-	(name typ)
-	(public_name typ)
-	(libraries zarith)
-	(flags (:standard -w -33)))

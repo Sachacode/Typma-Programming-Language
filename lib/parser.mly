@@ -1,35 +1,33 @@
 %{
-    open Syntax
+    open Typ.Typma
 %}
 
 (** Tokens. *)
 %token LPAREN RPAREN LBRACE RBRACE EOF
 %token ADD SUB MUL DIV
 %token NOT OR AND EQ LT
-%token SKIP PRINT ASGN SEMICOLON IF ELSE WHILE DO UNTIL CON
+%token SKIP (*PRINT*) ASGN SEMICOLON IF ELSE WHILE
 %token <bool> BOOL
 %token <int> INT
+%token <string> STR
 %token <string> VAR
 
 (** Start symbol. *)
-%start <cmd> prog
+%start <com> prog
 
-(** Arithmetic-expression parsing rules. *)
-%type <aexp> aadd
-%type <aexp> amul
-%type <aexp> alit
-
-(** Boolean-expression parsing rules. *)
-%type <bexp> bor
-%type <bexp> band
-%type <bexp> bnot
-%type <bexp> bcomp
-%type <bexp> blit
+(** expression parsing rules. *)
+%type <exp> eadd
+%type <exp> emul
+%type <exp> eor
+%type <exp> eand
+%type <exp> enot
+%type <exp> ecomp
+%type <exp> elit
 
 (** Command parsing rules. *)
-%type <cmd> cseq
-%type <cmd> cctrl
-%type <cmd> cbot
+%type <com> cseq
+%type <com> cctrl
+%type <com> cbot
 
 %%
 
@@ -37,55 +35,50 @@ prog:
   | c=cseq EOF { c }
 
 cseq:
-  | c1=cctrl SEMICOLON c2=cseq { Seq (c1,c2) }
-  | c1=cctrl CON c2=cseq { Con (c1,c2) }
+  | c1=cctrl SEMICOLON c2=cseq { CSeq (c1,c2) }
   | c=cctrl { c }
 
-
 cctrl:
-  | IF b=bor LBRACE c1=cseq RBRACE ELSE LBRACE c2=cseq RBRACE { If (b,c1,c2) }
-  | WHILE b=bor LBRACE c=cseq RBRACE { While (b,c) }
-  | DO LBRACE c=cseq RBRACE UNTIL b=bor { Do (c,b)}
+  | IF e=eor LBRACE c1=cseq RBRACE ELSE LBRACE c2=cseq RBRACE { CIf (e,c1,c2) }
+  | WHILE e=eor LBRACE c=cseq RBRACE { CWhile (e,c) }
   | c=cbot { c }
 
 cbot:
-  | SKIP { Skip }
-  | PRINT a=aadd { Print a }
-  | x=VAR ASGN a=aadd { Ass (x,a) }
+  | SKIP { CSkip }
+  (*| PRINT e=eadd { Print e }*)
+  | x=VAR ASGN e=eadd { CAsgn (x,e) }
   | LPAREN c=cseq RPAREN { c }
 
-bor:
-  | b1=band OR b2=bor { BOp (b1,Or,b2) }
-  | b=band { b }
+eor:
+  | e1=eand OR e2=eor { EOr (e1,e2) }
+  | b=eand { b }
 
-band:
-  | b1=bnot AND b2=band { BOp (b1,And,b2) }
-  | b=bnot { b }
+eand:
+  | e1=enot AND e2=eand { EAnd (e1,e2) }
+  | e=enot { e }
 
-bnot:
-  | NOT b=bnot { Not b }
-  | b=bcomp { b }
+enot:
+  | NOT e=enot { ENot e }
+  | e=ecomp { e }
 
-bcomp:
-  | a1=aadd EQ a2=aadd { COp (a1,Eq,a2) }
-  | a1=aadd LT a2=aadd { COp (a1,Lt,a2) }
-  | b=blit { b }
+ecomp:
+  | e1=eadd EQ e2=eadd { EEq (e1,e2) }
+  | e1=eadd LT e2=eadd { ELe (e1,e2) }
+  | e=elit { e }
 
-blit:
-  | b=BOOL { Bool b }
-  | LPAREN b=bor RPAREN { b }
+eadd:
+  | e1=emul ADD e2=eadd { EPlus (e1,e2) }
+  | e1=emul SUB e2=eadd { EMinus(e1,e2) }
+  | e=emul { e }
 
-aadd:
-  | a1=amul ADD a2=aadd { AOp (a1,Add,a2) }
-  | a1=amul SUB a2=aadd { AOp (a1,Sub,a2) }
-  | a=amul { a }
+emul:
+  | e1=elit MUL e2=emul { EMult (e1,e2) }
+  | e1=elit DIV e2=emul { EDiv (e1,e2) }
+  | e=elit { e }
 
-amul:
-  | a1=alit MUL a2=amul { AOp (a1,Mul,a2) }
-  | a1=alit DIV a2=amul {AOp (a1,Div,a2)}
-  | a=alit { a }
-
-alit:
-  | z=INT { Int z }
-  | x=VAR { Var x }
-  | LPAREN a=aadd RPAREN { a }
+elit:
+  | z=INT { ENat z }
+  | b=BOOL { EBool b }
+  | s=STR { EStr s }
+  | x=VAR { EId x }
+  | LPAREN e=eadd RPAREN { e }
