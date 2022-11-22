@@ -11,6 +11,8 @@
    META
    Nat.ml
    Nat.mli
+   Sus.ml
+   Sus.mli
    Typma.ml
    Typma.mli
    dune-package
@@ -34,12 +36,19 @@
    typ__Nat.cmt
    typ__Nat.cmti
    typ__Nat.cmx
+   typ__Sus.cmi
+   typ__Sus.cmt
+   typ__Sus.cmti
+   typ__Sus.cmx
    typ__Typma.cmi
    typ__Typma.cmt
    typ__Typma.cmti
    typ__Typma.cmx))
  (lib_root
-  (coq/user-contrib/TypmaEval/Typma.v coq/user-contrib/TypmaEval/Typma.vo))
+  (coq/user-contrib/TypmaEval/Sus.v
+   coq/user-contrib/TypmaEval/Sus.vo
+   coq/user-contrib/TypmaEval/Typma.v
+   coq/user-contrib/TypmaEval/Typma.vo))
  (libexec (typ.cmxs)))
 (library
  (name typ)
@@ -61,6 +70,7 @@
      (impl)
      (intf))
     ((name Nat) (obj_name typ__Nat) (visibility public) (impl) (intf))
+    ((name Sus) (obj_name typ__Sus) (visibility public) (impl) (intf))
     ((name Typma) (obj_name typ__Typma) (visibility public) (impl) (intf)))
    (alias_module
     (name Typ)

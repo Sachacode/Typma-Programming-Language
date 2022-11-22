@@ -1,1 +1,1 @@
-extract/Typma.ml: Bool Nat Pervasives String
+extract/Typma.ml: Bool Nat Pervasives Sus

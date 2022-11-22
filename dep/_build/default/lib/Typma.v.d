@@ -1,2 +1,2 @@
-Typma.vo Typma.glob Typma.v.beautified Typma.required_vo: Typma.v 
-Typma.vio: Typma.v 
+Typma.vo Typma.glob Typma.v.beautified Typma.required_vo: Typma.v ./Sus.vo
+Typma.vio: Typma.v ./Sus.vio

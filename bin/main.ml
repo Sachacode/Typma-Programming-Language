@@ -1,26 +1,27 @@
 (** The file for using extracted cor functions *)
 open Core
+open Lig
+open Typ.Typma
 
 let ast filename =
   let c = filename
           |> Stdlib.open_in
           |> Lexing.from_channel
           |> Parser.prog Lexer.tokenize in
-  print_endline ("Program parsed as: " ^ string_of_cmd c); c
+  print_endline ("Program parsed as: " ^ ToString.string_of_com c); c
 
 let bs c =
     print_endline
-      begin match Typ.eval [] c with
-        | Ok s ->
-          "Terminated with store " ^
-          Env.string_of_store s
-        | Error err ->
-          "Runtime error! " ^ Env.string_of_oops err
+      begin match ceval_step (t_empty (TNat 0)) c 256 with
+        | Some _ ->
+          ":)"
+        | None ->
+          "Yoshikage Kira"
       end
 
 let runbs =
   Command.basic
-    ~summary:"Big-step evaluation."
+    ~summary:"typma evaluation."
     Command.Param.(
       map
         (anon ("filename"%: string))

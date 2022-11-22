@@ -1,6 +1,6 @@
 (coq.extraction
 	(prelude Extract)
-	(extracted_modules Datatypes Typma Bool Nat)
+	(extracted_modules Datatypes Typma Bool Nat Sus)
 	(theories TypmaEval))
 (library
 	(name typ)

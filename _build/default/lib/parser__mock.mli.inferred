@@ -1,0 +1,38 @@
+type token =
+    WHILE
+  | VAR of string
+  | SUB
+  | STR of string
+  | SKIP
+  | SEMICOLON
+  | RPAREN
+  | RBRACE
+  | OR
+  | NOT
+  | MUL
+  | LT
+  | LPAREN
+  | LBRACE
+  | INT of int
+  | IF
+  | EQ
+  | EOF
+  | ELSE
+  | DIV
+  | BOOL of bool
+  | ASGN
+  | AND
+  | ADD
+val menhir_begin_marker : int
+val xv_prog : Typ.Typma.com
+val xv_eor : Typ.Typma.exp
+val xv_enot : Typ.Typma.exp
+val xv_emul : Typ.Typma.exp
+val xv_elit : Typ.Typma.exp
+val xv_ecomp : Typ.Typma.exp
+val xv_eand : Typ.Typma.exp
+val xv_eadd : Typ.Typma.exp
+val xv_cseq : Typ.Typma.com
+val xv_cctrl : Typ.Typma.com
+val xv_cbot : Typ.Typma.com
+val menhir_end_marker : int

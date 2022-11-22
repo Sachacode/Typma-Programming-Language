@@ -1,0 +1,31 @@
+DIGEST e9772de3b11f7bb0ae7c2031d2d35376
+FTypmaEval.Sus
+R17:30 Coq.Strings.String <> <> lib
+def 117:119 <> sus
+R124:129 Coq.Strings.String <> string ind
+def 143:151 <> susappend
+R156:161 Coq.Strings.String <> append def
+def 175:183 <> suslength
+R188:193 Coq.Strings.String <> length def
+def 207:212 <> suseqb
+R217:219 Coq.Strings.String <> eqb def
+def 233:238 <> sussub
+R243:251 Coq.Strings.String <> substring def
+def 266:270 <> pacer
+R273:275 TypmaEval.Sus <> sus def
+def 877:880 <> succ
+R883:885 TypmaEval.Sus <> sus def
+def 916:922 <> no_succ
+R925:927 TypmaEval.Sus <> sus def
+def 961:962 <> fs
+R965:967 TypmaEval.Sus <> sus def
+def 999:1000 <> ts
+R1003:1005 TypmaEval.Sus <> sus def
+def 1036:1037 <> ms
+R1040:1042 TypmaEval.Sus <> sus def
+def 1073:1076 <> nots
+R1079:1081 TypmaEval.Sus <> sus def
+def 1109:1112 <> ands
+R1115:1117 TypmaEval.Sus <> sus def
+def 1146:1148 <> ors
+R1151:1153 TypmaEval.Sus <> sus def

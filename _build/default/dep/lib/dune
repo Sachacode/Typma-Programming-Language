@@ -1,0 +1,6 @@
+(coq.theory
+ (name TypmaEval)
+ (package typ)
+ (synopsis "extract typma evaluation")
+ (modules (:standard)))
+(include_subdirs qualified)

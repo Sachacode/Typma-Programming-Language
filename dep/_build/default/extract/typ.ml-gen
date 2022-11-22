@@ -10,5 +10,9 @@ module Datatypes = Typ__Datatypes
 module Nat = Typ__Nat
 
 
+(** @canonical Typ.Sus *)
+module Sus = Typ__Sus
+
+
 (** @canonical Typ.Typma *)
 module Typma = Typ__Typma

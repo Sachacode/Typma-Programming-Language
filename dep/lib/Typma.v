@@ -1,37 +1,24 @@
 Set Warnings "-notation-overridden,-parsing,-deprecated-hint-without-locality".
-From Coq Require Strings.String.
 From Coq Require Import Bool.Bool.
 From Coq Require Import Init.Nat.
 From Coq Require Import Arith.Arith.
 From Coq Require Import Arith.EqNat. Import Nat.
 From Coq Require Import Lia.
 From Coq Require Import Lists.List. Import ListNotations.
-
-Module Pacer.
-  Import String.
-  Definition pacer: String.string := "The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start."%string.
-  Definition succ: string := "succ".
-  Definition no_succ: string := "no succ".
-  Definition fs: string := "false".
-  Definition ts: string := "true".
-  Definition ms: string := "star".
-  Definition nots: string := "!".
-  Definition ands: string := "&&".
-  Definition ors: string := "||".
-End Pacer.
+Require TypmaEval.Sus.
 
 (* the typma type that blends everything together*)
 Inductive typma : Type :=
   | TNat (n : nat)
   | TBool (b : bool)
-  | TStr (s : String.string).
+  | TStr (s : Sus.sus).
 
 (* settting up map for later *)
-Definition total_map (A : Type) := String.string -> A.
+Definition total_map (A : Type) := Sus.sus -> A.
 Definition state := total_map typma.
 Definition t_empty {A : Type} (v : A) : total_map A := (fun _ => v).
-Definition t_update {A : Type} (m : total_map A) (x : String.string) (v : A) :=
-fun x' => if String.eqb x x' then v else m x'.
+Definition t_update {A : Type} (m : total_map A) (x : Sus.sus) (v : A) :=
+fun x' => if Sus.suseqb x x' then v else m x'.
 
 (* conversion from any typma type to TNat *)
 Definition to_nat (t : typma) : nat :=
@@ -39,7 +26,7 @@ Definition to_nat (t : typma) : nat :=
   | TNat n => n
   | TBool true => 1
   | TBool false => 0
-  | TStr s => String.length s
+  | TStr s => Sus.suslength s
   end.
 
 (* conversion from any typma type to TBool *)
@@ -47,17 +34,17 @@ Definition to_bool (t : typma) : bool :=
   match t with
   | TNat n => (0 <? n)
   | TBool b => b
-  | TStr s => (0 <? String.length s) 
+  | TStr s => (0 <? Sus.suslength s) 
   end.
 
 (* conversion from any typma type to TStr *)
-Definition to_str (t : typma) : String.string :=
+Definition to_str (t : typma) : Sus.sus :=
   match t with
-  | TNat n => if (0 <? n) then Pacer.no_succ else Pacer.succ
+  | TNat n => if (0 <? n) then Sus.no_succ else Sus.succ
   | TBool b =>
     match b with
-    | false => Pacer.fs
-    | true => Pacer.ts
+    | false => Sus.fs
+    | true => Sus.ts
     end
   | TStr s => s
   end.
@@ -72,10 +59,10 @@ Definition typma_add (t1 t2 : typma) : typma :=
   | TNat n, TStr s => TNat (n + to_nat t2)
   | TBool b, TNat n => TNat (n + to_nat t1)
   | TBool b1, TBool b2 => TNat (to_nat t1 + to_nat t2)
-  | TBool b, TStr s => TStr (String.append (to_str t1) s)
-  | TStr s, TNat n => TStr (String.append s (to_str t2))
-  | TStr s, TBool b => TStr (String.append s (to_str t2))
-  | TStr s1, TStr s2 => TStr (String.append s1 s2)
+  | TBool b, TStr s => TStr (Sus.susappend (to_str t1) s)
+  | TStr s, TNat n => TStr (Sus.susappend s (to_str t2))
+  | TStr s, TBool b => TStr (Sus.susappend s (to_str t2))
+  | TStr s1, TStr s2 => TStr (Sus.susappend s1 s2)
   end.
 
 (* system of math for typma subtraction *)
@@ -87,7 +74,7 @@ Definition typma_minus (t1 t2 : typma) : typma :=
   | TBool b, TNat n => TNat (to_nat t1 - n)
   | TBool b1, TBool b2 => TNat (to_nat t1 - to_nat t2)
   | TBool b, TStr s => TNat (to_nat t1 - to_nat t2)
-  | TStr s, TNat n => TStr (String.substring 0 (String.length s - n) s)
+  | TStr s, TNat n => TStr (Sus.sussub 0 (Sus.suslength s - n) s)
   | TStr s, TBool b => TNat (to_nat t1 - to_nat t2)
   | TStr s1, TStr s2 => TNat (to_nat t1 - to_nat t2)
 end.
@@ -101,24 +88,24 @@ Definition typma_mult (t1 t2 : typma) : typma :=
   | TBool b, TNat n => TNat (n * to_nat t1)
   | TBool b1, TBool b2 => TNat (to_nat t1 * to_nat t2)
   | TBool b, TStr s => TNat (to_nat t1 * to_nat t2)
-  | TStr s, TNat n => TStr (String.append s (String.append Pacer.ms (to_str t2)))
-  | TStr s, TBool b => TStr (String.append s (String.append Pacer.ms (to_str t2)))
-  | TStr s1, TStr s2 => TStr (String.append s1 (String.append Pacer.ms s2))
+  | TStr s, TNat n => TStr (Sus.susappend s (Sus.susappend Sus.ms (to_str t2)))
+  | TStr s, TBool b => TStr (Sus.susappend s (Sus.susappend Sus.ms (to_str t2)))
+  | TStr s1, TStr s2 => TStr (Sus.susappend s1 (Sus.susappend Sus.ms s2))
 end.
 
 (* system of math for typma division proofs for interesting for weird div*)
 Definition typma_div (t1 t2 : typma) : typma :=
   match t1, t2 with
-  | TNat n1, TNat n2 => if (n2 =? 0) then TStr Pacer.pacer else TNat (n1 / n2)
-  | TNat n, TBool false => TStr Pacer.pacer
+  | TNat n1, TNat n2 => if (n2 =? 0) then TStr Sus.pacer else TNat (n1 / n2)
+  | TNat n, TBool false => TStr Sus.pacer
   | TNat n, TBool b => TNat (n / (to_nat (TBool b)))
-  | TNat n, TStr s => if (0 <? String.length s) then TNat (n / (to_nat (TStr s))) else TStr Pacer.pacer
-  | TBool b, TNat n => if (n =? 0) then TStr Pacer.pacer else TNat (n / (to_nat (TBool b)))
-  | TBool b, TBool false => TStr Pacer.pacer
+  | TNat n, TStr s => if (0 <? Sus.suslength s) then TNat (n / (to_nat (TStr s))) else TStr Sus.pacer
+  | TBool b, TNat n => if (n =? 0) then TStr Sus.pacer else TNat (n / (to_nat (TBool b)))
+  | TBool b, TBool false => TStr Sus.pacer
   | TBool b1, TBool b2 => TNat ((to_nat (TBool b1)) / (to_nat (TBool b2)))
-  | TBool b, TStr s => if (0 <? String.length s) then TNat ((to_nat (TBool b)) / (to_nat (TStr s))) else TStr Pacer.pacer
-  | TStr s, TNat n => if (n =? 0) then TStr Pacer.pacer else TNat ((to_nat (TStr s)) / n)
-  | TStr s, TBool false => TStr Pacer.pacer
+  | TBool b, TStr s => if (0 <? Sus.suslength s) then TNat ((to_nat (TBool b)) / (to_nat (TStr s))) else TStr Sus.pacer
+  | TStr s, TNat n => if (n =? 0) then TStr Sus.pacer else TNat ((to_nat (TStr s)) / n)
+  | TStr s, TBool false => TStr Sus.pacer
   | TStr s, TBool b => TNat ((to_nat (TStr s)) / (to_nat (TBool b)))
   | TStr s1, TStr s2 => TNat ((to_nat (TStr s1)) / (to_nat (TStr s2)))
 end.
@@ -133,7 +120,7 @@ match t1, t2 with
   | TStr s, TBool b
   | TBool b, TStr s => TBool (Bool.eqb b (to_bool (TStr s)))
   | TStr s, TNat n => TBool (to_nat (TStr s) =? n)
-  | TStr s1, TStr s2 => TBool (String.eqb s1 s2)
+  | TStr s1, TStr s2 => TBool (Sus.suseqb s1 s2)
 end.
 
 Definition typma_le (t1 t2 : typma) : typma :=
@@ -160,7 +147,7 @@ Definition typma_not (t : typma) : typma :=
   | TNat n => TNat (fact n)
   | TBool true => TBool false
   | TBool false => TBool true
-  | TStr s => TStr (String.append Pacer.ts s)
+  | TStr s => TStr (Sus.susappend Sus.ts s)
   end.
 
 Definition typma_and (t1 t2 : typma) : typma :=
@@ -171,9 +158,9 @@ Definition typma_and (t1 t2 : typma) : typma :=
   | TNat n, TStr s 
   | TStr s, TNat n => TBool (to_bool (TNat n) && to_bool (TStr s))
   | TBool b1, TBool b2 => TBool (b1 && b2)
-  | TBool b, TStr s => TStr (String.append (to_str (TBool b)) s)
-  | TStr s, TBool b => TStr (String.append s (to_str (TBool b)))
-  | TStr s1, TStr s2 => TStr (String.append s1 (String.append Pacer.ands s2))
+  | TBool b, TStr s => TStr (Sus.susappend (to_str (TBool b)) s)
+  | TStr s, TBool b => TStr (Sus.susappend s (to_str (TBool b)))
+  | TStr s1, TStr s2 => TStr (Sus.susappend s1 (Sus.susappend Sus.ands s2))
   end.
 
 Definition typma_or (t1 t2 : typma) : typma :=
@@ -186,15 +173,15 @@ Definition typma_or (t1 t2 : typma) : typma :=
   | TBool b1, TBool b2 => TBool (b1 || b2)
   | TBool b, TStr s
   | TStr s, TBool b => TBool (b || to_bool (TStr s))
-  | TStr s1, TStr s2 => TStr (String.append s1 (String.append Pacer.ors s2))
+  | TStr s1, TStr s2 => TStr (Sus.susappend s1 (Sus.susappend Sus.ors s2))
 end.
 
 (* syntax definition for exp *)
 Inductive exp : Type :=
   | ENat (n : nat)
   | EBool (b : bool)
-  | EStr (s : String.string)
-  | EId (x : String.string)
+  | EStr (s : Sus.sus)
+  | EId (x : Sus.sus)
   | EPlus (e1 e2 : exp)
   | EMinus (e1 e2 : exp)
   | EMult (e1 e2 : exp)
@@ -228,9 +215,9 @@ Inductive exevalR : exp -> state -> typma -> Prop :=
     exevalR (ENat n) st (TNat n)
   | E_EBool (b : bool) (st : state):
     exevalR (EBool b) st (TBool b)
-  | E_EStr (s : String.string) (st : state):
+  | E_EStr (s : Sus.sus) (st : state):
     exevalR (EStr s) st (TStr s)
-  | E_EId (x : String.string) (st : state):
+  | E_EId (x : Sus.sus) (st : state):
     exevalR (EId x) st (st x)
   | E_EPlus (e1 e2 : exp) (t1 t2 : typma) (st : state)
   (H1 : exevalR e1 st t1) (H2 : exevalR e2 st t2):
@@ -272,7 +259,7 @@ Qed.
 
 Inductive com : Type :=
   | CSkip
-  | CAsgn (x : String.string) (e : exp)
+  | CAsgn (x : Sus.sus) (e : exp)
   | CSeq (c1 c2 : com)
   | CIf (e : exp) (c1 c2 : com)
   | CWhile (e : exp) (c : com).

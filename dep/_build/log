@@ -4,7 +4,7 @@
 # Workspace root:
 # /Users/sachapeterson/Desktop/TypmaRepo/Typma-Programming-Language/dep
 # Auto-detected concurrency: 8
-$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_6e40c4_output
+$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_4a963b_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -113,23 +113,13 @@ $ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default/lib && /Users/sachapeterson/.opam/coq/bin/coqdep -R . TypmaEval -dyndep opt Typma.v) > _build/default/lib/Typma.v.d
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/coqc -q -w -deprecated-native-compiler-option -w -native-compiler-disabled -native-compiler ondemand -R lib TypmaEval lib/Typma.v)
+$ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqdep -Q ../lib TypmaEval -R . DuneExtraction -dyndep opt Extract.v) > _build/default/extract/Extract.v.d
 $ (cd _build/default/extract && /Users/sachapeterson/.opam/coq/bin/coqc -q -w -deprecated-native-compiler-option -w -native-compiler-disabled -native-compiler ondemand -Q ../lib TypmaEval -R . DuneExtraction Extract.v)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -intf extract/Typma.mli) > _build/default/extract/.typ.objs/Typma.mli.d
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Typma.ml) > _build/default/extract/.typ.objs/Typma.ml.d
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -w -3 -w -39 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Typma.cmi -c -intf extract/Typma.mli)
-$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -w -3 -w -39 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Typma.cmo -c -impl extract/Typma.ml)
-> File "extract/Typma.ml", line 133, characters 28-29:
-> 133 |      | TNat n2 -> TNat (sub n n2)
->                                   ^
-> Error: This expression has type int but an expression was expected of type
->          string
-[2]
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamldep.opt -modules -impl extract/Sus.ml) > _build/default/extract/.typ.objs/Sus.ml.d
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -w -3 -w -39 -g -bin-annot -I extract/.typ.objs/byte -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/byte/typ__Sus.cmo -c -impl extract/Sus.ml)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -w -40 -w -33 -w -3 -w -39 -g -a -o extract/typ.cma extract/.typ.objs/byte/typ.cmo extract/.typ.objs/byte/typ__Bool.cmo extract/.typ.objs/byte/typ__Datatypes.cmo extract/.typ.objs/byte/typ__Nat.cmo extract/.typ.objs/byte/typ__Sus.cmo extract/.typ.objs/byte/typ__Typma.cmo)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -w -3 -w -39 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Sus.cmx -c -impl extract/Sus.ml)
 $ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -w -3 -w -39 -g -I extract/.typ.objs/byte -I extract/.typ.objs/native -I /Users/sachapeterson/.opam/coq/lib/zarith -intf-suffix .ml -no-alias-deps -open Typ -o extract/.typ.objs/native/typ__Typma.cmx -c -impl extract/Typma.ml)
-> File "extract/Typma.ml", line 133, characters 28-29:
-> 133 |      | TNat n2 -> TNat (sub n n2)
->                                   ^
-> Error: This expression has type int but an expression was expected of type
->          string
-[2]
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -w -3 -w -39 -g -a -o extract/typ.cmxa extract/.typ.objs/native/typ.cmx extract/.typ.objs/native/typ__Bool.cmx extract/.typ.objs/native/typ__Datatypes.cmx extract/.typ.objs/native/typ__Nat.cmx extract/.typ.objs/native/typ__Sus.cmx extract/.typ.objs/native/typ__Typma.cmx)
+$ (cd _build/default && /Users/sachapeterson/.opam/coq/bin/ocamlopt.opt -w -40 -w -33 -w -3 -w -39 -g -shared -linkall -I extract -o extract/typ.cmxs extract/typ.cmxa)
+# Promoting "_build/default/typ.install" to "typ.install"

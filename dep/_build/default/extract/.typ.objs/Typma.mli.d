@@ -1,1 +1,1 @@
-extract/Typma.mli: Bool Nat String
+extract/Typma.mli: Bool Nat Sus

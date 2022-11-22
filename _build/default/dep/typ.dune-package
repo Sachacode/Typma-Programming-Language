@@ -1,0 +1,81 @@
+(lang dune 3.6)
+(name typ)
+(version 0.1.0)
+(sections (lib .) (lib_root ..) (libexec .))
+(files
+ (lib
+  (Bool.ml
+   Bool.mli
+   Datatypes.ml
+   Datatypes.mli
+   META
+   Nat.ml
+   Nat.mli
+   Sus.ml
+   Sus.mli
+   Typma.ml
+   Typma.mli
+   dune-package
+   opam
+   typ.a
+   typ.cma
+   typ.cmi
+   typ.cmt
+   typ.cmx
+   typ.cmxa
+   typ.ml
+   typ__Bool.cmi
+   typ__Bool.cmt
+   typ__Bool.cmti
+   typ__Bool.cmx
+   typ__Datatypes.cmi
+   typ__Datatypes.cmt
+   typ__Datatypes.cmti
+   typ__Datatypes.cmx
+   typ__Nat.cmi
+   typ__Nat.cmt
+   typ__Nat.cmti
+   typ__Nat.cmx
+   typ__Sus.cmi
+   typ__Sus.cmt
+   typ__Sus.cmti
+   typ__Sus.cmx
+   typ__Typma.cmi
+   typ__Typma.cmt
+   typ__Typma.cmti
+   typ__Typma.cmx))
+ (lib_root
+  (coq/user-contrib/TypmaEval/Sus.v
+   coq/user-contrib/TypmaEval/Sus.vo
+   coq/user-contrib/TypmaEval/Typma.v
+   coq/user-contrib/TypmaEval/Typma.vo))
+ (libexec (typ.cmxs)))
+(library
+ (name typ)
+ (kind normal)
+ (archives (byte typ.cma) (native typ.cmxa))
+ (plugins (byte typ.cma) (native typ.cmxs))
+ (native_archives typ.a)
+ (requires zarith)
+ (main_module_name Typ)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Typ)
+   (modules
+    ((name Bool) (obj_name typ__Bool) (visibility public) (impl) (intf))
+    ((name Datatypes)
+     (obj_name typ__Datatypes)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Nat) (obj_name typ__Nat) (visibility public) (impl) (intf))
+    ((name Sus) (obj_name typ__Sus) (visibility public) (impl) (intf))
+    ((name Typma) (obj_name typ__Typma) (visibility public) (impl) (intf)))
+   (alias_module
+    (name Typ)
+    (obj_name typ)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))

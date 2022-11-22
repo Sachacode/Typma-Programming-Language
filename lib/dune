@@ -3,5 +3,5 @@
 (ocamllex (modules lexer))
 
 (library
-	(name et)
+	(name lig)
 	(libraries zarith core typ menhirLib))

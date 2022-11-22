@@ -8,6 +8,8 @@ Require Export Coq.extraction.ExtrOcamlNatInt.
 
 (*Extract Inlined Constant plus => "Z.add".*)
 
+Extract Inlined Constant String.substring => "fun n1 n2 s -> String.sub s n1 n2".
+
 Require TypmaEval.Typma.
 (* for extra files change below*)
-Separate Extraction TypmaEval.Typma.
+Separate Extraction TypmaEval.Typma TypmaEval.Sus.
