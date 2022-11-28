@@ -10,6 +10,7 @@ type token =
   | SEMICOLON
   | RPAREN
   | RBRACE
+  | PRINT
   | OR
   | NOT
   | MUL

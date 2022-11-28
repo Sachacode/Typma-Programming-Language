@@ -29,6 +29,7 @@ module MenhirBasics = struct
     | SEMICOLON
     | RPAREN
     | RBRACE
+    | PRINT
     | OR
     | NOT
     | MUL
@@ -38,7 +39,7 @@ module MenhirBasics = struct
     | INT of (
 # 11 "lib/parser.mly"
        (int)
-# 42 "lib/parser.ml"
+# 43 "lib/parser.ml"
   )
     | IF
     | EQ
@@ -48,7 +49,7 @@ module MenhirBasics = struct
     | BOOL of (
 # 10 "lib/parser.mly"
        (bool)
-# 52 "lib/parser.ml"
+# 53 "lib/parser.ml"
   )
     | ASGN
     | AND
@@ -62,7 +63,7 @@ include MenhirBasics
   
     open Typ.Typma
 
-# 66 "lib/parser.ml"
+# 67 "lib/parser.ml"
 
 module Tables = struct
   
@@ -72,36 +73,38 @@ module Tables = struct
     fun _tok ->
       match _tok with
       | ADD ->
-          24
+          25
       | AND ->
-          23
+          24
       | ASGN ->
-          22
+          23
       | BOOL _ ->
-          21
+          22
       | DIV ->
-          20
+          21
       | ELSE ->
-          19
+          20
       | EOF ->
-          18
+          19
       | EQ ->
-          17
+          18
       | IF ->
-          16
+          17
       | INT _ ->
-          15
+          16
       | LBRACE ->
-          14
+          15
       | LPAREN ->
-          13
+          14
       | LT ->
-          12
+          13
       | MUL ->
-          11
+          12
       | NOT ->
-          10
+          11
       | OR ->
+          10
+      | PRINT ->
           9
       | RBRACE ->
           8
@@ -158,6 +161,8 @@ module Tables = struct
           Obj.repr ()
       | OR ->
           Obj.repr ()
+      | PRINT ->
+          Obj.repr ()
       | RBRACE ->
           Obj.repr ()
       | RPAREN ->
@@ -176,22 +181,22 @@ module Tables = struct
           Obj.repr ()
   
   and default_reduction =
-    (8, "\000\000\021\020\000\000\018\019\000\000\000\000\023\000\024\011\000\n\000\022\026\000\027\000\000\016\000\015\000\000\000\000\003\002\000\000\000\000\000\000\000\000\000\005\000\000\b\007\000\000\r\000\000\028\000\004\000\006\001\000\030")
+    (8, "\000\000\022\021\000\000\019\020\000\000\000\000\024\000\025\012\000\011\000\023\027\000\028\000\000\017\000\016\000\000\000\000\004\002\000\003\000\000\000\000\000\000\000\000\000\006\000\000\t\b\000\000\014\000\000\029\000\005\000\007\001\000\031")
   
   and error =
-    (25, "d\004\128\020\018\130\000\000\000\000\000\000\002\130PA@( \000\000\000\000\000\000\019\202a\148\002\130\004\246\154e\000\160\128\000\000\001@( \000\000\000\000\000\000(\005\004\000\000\000\000@\000\000\000\000\000\000\000\000\130\210L\000\000\000\000\016\128(\005\004\000\000\000\n\001A\000\000\000\000\000 \003 $\000\000\000\bP\n\b\000\000\000\000\000\000\025\001 \005\004\160\128\000 \003 $\000\002\000\000\000\000 \000\002\0002\002@\000 \000\000\000\000\0008\002\003 $\000\000\000\000\000\000\000\000B\001\020\018\130\000\000\000\000\b@\002\130P@\000\000\000\004\000\000\000\000\000\000\128\000\000\000\000\000\000\000\000\000\004\000\000\000\000")
+    (26, "dB@\n\004\160\128\000\000\000\000\000\000(\018\130\n\000\160\128\000\000\000\000\000\000\019\1650\202\000\160\129:\211L\160\n\b\000\000\000\n\000\160\128\000\000\000\000\000\000(\002\130\000\000\000\000\016\000\000\000\000\000\000\000\000\004\011I0\000\000\000\000\016\128(\002\130\000\000\000\002\128( \000\000\000\000\001\000\025\016\144\000\000\000\016\160\n\b\000\000\000\000\000\000\002\128( \000\000\000dB@\n\004\160\128\000\016\001\145\t\000\000\128\000\000\000\002\000\000\016\001\145\t\000\000\128\000\000\000\000\0008\001\001\145\t\000\000\000\000\000\000\000\000\002\016\b\160J\b\000\000\000\000\b@\002\129( \000\000\000\001\000\000\000\000\000\000\b\000\000\000\000\000\000\000\000\000\000\004\000\000\000\000")
   
   and start =
     1
   
   and action =
-    ((8, "pb\000\000bb\000\000 b\007b\000b\000\000b\000\r\000\000@\000\002b\000b\000\tp\021b\000\000pb\026p*\0268pJ\000<p\000\000\015b\000\"b\000P\000T\000\000H\000"), (8, "aN5aaaa5.ava~baa\1986j&aa----\210\150-\158-q\162--a\182!!-BA\166.a\174A\222!a\230\n6\014\243Aa\006z\018\000\134\022\000\026\000\000\000\000\138\030\000\142"))
+    ((8, "h:\000\000::\000\000\":\007:\000:\000\000:\000\011\000\000D\000\025:\000:\000\th\r:\000\000:\000h:\022h*\028.h>\000ph\000\000\b:\000\005:\000R\000T\000\000J\000"), (8, "ebNeeeje\218.eveu9ee~69&ee111\1581\206\1661\n1\014\17011e\174\182\0181B\022E\026.e\230E\238\030e\006z6\251\134Ee\000\138\190%%\000\146\000\000\150\000\000\000\000\000%"))
   
   and lhs =
-    (4, "\011\187\170\169\152\136wfeUUDC2!")
+    (4, "\011\187\186\170\153\136\135vfUUTD3\"\016")
   
   and goto =
-    ((8, "<\005\000\0000:\000\000\000L\000>\000r\000\000P\000\000\000\000\000\000\000Z\000^\000\000^\000n\000\000n\n\000t\000\000\000z\000\000\000\128\000\000\000$\000\000\024\000\000\000\000\000\000\000\000"), (8, "\0291\t\022\0234\024%1\t\022\0234\02461\t\022\0234\0241\t\022\0233\024\021\t\022\023;\024\t\011\r\011\019\000<-0\t\011\t\011\016\000\018\t\011\t\011\026\000\0289-0\t\011\015\011!7-0'-0+-0/-0"))
+    ((8, "<\005\000\0000:\000\000\000L\000>\000\148\000\000P\000\000\000\000\000\000\000Z\000^\000\000^\000n\000\000r\000r\n\000x\000\000\000~\000\000\000\132\000\000\000$\000\000\024\000\000\000\000\000\000\000\000"), (8, "\0293\t\022\0236\024'3\t\022\0236\02483\t\022\0236\0243\t\022\0235\024\021\t\022\023=\024\t\011\r\011\019\000>/2\t\011\t\011\016\000\018\t\011\t\011\026\000\028;/2\t\011\t\011!\000$9/2)/2-/21/2\015\011"))
   
   and semantic_action =
     [|
@@ -211,7 +216,39 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 47 "lib/parser.mly"
          ( CSkip )
-# 215 "lib/parser.ml"
+# 220 "lib/parser.ml"
+         in
+        {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = Obj.repr _v;
+          MenhirLib.EngineTypes.startp = _startpos;
+          MenhirLib.EngineTypes.endp = _endpos;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        });
+      (fun _menhir_env ->
+        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
+        let {
+          MenhirLib.EngineTypes.state = _;
+          MenhirLib.EngineTypes.semv = e;
+          MenhirLib.EngineTypes.startp = _startpos_e_;
+          MenhirLib.EngineTypes.endp = _endpos_e_;
+          MenhirLib.EngineTypes.next = {
+            MenhirLib.EngineTypes.state = _menhir_s;
+            MenhirLib.EngineTypes.semv = _1;
+            MenhirLib.EngineTypes.startp = _startpos__1_;
+            MenhirLib.EngineTypes.endp = _endpos__1_;
+            MenhirLib.EngineTypes.next = _menhir_stack;
+          };
+        } = _menhir_stack in
+        let e : (Typ.Typma.exp) = Obj.magic e in
+        let _1 : unit = Obj.magic _1 in
+        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
+        let _startpos = _startpos__1_ in
+        let _endpos = _endpos_e_ in
+        let _v : (Typ.Typma.com) = 
+# 48 "lib/parser.mly"
+                 ( CPrint e )
+# 252 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -246,7 +283,7 @@ module Tables = struct
         let x : (
 # 13 "lib/parser.mly"
        (string)
-# 250 "lib/parser.ml"
+# 287 "lib/parser.ml"
         ) = Obj.magic x in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
@@ -254,7 +291,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 49 "lib/parser.mly"
                       ( CAsgn (x,e) )
-# 258 "lib/parser.ml"
+# 295 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -293,7 +330,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 50 "lib/parser.mly"
                          ( c )
-# 297 "lib/parser.ml"
+# 334 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -374,7 +411,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 42 "lib/parser.mly"
                                                               ( CIf (e,c1,c2) )
-# 378 "lib/parser.ml"
+# 415 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -427,7 +464,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 43 "lib/parser.mly"
                                      ( CWhile (e,c) )
-# 431 "lib/parser.ml"
+# 468 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -452,7 +489,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 44 "lib/parser.mly"
            ( c )
-# 456 "lib/parser.ml"
+# 493 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -491,7 +528,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 38 "lib/parser.mly"
                                ( CSeq (c1,c2) )
-# 495 "lib/parser.ml"
+# 532 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -516,7 +553,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 39 "lib/parser.mly"
             ( c )
-# 520 "lib/parser.ml"
+# 557 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -555,7 +592,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 70 "lib/parser.mly"
                         ( EPlus (e1,e2) )
-# 559 "lib/parser.ml"
+# 596 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -594,7 +631,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 71 "lib/parser.mly"
                         ( EMinus(e1,e2) )
-# 598 "lib/parser.ml"
+# 635 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -619,7 +656,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 72 "lib/parser.mly"
            ( e )
-# 623 "lib/parser.ml"
+# 660 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -658,7 +695,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 57 "lib/parser.mly"
                         ( EAnd (e1,e2) )
-# 662 "lib/parser.ml"
+# 699 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -683,7 +720,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 58 "lib/parser.mly"
            ( e )
-# 687 "lib/parser.ml"
+# 724 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -722,7 +759,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 65 "lib/parser.mly"
                        ( EEq (e1,e2) )
-# 726 "lib/parser.ml"
+# 763 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -761,7 +798,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 66 "lib/parser.mly"
                        ( ELe (e1,e2) )
-# 765 "lib/parser.ml"
+# 802 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -786,7 +823,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 67 "lib/parser.mly"
            ( e )
-# 790 "lib/parser.ml"
+# 827 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -807,7 +844,7 @@ module Tables = struct
         let z : (
 # 11 "lib/parser.mly"
        (int)
-# 811 "lib/parser.ml"
+# 848 "lib/parser.ml"
         ) = Obj.magic z in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_z_ in
@@ -815,7 +852,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 80 "lib/parser.mly"
           ( ENat z )
-# 819 "lib/parser.ml"
+# 856 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -836,7 +873,7 @@ module Tables = struct
         let b : (
 # 10 "lib/parser.mly"
        (bool)
-# 840 "lib/parser.ml"
+# 877 "lib/parser.ml"
         ) = Obj.magic b in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_b_ in
@@ -844,7 +881,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 81 "lib/parser.mly"
            ( EBool b )
-# 848 "lib/parser.ml"
+# 885 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -865,7 +902,7 @@ module Tables = struct
         let s : (
 # 12 "lib/parser.mly"
        (string)
-# 869 "lib/parser.ml"
+# 906 "lib/parser.ml"
         ) = Obj.magic s in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_s_ in
@@ -873,7 +910,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 82 "lib/parser.mly"
           ( EStr s )
-# 877 "lib/parser.ml"
+# 914 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -894,7 +931,7 @@ module Tables = struct
         let x : (
 # 13 "lib/parser.mly"
        (string)
-# 898 "lib/parser.ml"
+# 935 "lib/parser.ml"
         ) = Obj.magic x in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
@@ -902,7 +939,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 83 "lib/parser.mly"
           ( EId x )
-# 906 "lib/parser.ml"
+# 943 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -941,7 +978,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 84 "lib/parser.mly"
                          ( e )
-# 945 "lib/parser.ml"
+# 982 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -980,7 +1017,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 75 "lib/parser.mly"
                         ( EMult (e1,e2) )
-# 984 "lib/parser.ml"
+# 1021 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1019,7 +1056,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 76 "lib/parser.mly"
                         ( EDiv (e1,e2) )
-# 1023 "lib/parser.ml"
+# 1060 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1044,7 +1081,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 77 "lib/parser.mly"
            ( e )
-# 1048 "lib/parser.ml"
+# 1085 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1076,7 +1113,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 61 "lib/parser.mly"
                ( ENot e )
-# 1080 "lib/parser.ml"
+# 1117 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1101,7 +1138,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 62 "lib/parser.mly"
             ( e )
-# 1105 "lib/parser.ml"
+# 1142 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1140,7 +1177,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 53 "lib/parser.mly"
                       ( EOr (e1,e2) )
-# 1144 "lib/parser.ml"
+# 1181 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1165,7 +1202,7 @@ module Tables = struct
         let _v : (Typ.Typma.exp) = 
 # 54 "lib/parser.mly"
            ( b )
-# 1169 "lib/parser.ml"
+# 1206 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
@@ -1197,7 +1234,7 @@ module Tables = struct
         let _v : (Typ.Typma.com) = 
 # 35 "lib/parser.mly"
                ( c )
-# 1201 "lib/parser.ml"
+# 1238 "lib/parser.ml"
          in
         {
           MenhirLib.EngineTypes.state = _menhir_s;

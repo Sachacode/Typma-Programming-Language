@@ -351,37 +351,45 @@ let rec exeval st = function
 type com =
 | CSkip
 | CAsgn of sus * exp
+| CPrint of exp
 | CSeq of com * com
 | CIf of exp * com * com
 | CWhile of exp * com
 
 (** val com_rect :
-    'a1 -> (sus -> exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp
-    -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 -> 'a1) -> com
-    -> 'a1 **)
+    'a1 -> (sus -> exp -> 'a1) -> (exp -> 'a1) -> (com -> 'a1 -> com -> 'a1
+    -> 'a1) -> (exp -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1
+    -> 'a1) -> com -> 'a1 **)
 
-let rec com_rect f f0 f1 f2 f3 = function
+let rec com_rect f f0 f1 f2 f3 f4 = function
 | CSkip -> f
 | CAsgn (x, e) -> f0 x e
+| CPrint e -> f1 e
 | CSeq (c1, c2) ->
-  f1 c1 (com_rect f f0 f1 f2 f3 c1) c2 (com_rect f f0 f1 f2 f3 c2)
+  f2 c1 (com_rect f f0 f1 f2 f3 f4 c1) c2 (com_rect f f0 f1 f2 f3 f4 c2)
 | CIf (e, c1, c2) ->
-  f2 e c1 (com_rect f f0 f1 f2 f3 c1) c2 (com_rect f f0 f1 f2 f3 c2)
-| CWhile (e, c0) -> f3 e c0 (com_rect f f0 f1 f2 f3 c0)
+  f3 e c1 (com_rect f f0 f1 f2 f3 f4 c1) c2 (com_rect f f0 f1 f2 f3 f4 c2)
+| CWhile (e, c0) -> f4 e c0 (com_rect f f0 f1 f2 f3 f4 c0)
 
 (** val com_rec :
-    'a1 -> (sus -> exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp
-    -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 -> 'a1) -> com
-    -> 'a1 **)
+    'a1 -> (sus -> exp -> 'a1) -> (exp -> 'a1) -> (com -> 'a1 -> com -> 'a1
+    -> 'a1) -> (exp -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1
+    -> 'a1) -> com -> 'a1 **)
 
-let rec com_rec f f0 f1 f2 f3 = function
+let rec com_rec f f0 f1 f2 f3 f4 = function
 | CSkip -> f
 | CAsgn (x, e) -> f0 x e
+| CPrint e -> f1 e
 | CSeq (c1, c2) ->
-  f1 c1 (com_rec f f0 f1 f2 f3 c1) c2 (com_rec f f0 f1 f2 f3 c2)
+  f2 c1 (com_rec f f0 f1 f2 f3 f4 c1) c2 (com_rec f f0 f1 f2 f3 f4 c2)
 | CIf (e, c1, c2) ->
-  f2 e c1 (com_rec f f0 f1 f2 f3 c1) c2 (com_rec f f0 f1 f2 f3 c2)
-| CWhile (e, c0) -> f3 e c0 (com_rec f f0 f1 f2 f3 c0)
+  f3 e c1 (com_rec f f0 f1 f2 f3 f4 c1) c2 (com_rec f f0 f1 f2 f3 f4 c2)
+| CWhile (e, c0) -> f4 e c0 (com_rec f f0 f1 f2 f3 f4 c0)
+
+(** val t_print' : 'a1 -> 'a1 total_map **)
+
+let t_print' v _ =
+  v
 
 (** val ceval_step : state -> com -> int -> state option **)
 
@@ -392,6 +400,7 @@ let rec ceval_step st c i =
     match c with
     | CSkip -> Some st
     | CAsgn (l, e1) -> Some (t_update st l (exeval st e1))
+    | CPrint e -> Some (print_endline succ; t_print' (exeval st e))
     | CSeq (c1, c2) ->
       (match ceval_step st c1 i' with
        | Some st' -> ceval_step st' c2 i'

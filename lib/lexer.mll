@@ -26,7 +26,7 @@ rule tokenize = parse
      | "==" { EQ }
      | "<" { LT }
      | "skip" { SKIP }
-     (*| "print" { PRINT }*)
+     | "print" { PRINT }
      | ":=" { ASGN }
      | ";" { SEMICOLON }
      | "if" { IF }

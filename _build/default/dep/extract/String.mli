@@ -1,4 +1,0 @@
-
-val length : string -> int
-
-

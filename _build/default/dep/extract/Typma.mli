@@ -81,16 +81,21 @@ val exeval : state -> exp -> typma
 type com =
 | CSkip
 | CAsgn of sus * exp
+| CPrint of exp
 | CSeq of com * com
 | CIf of exp * com * com
 | CWhile of exp * com
 
 val com_rect :
-  'a1 -> (sus -> exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp ->
-  com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 -> 'a1) -> com -> 'a1
+  'a1 -> (sus -> exp -> 'a1) -> (exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 ->
+  'a1) -> (exp -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 ->
+  'a1) -> com -> 'a1
 
 val com_rec :
-  'a1 -> (sus -> exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp ->
-  com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 -> 'a1) -> com -> 'a1
+  'a1 -> (sus -> exp -> 'a1) -> (exp -> 'a1) -> (com -> 'a1 -> com -> 'a1 ->
+  'a1) -> (exp -> com -> 'a1 -> com -> 'a1 -> 'a1) -> (exp -> com -> 'a1 ->
+  'a1) -> com -> 'a1
+
+val t_print' : 'a1 -> 'a1 total_map
 
 val ceval_step : state -> com -> int -> state option

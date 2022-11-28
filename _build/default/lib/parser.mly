@@ -6,7 +6,7 @@
 %token LPAREN RPAREN LBRACE RBRACE EOF
 %token ADD SUB MUL DIV
 %token NOT OR AND EQ LT
-%token SKIP (*PRINT*) ASGN SEMICOLON IF ELSE WHILE
+%token SKIP PRINT ASGN SEMICOLON IF ELSE WHILE
 %token <bool> BOOL
 %token <int> INT
 %token <string> STR
@@ -45,7 +45,7 @@ cctrl:
 
 cbot:
   | SKIP { CSkip }
-  (*| PRINT e=eadd { Print e }*)
+  | PRINT e=eadd { CPrint e }
   | x=VAR ASGN e=eadd { CAsgn (x,e) }
   | LPAREN c=cseq RPAREN { c }
 

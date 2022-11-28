@@ -260,11 +260,15 @@ Qed.
 Inductive com : Type :=
   | CSkip
   | CAsgn (x : Sus.sus) (e : exp)
+  | CPrint (e : exp)
   | CSeq (c1 c2 : com)
   | CIf (e : exp) (c1 c2 : com)
   | CWhile (e : exp) (c : com).
 
 (*figure out print statement*)
+
+Definition t_print {A : Type} (v : A) : total_map A := (fun _ => v).
+Definition t_print' {A : Type} (v : A) : total_map A := (fun _ => v).
 
 Inductive ceval : com -> state -> state -> Prop :=
   | E_Skip : forall st,
@@ -272,6 +276,9 @@ Inductive ceval : com -> state -> state -> Prop :=
   | E_Asgn : forall st e t x,
     exeval st e = t ->
     ceval (CAsgn x e) st (t_update st x t)
+  | E_Print : forall st e t,
+    exeval st e = t ->
+    ceval (CPrint e) st (t_print t)
   | E_Seq : forall c1 c2 st st' st'',
     ceval c1 st st' ->
     ceval c2 st' st'' ->
@@ -302,6 +309,8 @@ match i with
     Some st
     | CAsgn l e1 =>
     Some (t_update st l (exeval st e1))
+    | CPrint e =>
+    Some (t_print (exeval st e))
     | CSeq c1 c2 =>
     match (ceval_step st c1 i') with
       | Some st' => ceval_step st' c2 i'
@@ -336,6 +345,7 @@ Proof.
          simpl in H; inversion H; subst; clear H.
     + (* skip *) apply E_Skip.
     + (* := *) apply E_Asgn. reflexivity.
+    + apply E_Print. reflexivity.
 
     + (* ; *)
       destruct (ceval_step st c1 i') eqn:Heqr1.
@@ -387,6 +397,8 @@ induction i1 as [|i1']; intros i2 st st' c Hle Hceval.
     + (* := *)
       simpl in Hceval. inversion Hceval.
       reflexivity.
+    +simpl in Hceval. inversion Hceval.
+    reflexivity.
     + (* ; *)
       simpl in Hceval. simpl.
       destruct (ceval_step st c1 i1') eqn:Heqst1'o.
@@ -421,6 +433,8 @@ Proof.
   intros c st st' Hce.
   induction Hce.
   -exists 1. reflexivity.
+  -exists 1. simpl. rewrite H. reflexivity.
+  (*print*)
   -exists 1. simpl. rewrite H. reflexivity.
   -destruct IHHce1. destruct IHHce2. exists (S (x + x0)). cbn.
   assert (H': x <= x + x0) by lia.

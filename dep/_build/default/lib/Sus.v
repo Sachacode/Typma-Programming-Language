@@ -1,4 +1,4 @@
-From Coq Require Strings.String. Import String.
+From Coq Require Import Strings.String. Import String.
 
 (* type synonym for strings to avoid extraction bugs *)
 
