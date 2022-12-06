@@ -1,10 +1,10 @@
-# dune exec ./bin/main.exe -- -typma tests/test0.typ
+# dune exec ./bin/main.exe -- -typma tests/test6.typ
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root:
 # /Users/sachapeterson/Desktop/TypmaRepo/Typma-Programming-Language
 # Auto-detected concurrency: 8
-$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_e2123b_output
+$ /Users/sachapeterson/.opam/coq/bin/ocamlc.opt -config > /var/folders/4f/pj098_qx3lj0kg73bq04kngm0000gn/T/dune_e5311f_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"

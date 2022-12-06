@@ -45,8 +45,8 @@ cctrl:
 
 cbot:
   | SKIP { CSkip }
-  | PRINT e=eadd { CPrint e }
-  | x=VAR ASGN e=eadd { CAsgn (x,e) }
+  | PRINT e=eor { CPrint e }
+  | x=VAR ASGN e=eor { CAsgn (x,e) }
   | LPAREN c=cseq RPAREN { c }
 
 eor:
@@ -64,7 +64,7 @@ enot:
 ecomp:
   | e1=eadd EQ e2=eadd { EEq (e1,e2) }
   | e1=eadd LT e2=eadd { ELe (e1,e2) }
-  | e=elit { e }
+  | e=eadd { e }
 
 eadd:
   | e1=emul ADD e2=eadd { EPlus (e1,e2) }
@@ -81,4 +81,4 @@ elit:
   | b=BOOL { EBool b }
   | s=STR { EStr s }
   | x=VAR { EId x }
-  | LPAREN e=eadd RPAREN { e }
+  | LPAREN e=eor RPAREN { e }

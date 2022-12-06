@@ -5,7 +5,7 @@ let rec string_of_exp (e: exp) : string =
   match e with
   | ENat n -> string_of_int n
   | EBool b -> Stdlib.Bool.to_string b
-  | EStr s -> s
+  | EStr s -> "\"" ^ s ^ "\""
   | EId x -> x
   | EPlus (e1, e2) ->  "(" ^ string_of_exp e1 ^ " + " ^ string_of_exp e2 ^ ")"
   | EMinus (e1, e2) ->  "(" ^ string_of_exp e1 ^ " - " ^ string_of_exp e2 ^ ")"
