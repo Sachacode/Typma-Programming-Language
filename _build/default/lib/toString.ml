@@ -22,6 +22,6 @@ let rec string_of_com (c : com) : string =
   | CSkip -> "skip"
   | CPrint e -> "print " ^ string_of_exp e
   | CAsgn (s, e) -> s ^ " := " ^ string_of_exp e
-  | CSeq (c1, c2) -> string_of_com c1 ^ "; " ^ string_of_com c2
+  | CSeq (c1, c2) -> string_of_com c1 ^ ";\n" ^ string_of_com c2
   | CIf (e, c1, c2) -> "if " ^ string_of_exp e ^ " {" ^ string_of_com c1 ^ "} else {" ^ string_of_com c2 ^ "}"
   | CWhile (e, c) -> "while " ^ string_of_exp e ^ " {" ^ string_of_com c ^ "}"

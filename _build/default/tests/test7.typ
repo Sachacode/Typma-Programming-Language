@@ -1,0 +1,2 @@
+foo := "hi";
+bar := false
