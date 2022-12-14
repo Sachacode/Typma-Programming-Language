@@ -49,8 +49,6 @@ Definition to_str (t : typma) : Sus.sus :=
   | TStr s => s
   end.
 
-(*conversion examples, asyemtirc , add optimizations, hore logic*)
-
 (* system of math for typma addition *)
 Definition typma_add (t1 t2 : typma) : typma :=
   match t1, t2 with
@@ -110,6 +108,7 @@ Definition typma_div (t1 t2 : typma) : typma :=
   | TStr s1, TStr s2 => TNat ((to_nat (TStr s1)) / (to_nat (TStr s2)))
 end.
 
+(* system of math for typma equality *)
 Definition typma_equal (t1 t2 : typma) : typma :=
 match t1, t2 with
   | TNat n1, TNat n2 => TBool (n1 =? n2)
@@ -123,6 +122,7 @@ match t1, t2 with
   | TStr s1, TStr s2 => TBool (Sus.suseqb s1 s2)
 end.
 
+(* system of math for typma less than *)
 Definition typma_le (t1 t2 : typma) : typma :=
   match t1, t2 with
   | TNat n1, TNat n2 => TBool (n1 <? n2)
@@ -136,12 +136,14 @@ Definition typma_le (t1 t2 : typma) : typma :=
   | TStr s1, TStr s2 => TBool ((to_nat (TStr s1)) <? (to_nat (TStr s2)))
 end.
 
+(* factorial function *)
 Fixpoint fact (n : nat) : nat :=
   match n with
   | 0 => S 0
   | S n' => n * fact (n')
   end.
 
+(* system of math for typma not *)
 Definition typma_not (t : typma) : typma :=
   match t with
   | TNat n => TNat (fact n)
@@ -150,6 +152,7 @@ Definition typma_not (t : typma) : typma :=
   | TStr s => TStr (Sus.susappend Sus.ts s)
   end.
 
+(* system of math for typma and *)
 Definition typma_and (t1 t2 : typma) : typma :=
   match t1, t2 with
   | TNat n1, TNat n2 => TBool (to_bool (TNat n1) && to_bool (TNat n2))
@@ -163,7 +166,8 @@ Definition typma_and (t1 t2 : typma) : typma :=
   | TStr s1, TStr s2 => TStr (Sus.susappend s1 (Sus.susappend Sus.ands s2))
   end.
 
-Definition typma_or (t1 t2 : typma) : typma :=
+(* system of math for typma or *)
+  Definition typma_or (t1 t2 : typma) : typma :=
   match t1, t2 with
   | TNat n1, TNat n2 => TBool (to_bool (TNat n1) || to_bool (TNat n2))
   | TNat n, TBool b 
@@ -210,6 +214,7 @@ Fixpoint exeval (st : state) (e : exp) : typma :=
   | EOr e1 e2 => typma_or (exeval st e1) (exeval st e2)
   end.
 
+(* inductive proposition for expressions *)
 Inductive exevalR : exp -> state -> typma -> Prop :=
   | E_ENat (n : nat) (st : state):
     exevalR (ENat n) st (TNat n)
@@ -247,6 +252,7 @@ Inductive exevalR : exp -> state -> typma -> Prop :=
   (H1 : exevalR e1 st t1) (H2 : exevalR e2 st t2):
     exevalR (EOr e1 e2) st (typma_or t1 t2). 
 
+(* proof for expressions *)
 Theorem exeval_iff_exevalR : forall e st t,
   (exevalR e st t) <-> exeval st e = t.
 Proof.
@@ -257,6 +263,7 @@ Proof.
   try (apply IHe1; reflexivity); try (apply IHe2; reflexivity); try (apply IHe; reflexivity).
 Qed.
 
+(* syntax defenition for commands *)
 Inductive com : Type :=
   | CSkip
   | CAsgn (x : Sus.sus) (e : exp)
@@ -265,11 +272,11 @@ Inductive com : Type :=
   | CIf (e : exp) (c1 c2 : com)
   | CWhile (e : exp) (c : com).
 
-(*figure out print statement*)
-
+(* map for print statements, two dups needed for extraction fix *)
 Definition t_print {A : Type} (v : A) : total_map A := (fun _ => v).
 Definition t_print' {A : Type} (v : A) : total_map A := (fun _ => v).
 
+(* inductive proposition for commands *)
 Inductive ceval : com -> state -> state -> Prop :=
   | E_Skip : forall st,
     ceval CSkip st st
@@ -300,6 +307,7 @@ Inductive ceval : com -> state -> state -> Prop :=
     ceval (CWhile t c) st' st'' ->
     ceval (CWhile t c) st st''.
 
+(* function for commands *)
 Fixpoint ceval_step (st : state) (c : com) (i : nat) : option state :=
 match i with
   | O => None
@@ -330,6 +338,8 @@ match i with
   end
 end.
 
+(* proofs for command, three needed for gas implementation of infinite while loops *)
+(* this proof is a modified version of a proof from Software Foundations: Logical Foundations chapter ImpCEvalFun *)
 Theorem ceval_step__ceval: forall c st st',
   (exists i, ceval_step st c i = Some st') -> ceval c st st'.
 Proof.
@@ -379,6 +389,8 @@ Proof.
         apply E_WhileFalse. apply Heqr.
 Qed.
 
+(* seperate proof used later for deterministic proof *)
+(* this proof is a modified version of a proof from Software Foundations: Logical Foundations chapter ImpCEvalFun *)
 Theorem ceval_step_more: forall i1 i2 st st' c,
   i1 <= i2 ->
   ceval_step st c i1 = Some st' ->
@@ -426,6 +438,8 @@ induction i1 as [|i1']; intros i2 st st' c Hle Hceval.
         simpl in Hceval. discriminate Hceval. 
 Qed.
 
+(* this proof is a modified version of an excercise from Software Foundations: Logical Foundations chapter ImpCEvalFun *)
+(* I wrote this *)
 Theorem ceval__ceval_step: forall c st st',
   ceval c st st' ->
   exists i, ceval_step st c i = Some st'.
@@ -450,6 +464,7 @@ Proof.
   pose proof ceval_step_more _ _ _ _ _ H'' H1. apply H3.
 Qed.
 
+(* this proof is a modified version of a proof from Software Foundations: Logical Foundations chapter ImpCEvalFun *)
 Theorem ceval_and_ceval_step_coincide: forall c st st',
   ceval c st st'
   <-> exists i, ceval_step st c i = Some st'.
@@ -458,6 +473,8 @@ Proof.
   split. apply ceval__ceval_step. apply ceval_step__ceval.
 Qed.
 
+(* proof that Typma is deterministic *)
+(* this proof is a modified version of a proof from Software Foundations: Logical Foundations chapter ImpCEvalFun *)
 Theorem ceval_deterministic' : forall c st st1 st2,
   ceval c st st1 ->
   ceval c st st2 ->
